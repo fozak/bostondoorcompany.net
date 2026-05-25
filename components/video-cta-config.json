@@ -1,0 +1,62 @@
+{
+  "chestnut": {
+    "video": "/video/chestnut.mp4",
+    "badge": "Chestnut Hill, MA — In Progress",
+    "headline": "New Construction",
+    "sub": "Foundation · Structural Steel · Framing",
+    "cta": "Get A Free Estimate",
+    "ctaLink": "#contact",
+    "chips": [
+      { "icon": "fa-map-marker-alt", "label": "Chestnut Hill, MA" },
+      { "icon": "fa-hard-hat",       "label": "New Construction"  },
+      { "icon": "fa-check-circle",   "label": "Licensed & Insured"},
+      { "icon": "fa-file-alt",       "label": "Permitted"         }
+    ],
+    "timings": {
+      "badge":    1.5,
+      "headline": 3.0,
+      "chips":    4.5,
+      "cta":      6.0
+    }
+  },
+  "roofing": {
+    "video": "/video/roofing.mp4",
+    "badge": "Boston, MA — Completed",
+    "headline": "Roof Replacement",
+    "sub": "Full Strip · New Shingles · Flashing",
+    "cta": "Get A Free Estimate",
+    "ctaLink": "#contact",
+    "chips": [
+      { "icon": "fa-map-marker-alt", "label": "Boston, MA"        },
+      { "icon": "fa-hard-hat",       "label": "Roofing & Siding"  },
+      { "icon": "fa-check-circle",   "label": "Licensed & Insured"},
+      { "icon": "fa-file-alt",       "label": "Permitted"         }
+    ],
+    "timings": {
+      "badge":    1.0,
+      "headline": 2.5,
+      "chips":    4.0,
+      "cta":      5.5
+    }
+  },
+  "interior": {
+    "video": "/video/interior.mp4",
+    "badge": "Newton, MA — Completed",
+    "headline": "Kitchen & Bath Remodel",
+    "sub": "Custom Cabinets · Tile · Open Concept",
+    "cta": "View Our Work",
+    "ctaLink": "#gallery",
+    "chips": [
+      { "icon": "fa-map-marker-alt", "label": "Newton, MA"        },
+      { "icon": "fa-home",           "label": "Home Remodeling"   },
+      { "icon": "fa-check-circle",   "label": "Licensed & Insured"},
+      { "icon": "fa-file-alt",       "label": "Permitted"         }
+    ],
+    "timings": {
+      "badge":    1.0,
+      "headline": 3.0,
+      "chips":    4.5,
+      "cta":      6.0
+    }
+  }
+}

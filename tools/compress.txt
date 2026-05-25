@@ -1,0 +1,45 @@
+Add-Type -AssemblyName System.Drawing
+
+$maxBytes = 200 * 1024
+$folder = Get-Location
+
+Get-ChildItem -Filter "*.jpg" | ForEach-Object {
+    $file = $_.FullName
+    $size = $_.Length
+
+    if ($size -gt $maxBytes) {
+        # Load into byte array first to release file lock
+        $bytes = [System.IO.File]::ReadAllBytes($file)
+        $ms_in = New-Object System.IO.MemoryStream(,$bytes)
+        $img = [System.Drawing.Image]::FromStream($ms_in)
+
+        $encoder = [System.Drawing.Imaging.ImageCodecInfo]::GetImageEncoders() | 
+                   Where-Object { $_.MimeType -eq "image/jpeg" }
+
+        $encoderParams = New-Object System.Drawing.Imaging.EncoderParameters(1)
+        $q = 85
+
+        $ms_out = New-Object System.IO.MemoryStream
+        do {
+            $ms_out.SetLength(0)
+            $encoderParams.Param[0] = New-Object System.Drawing.Imaging.EncoderParameter(
+                [System.Drawing.Imaging.Encoder]::Quality, [long]$q
+            )
+            $img.Save($ms_out, $encoder, $encoderParams)
+            $q -= 5
+        } while ($ms_out.Length -gt $maxBytes -and $q -gt 10)
+
+        $img.Dispose()
+        $ms_in.Dispose()
+
+        # Now file is released — safe to write
+        [System.IO.File]::WriteAllBytes($file, $ms_out.ToArray())
+        $ms_out.Dispose()
+
+        Write-Host "Compressed: $($_.Name) → $([math]::Round($_.Length/1KB))KB → $([math]::Round((Get-Item $file).Length/1KB))KB"
+    } else {
+        Write-Host "OK (skip): $($_.Name) — $([math]::Round($size/1KB))KB"
+    }
+}
+
+Write-Host "`nDone."

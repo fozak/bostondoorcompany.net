@@ -1,0 +1,170 @@
+/* ============================================================
+   video-cta.css  —  Elite Contractors LLC
+   Add to site.css or import separately
+   Compatible with Tabler CSS framework
+   ============================================================ */
+
+/* ── Wrapper ─────────────────────────────────────────────── */
+.video-cta-wrap {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  background: #0d0d0d;
+  /* Default aspect ratio — override per page if needed */
+  aspect-ratio: 16 / 9;
+  max-height: 90vh;
+}
+
+.video-cta-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+/* ── Video ───────────────────────────────────────────────── */
+.video-cta-player {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* ── Gradient overlay ────────────────────────────────────── */
+.video-cta-gradient {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.80) 0%,
+    rgba(0, 0, 0, 0.35) 50%,
+    rgba(0, 0, 0, 0.10) 100%
+  );
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* ── Overlay container ───────────────────────────────────── */
+.video-cta-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 2.5rem 3rem;
+  gap: 1rem;
+}
+
+/* ── Shared animation base ───────────────────────────────── */
+.vcta-el {
+  opacity: 0;
+  transform: translateY(18px);
+  transition:
+    opacity 0.65s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.65s cubic-bezier(0.22, 1, 0.36, 1);
+  pointer-events: none;
+}
+
+.vcta-el.vcta-visible {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+/* ── Badge ───────────────────────────────────────────────── */
+.video-cta-badge {
+  display: inline-flex;
+}
+
+.video-cta-badge .badge {
+  letter-spacing: 0.08em;
+  font-size: 0.75rem !important;
+  font-weight: 700;
+  border-radius: 3px;
+}
+
+/* ── Headline ────────────────────────────────────────────── */
+.video-cta-headline h2 {
+  font-size: clamp(1.8rem, 4vw, 3rem);
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+  text-shadow: 0 2px 12px rgba(0,0,0,0.4);
+  margin-bottom: 0.4rem;
+}
+
+.vcta-subline {
+  font-size: clamp(0.95rem, 1.5vw, 1.15rem);
+  opacity: 0.82;
+  letter-spacing: 0.04em;
+  text-shadow: 0 1px 6px rgba(0,0,0,0.5);
+}
+
+/* ── CTA Button ──────────────────────────────────────────── */
+.video-cta-btn-wrap {
+  display: inline-flex;
+}
+
+.vcta-btn {
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.35);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.vcta-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 28px rgba(0,0,0,0.45);
+}
+
+/* ── Progress bar ────────────────────────────────────────── */
+.video-cta-progress {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: rgba(255,255,255,0.15);
+  z-index: 3;
+}
+
+.video-cta-progress-bar {
+  height: 100%;
+  width: 0%;
+  background: var(--tblr-primary, #206bc4);
+  transition: width 0.25s linear;
+}
+
+/* ── Responsive ──────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .video-cta-overlay {
+    padding: 1.5rem;
+  }
+
+  .video-cta-headline h2 {
+    font-size: 1.6rem;
+  }
+
+  .vcta-subline {
+    font-size: 0.9rem;
+  }
+
+  .vcta-btn {
+    font-size: 0.8rem;
+    padding: 0.6rem 1.5rem !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .video-cta-headline h2 {
+    font-size: 1.3rem;
+  }
+
+  .video-cta-overlay {
+    padding: 1rem 1.25rem;
+    gap: 0.6rem;
+  }
+}

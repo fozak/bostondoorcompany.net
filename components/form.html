@@ -1,0 +1,32 @@
+<form id="estimate-form">
+  <div class="row g-3">
+    <div class="col-sm-6">
+      <input type="text" name="name" class="form-control form-control-lg" placeholder="Your Name">
+    </div>
+    <div class="col-sm-6">
+      <input type="email" name="email" class="form-control form-control-lg" placeholder="Your Email">
+    </div>
+    <div class="col-sm-6">
+      <input type="tel" name="phone" class="form-control form-control-lg" placeholder="Phone Number">
+    </div>
+    <div class="col-sm-6">
+      <select name="service" class="form-select form-select-lg">
+        <option value="">Service Needed</option>
+        <option>Home Remodeling &amp; Renovations</option>
+        <option>Roofing &amp; Siding</option>
+        <option>Interior Repairs &amp; Finishes</option>
+        <option>Landscaping &amp; Tree Services</option>
+        <option>Solar Energy Solutions</option>
+        <option>Consulting &amp; Project Management</option>
+        <option>Other</option>
+      </select>
+    </div>
+    <div class="col-12">
+      <textarea name="message" class="form-control" rows="4" placeholder="Describe your project..."></textarea>
+    </div>
+    <div class="col-12">
+      <button type="submit" id="submit-btn" class="btn btn-primary w-100 py-3">Request Free Estimate</button>
+    </div>
+    <div class="col-12" id="form-msg" style="display:none"></div>
+  </div>
+</form>

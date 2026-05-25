@@ -1,0 +1,409 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="livereload" content="disabled">
+<title>Image Renamer — Elite Contractors</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/core@1.0.0-beta17/dist/css/tabler.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="antialiased">
+
+<div class="wrapper">
+
+  <div class="navbar navbar-expand-md navbar-dark navbar-overlap d-print-none" style="background:#1a1a1a;">
+    <div class="container-xl">
+      <span class="navbar-brand">
+        <i class="fa fa-images me-2"></i>
+        Image Renamer — Elite Contractors LLC
+      </span>
+      <span class="text-white-50 small ms-auto">Chrome / Edge only (File System Access API)</span>
+    </div>
+  </div>
+
+  <div class="page-wrapper">
+    <div class="container-xl">
+
+      <div class="page-header mt-3">
+        <div class="row align-items-center">
+          <div class="col">
+            <h2 class="page-title">Rename WhatsApp Images</h2>
+            <div class="text-muted mt-1">
+              Select your <code>images/</code> folder. Files already following the naming convention are skipped automatically.
+              Assign a category and short description to the rest, then click <strong>Rename files</strong>.
+              Files over <strong>200 KB</strong> are automatically compressed via canvas re-encoding.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Toolbar -->
+      <div class="card mt-3">
+        <div class="card-body">
+          <div class="row g-2 align-items-center">
+            <div class="col-auto">
+              <button class="btn btn-dark" id="pickBtn">
+                <i class="fa fa-folder-open me-2"></i>Select folder
+              </button>
+            </div>
+            <div class="col-auto">
+              <button class="btn btn-success" id="renameBtn" disabled>
+                <i class="fa fa-check me-2"></i>Rename files
+              </button>
+            </div>
+            <div class="col">
+              <span class="text-muted small" id="status">No folder selected</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Counters -->
+      <div class="row g-3 mt-1" id="counters" style="display:none">
+        <div class="col-6 col-sm-3">
+          <div class="card">
+            <div class="card-body p-3 text-center">
+              <div class="text-muted small mb-1">Total images</div>
+              <div class="h2 mb-0" id="cTotal">0</div>
+            </div>
+          </div>
+        </div>
+        <div class="col-6 col-sm-3">
+          <div class="card">
+            <div class="card-body p-3 text-center">
+              <div class="text-muted small mb-1">To rename</div>
+              <div class="h2 mb-0 text-success" id="cRename">0</div>
+            </div>
+          </div>
+        </div>
+        <div class="col-6 col-sm-3">
+          <div class="card">
+            <div class="card-body p-3 text-center">
+              <div class="text-muted small mb-1">Already named</div>
+              <div class="h2 mb-0 text-muted" id="cSkip">0</div>
+            </div>
+          </div>
+        </div>
+        <div class="col-6 col-sm-3">
+          <div class="card">
+            <div class="card-body p-3 text-center">
+              <div class="text-muted small mb-1">Categories used</div>
+              <div class="h2 mb-0 text-primary" id="cCats">0</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Table -->
+      <div class="card mt-3" id="tableWrap" style="display:none">
+        <div class="card-header">
+          <h3 class="card-title">Files</h3>
+          <div class="card-options text-muted small">
+            Edit category + description for each file to rename
+          </div>
+        </div>
+        <div class="table-responsive">
+          <table class="table table-vcenter card-table table-hover">
+            <thead>
+              <tr>
+                <th>Original filename</th>
+                <th style="width:80px">Size</th>
+                <th>Category</th>
+                <th style="width:60px">#</th>
+                <th>Description</th>
+                <th>New filename</th>
+                <th style="width:100px">Status</th>
+              </tr>
+            </thead>
+            <tbody id="tbody"></tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Log -->
+      <div class="card mt-3" id="logWrap" style="display:none">
+        <div class="card-header">
+          <h3 class="card-title">Rename log</h3>
+        </div>
+        <div class="card-body p-0">
+          <div id="log" style="font-family:monospace;font-size:12px;padding:1rem;max-height:260px;overflow-y:auto;line-height:1.8;"></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@tabler/core@1.0.0-beta17/dist/js/tabler.min.js"></script>
+<script>
+const CATS = [
+  { value: 'home-remodeling',           label: 'Home Remodeling' },
+  { value: 'roofing-siding',            label: 'Roofing & Siding' },
+  { value: 'interior-repairs',          label: 'Interior Repairs' },
+  { value: 'landscaping-tree-services', label: 'Landscaping & Tree Services' },
+  { value: 'solar-energy',              label: 'Solar Energy' },
+  { value: 'consulting',                label: 'Consulting' },
+  { value: 'pest-control',              label: 'Pest Control' },
+];
+
+const VALID_EXTS = ['jpg','jpeg','png','gif','webp'];
+const NAMED_RE = /^(home-remodeling|roofing-siding|interior-repairs|landscaping-tree-services|solar-energy|consulting|pest-control)-(\d+)-(.+)\.(jpg|jpeg|png|gif|webp)$/i;
+const SKIP_NAMES = ['logo.png'];
+const SIZE_LIMIT = 200 * 1024;
+
+let dirHandle = null;
+let rows = [];
+
+function fileExt(name) { return name.split('.').pop().toLowerCase(); }
+function fmtSize(b) { return b >= 1048576 ? (b/1048576).toFixed(1)+' MB' : Math.round(b/1024)+' KB'; }
+function slugify(s) { return s.trim().toLowerCase().replace(/\s+/g,'-').replace(/[^a-z0-9-]/g,'')||'photo'; }
+
+function buildMaxMap() {
+  const map = {};
+  for (const r of rows) {
+    if (!r.skip) continue;
+    const m = r.origName.match(NAMED_RE);
+    if (!m) continue;
+    const num = parseInt(m[2]);
+    if (!map[m[1]] || map[m[1]] < num) map[m[1]] = num;
+  }
+  return map;
+}
+
+function updateNewNames() {
+  const maxMap = buildMaxMap();
+  const assigned = {};
+  for (const r of rows) {
+    if (r.skip) continue;
+    const cat = r.catEl.value;
+    const desc = slugify(r.descEl.value);
+    const e = fileExt(r.origName);
+    if (assigned[cat] === undefined) assigned[cat] = (maxMap[cat] || 0);
+    assigned[cat]++;
+    r.newName = `${cat}-${String(assigned[cat]).padStart(2,'0')}-${desc}.${e}`;
+    r.newNameEl.textContent = r.newName;
+  }
+  const toRename = rows.filter(r => !r.skip).length;
+  document.getElementById('cRename').textContent = toRename;
+  document.getElementById('renameBtn').disabled = toRename === 0;
+  document.getElementById('cCats').textContent = new Set(rows.filter(r=>!r.skip).map(r=>r.catEl.value)).size;
+}
+
+async function compressImage(blob) {
+  return new Promise((resolve, reject) => {
+    const img = new Image();
+    const url = URL.createObjectURL(blob);
+    img.onload = async () => {
+      URL.revokeObjectURL(url);
+      const canvas = document.createElement('canvas');
+      let { width, height } = img;
+      const MAX = 2400;
+      if (width > MAX) { height = Math.round(height*MAX/width); width = MAX; }
+      if (height > MAX) { width = Math.round(width*MAX/height); height = MAX; }
+      canvas.width = width; canvas.height = height;
+      canvas.getContext('2d').drawImage(img, 0, 0, width, height);
+
+      // binary search quality
+      let lo = 0.1, hi = 0.9, best = null;
+      const attempt = q => new Promise(r => canvas.toBlob(r, 'image/jpeg', q));
+      let result = await attempt(0.82);
+      if (result.size <= SIZE_LIMIT) { resolve(result); return; }
+      for (let i = 0; i < 8; i++) {
+        const mid = (lo + hi) / 2;
+        result = await attempt(mid);
+        if (result.size <= SIZE_LIMIT) { best = result; lo = mid; } else { hi = mid; }
+      }
+      resolve(best || await attempt(0.1));
+    };
+    img.onerror = reject;
+    img.src = url;
+  });
+}
+
+document.getElementById('pickBtn').addEventListener('click', async () => {
+  if (!window.showDirectoryPicker) { alert('Chrome or Edge required.'); return; }
+  try {
+    dirHandle = await window.showDirectoryPicker({ mode: 'readwrite' });
+    const perm = await dirHandle.requestPermission({ mode: 'readwrite' });
+    if (perm !== 'granted') { document.getElementById('status').textContent = 'Write permission denied.'; return; }
+
+    document.getElementById('status').textContent = 'Reading folder…';
+    rows = [];
+    document.getElementById('tbody').innerHTML = '';
+
+    const imageFiles = [];
+    for await (const [name, handle] of dirHandle.entries()) {
+      if (handle.kind !== 'file') continue;
+      if (SKIP_NAMES.includes(name)) continue;
+      if (!VALID_EXTS.includes(fileExt(name))) continue;
+      imageFiles.push({ name, handle });
+    }
+    imageFiles.sort((a,b) => a.name.localeCompare(b.name));
+
+    // Read all sizes into memory up front
+    for (const f of imageFiles) {
+      const file = await f.handle.getFile();
+      f.size = file.size;
+    }
+
+    for (const f of imageFiles) {
+      const isNamed = NAMED_RE.test(f.name);
+      const m = isNamed ? f.name.match(NAMED_RE) : null;
+      const row = { origName: f.name, handle: f.handle, skip: isNamed, newName: f.name, fileSize: f.size, needsCompress: f.size > SIZE_LIMIT };
+
+      const tr = document.createElement('tr');
+
+      // Original name
+      const origTd = document.createElement('td');
+      origTd.innerHTML = `<span style="font-family:monospace;font-size:11px;color:#666;" title="${f.name}">${f.name}</span>`;
+      tr.appendChild(origTd);
+
+      // Size
+      const sizeTd = document.createElement('td');
+      sizeTd.innerHTML = row.needsCompress
+        ? `<span class="badge bg-danger-lt text-danger">${fmtSize(f.size)} <i class="fa fa-compress-alt ms-1"></i></span>`
+        : `<span class="text-muted small">${fmtSize(f.size)}</span>`;
+      tr.appendChild(sizeTd);
+
+      // Category
+      const catTd = document.createElement('td');
+      if (isNamed) {
+        catTd.innerHTML = `<span class="badge bg-secondary-lt">${m[1]}</span>`;
+        row.catEl = { value: m[1] };
+      } else {
+        const sel = document.createElement('select');
+        sel.className = 'form-select form-select-sm';
+        CATS.forEach(c => { const o = document.createElement('option'); o.value=c.value; o.textContent=c.label; sel.appendChild(o); });
+        sel.addEventListener('change', updateNewNames);
+        catTd.appendChild(sel);
+        row.catEl = sel;
+      }
+      tr.appendChild(catTd);
+
+      // Number
+      const numTd = document.createElement('td');
+      numTd.innerHTML = isNamed ? `<span class="text-muted">${m[2]}</span>` : `<span class="text-muted fst-italic">auto</span>`;
+      tr.appendChild(numTd);
+
+      // Description
+      const descTd = document.createElement('td');
+      if (isNamed) {
+        descTd.innerHTML = `<code style="font-size:12px;">${m[3]}</code>`;
+        row.descEl = { value: m[3] };
+      } else {
+        const inp = document.createElement('input');
+        inp.type='text'; inp.className='form-control form-control-sm'; inp.placeholder='short-description'; inp.style.minWidth='180px';
+        inp.addEventListener('input', updateNewNames);
+        descTd.appendChild(inp);
+        row.descEl = inp;
+      }
+      tr.appendChild(descTd);
+
+      // New name
+      const newTd = document.createElement('td');
+      const newSpan = document.createElement('span');
+      newSpan.style.cssText = 'font-family:monospace;font-size:12px;';
+      newSpan.style.color = isNamed ? '#aaa' : '';
+      if (!isNamed) newSpan.classList.add('text-success','fw-medium');
+      newSpan.textContent = isNamed ? f.name : '—';
+      newTd.appendChild(newSpan);
+      row.newNameEl = newSpan;
+      tr.appendChild(newTd);
+
+      // Status
+      const statusTd = document.createElement('td');
+      statusTd.innerHTML = isNamed
+        ? `<span class="badge bg-warning-lt text-warning">skip</span>`
+        : `<span class="badge bg-success-lt text-success">rename</span>`;
+      if (!isNamed) row.statusEl = statusTd.querySelector('span');
+      tr.appendChild(statusTd);
+
+      document.getElementById('tbody').appendChild(tr);
+      rows.push(row);
+    }
+
+    document.getElementById('cTotal').textContent = rows.length;
+    document.getElementById('cSkip').textContent = rows.filter(r=>r.skip).length;
+    document.getElementById('counters').style.display = '';
+    document.getElementById('tableWrap').style.display = '';
+    document.getElementById('status').textContent = 'Folder: ' + dirHandle.name;
+    updateNewNames();
+  } catch(e) {
+    if (e.name !== 'AbortError') document.getElementById('status').textContent = 'Error: ' + e.message;
+  }
+});
+
+document.getElementById('renameBtn').addEventListener('click', async () => {
+  const log = document.getElementById('log');
+  document.getElementById('logWrap').style.display = '';
+  log.innerHTML = '<div style="color:#888;">Step 1/3: Reading all files into memory…</div>';
+
+  const toRename = rows.filter(r => !r.skip);
+  let ok = 0, errCount = 0;
+
+  // PHASE 1: read everything into memory
+  const prepared = [];
+  for (const r of toRename) {
+    try {
+      const file = await r.handle.getFile();
+      let data, finalName = r.newName, compressedSize = null;
+
+      if (r.needsCompress) {
+        const compressed = await compressImage(file);
+        data = await compressed.arrayBuffer();
+        compressedSize = compressed.size;
+        if (/\.png$/i.test(finalName)) finalName = finalName.replace(/\.png$/i, '.jpg');
+      } else {
+        data = await file.arrayBuffer();
+      }
+
+      prepared.push({ r, data, finalName, compressedSize });
+    } catch(e) {
+      log.innerHTML += `<div style="color:#d63939;">&#10007; Read failed: ${r.origName}: ${e.message}</div>`;
+      errCount++;
+    }
+  }
+
+  log.innerHTML += `<div style="color:#888;">Step 2/3: Writing ${prepared.length} files…</div>`;
+
+  // PHASE 2: write all new files
+  for (const p of prepared) {
+    try {
+      const newHandle = await dirHandle.getFileHandle(p.finalName, { create: true });
+      const writable = await newHandle.createWritable();
+      await writable.write(p.data);
+      await writable.close();
+      p.written = true;
+    } catch(e) {
+      log.innerHTML += `<div style="color:#d63939;">&#10007; Write failed: ${p.finalName}: ${e.message}</div>`;
+      errCount++;
+    }
+  }
+
+  log.innerHTML += `<div style="color:#888;">Step 3/3: Deleting originals…</div>`;
+
+  // PHASE 3: delete originals only if write succeeded
+  for (const p of prepared) {
+    if (!p.written) continue;
+    try {
+      if (p.r.origName !== p.finalName) await dirHandle.removeEntry(p.r.origName);
+      const note = p.compressedSize ? ` <span style="color:#888;">(${fmtSize(p.r.fileSize)} → ${fmtSize(p.compressedSize)})</span>` : '';
+      log.innerHTML += `<div style="color:#2fb344;">&#10003; ${p.r.origName} → <strong>${p.finalName}</strong>${note}</div>`;
+      if (p.r.statusEl) { p.r.statusEl.className = p.compressedSize ? 'badge bg-warning' : 'badge bg-success'; p.r.statusEl.textContent = p.compressedSize ? 'compressed' : 'done'; }
+      ok++;
+    } catch(e) {
+      log.innerHTML += `<div style="color:#f59f00;">&#9888; Delete failed: ${p.r.origName}: ${e.message}</div>`;
+    }
+    log.scrollTop = log.scrollHeight;
+  }
+
+  log.innerHTML += `<div style="margin-top:10px;font-weight:600;">Done — ${ok} renamed, ${errCount} errors.</div>`;
+  document.getElementById('status').textContent = `Done — ${ok} renamed, ${errCount} errors`;
+  document.getElementById('renameBtn').disabled = true;
+});
+</script>
+
+
+</body>
+</html>

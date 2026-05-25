@@ -1,0 +1,848 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Elite Contractors LLC — Home Remodeling & Renovations Boston, MA</title>
+  <meta name="description" content="Elite Contractors LLC — Boston's trusted home remodeling, roofing, landscaping, solar, and interior repair specialists. Licensed, insured, financing available.">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/core@1.0.0-beta17/dist/css/tabler.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    :root {
+      --c-blue: #1a56db;
+      --c-blue-dk: #1042a8;
+      --c-navy: #0d1b3e;
+      --c-sky: #e8f0fe;
+    }
+
+    .btn-primary { background: var(--c-blue) !important; border-color: var(--c-blue) !important; }
+    .btn-primary:hover { background: var(--c-blue-dk) !important; border-color: var(--c-blue-dk) !important; }
+    .text-primary { color: var(--c-blue) !important; }
+    .border-primary { border-color: var(--c-blue) !important; }
+
+    /* Topbar */
+    .topbar { background: var(--c-navy); padding: 1.4rem 0; }
+    .topbar-item { display: flex; align-items: center; gap: 1.1rem; padding: 0 2rem; }
+    .topbar-item + .topbar-item { border-left: 1px solid rgba(255,255,255,.15); }
+    .topbar-icon { width: 52px; height: 52px; background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.15); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.3rem; color: #7eb3ff; flex-shrink: 0; }
+    .topbar-label { font-size: .7rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: rgba(255,255,255,.5); }
+    .topbar-value { font-size: .95rem; color: #fff; font-weight: 500; }
+
+    /* Navbar */
+    .site-nav { background: var(--c-navy); border-bottom: 3px solid var(--c-blue); box-shadow: 0 2px 12px rgba(0,0,0,.18); }
+    .site-nav .nav-link { color: rgba(255,255,255,.85) !important; font-weight: 600; font-size: .95rem; letter-spacing: .03em; padding: 1.1rem .9rem !important; text-transform: uppercase; }
+    .site-nav .nav-link:hover, .site-nav .nav-link.active { color: #7eb3ff !important; }
+    .site-nav .dropdown-menu { border-top: 3px solid var(--c-blue); border-radius: 0; }
+    .nav-quote { background: var(--c-blue) !important; color: #fff !important; border-radius: 4px; padding: .7rem 1.4rem !important; margin-left: .5rem; }
+    .nav-quote:hover { background: var(--c-blue-dk) !important; color: #fff !important; }
+
+    /* Hero */
+    .hero { position: relative; height: 580px; overflow: hidden; }
+    .hero img { width: 100%; height: 100%; object-fit: cover; filter: brightness(.45); }
+    .hero-caption { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 1rem; }
+    .hero-badge { display: inline-block; background: var(--c-blue); color: #fff; font-size: .75rem; font-weight: 700; letter-spacing: .15em; text-transform: uppercase; padding: .35rem 1.2rem; border-radius: 2px; margin-bottom: 1.2rem; }
+
+    /* Sections */
+    section { padding: 5rem 0; }
+    .section-bg { background: var(--c-sky); }
+    .section-title { font-weight: 800; letter-spacing: -.01em; }
+    .section-title span { color: var(--c-blue); }
+
+    html { font-size: 125%; }
+
+    /* Service cards */
+    .svc-img { height: 200px; object-fit: cover; width: 100%; }
+    .svc-icon { width: 64px; height: 64px; background: var(--c-blue); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #fff !important; font-size: 1.4rem; box-shadow: 0 4px 14px rgba(26,86,219,.45); margin: -32px auto 0; position: relative; z-index: 1; }
+    .svc-icon i { color: #fff !important; }
+    .card { border: none; box-shadow: 0 2px 12px rgba(0,0,0,.07); }
+    .card:hover { box-shadow: 0 6px 24px rgba(0,0,0,.13); transition: box-shadow .25s; }
+
+    /* Portfolio */
+    .port-box { position: relative; overflow: hidden; border-radius: 6px; }
+    .port-box img { height: 250px; object-fit: cover; width: 100%; display: block; transition: transform .4s; }
+    .port-box:hover img { transform: scale(1.05); }
+    .port-label { position: absolute; bottom: 0; left: 0; right: 0; background: rgba(13,27,62,.82); padding: .85rem 1rem; color: #fff; }
+    .port-label .h6 { color: #fff; }
+    .port-label small { color: rgba(255,255,255,.7); }
+
+    /* Footer */
+    .site-footer { background: var(--c-navy); color: rgba(255,255,255,.6); }
+    .site-footer a { color: rgba(255,255,255,.6); text-decoration: none; }
+    .site-footer a:hover { color: #7eb3ff; }
+    .footer-bar { background: #070f22; border-top: 3px solid var(--c-blue); }
+  </style>
+
+  <!-- Google tag -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-YB68QCJBT6"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-YB68QCJBT6');
+  </script>
+</head>
+
+<body>
+
+  <!-- Topbar -->
+  <div class="topbar d-none d-lg-block">
+    <div class="container-xl">
+      <div class="d-flex justify-content-center">
+        <div class="topbar-item">
+          <div class="topbar-icon"><i class="fa fa-map-marker-alt"></i></div>
+          <div>
+            <div class="topbar-label">Service Area</div>
+            <div class="topbar-value">Greater Boston, MA</div>
+          </div>
+        </div>
+        <div class="topbar-item">
+          <div class="topbar-icon"><i class="fa fa-envelope"></i></div>
+          <div>
+            <div class="topbar-label">Email Us</div>
+            <div class="topbar-value">info@elitecontractorsllc.biz</div>
+          </div>
+        </div>
+        <div class="topbar-item">
+          <div class="topbar-icon"><i class="fa fa-phone-alt"></i></div>
+          <div>
+            <div class="topbar-label">Call Us</div>
+            <div class="topbar-value">(857) 499-4440</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg site-nav sticky-top">
+    <div class="container-xl">
+      <a class="navbar-brand" href="/">
+        <img src="/images/logo.png" alt="Elite Contractors LLC" style="height:64px;">
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="nav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link active" href="/">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+          <li class="nav-item"><a class="nav-link" href="/gallery.html">Gallery</a></li>
+          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">More</a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">Privacy Policy</a></li>
+              <li><a class="dropdown-item" href="#">Do Not Sell My Personal Information</a></li>
+            </ul>
+          </li>
+          <li class="nav-item d-none d-lg-block">
+            <a class="nav-link nav-quote ms-3" href="#contact">Get A Free Estimate <i class="ti ti-arrow-right"></i></a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <div class="hero">
+    <img src="/images/roofing-siding-01-aerial-exterior.jpg" alt="Elite Contractors LLC — Boston Home Remodeling">
+    <div class="hero-caption">
+      <span class="hero-badge">Greater Boston's Trusted Contractor</span>
+      <h1 class="display-3 text-uppercase text-white mb-2">Elite Home Remodeling &amp; Renovations</h1>
+      <p class="text-white fs-4 mb-4" style="opacity:.85;">Licensed · Insured · Financing Available</p>
+      <a href="#contact" class="btn btn-primary btn-lg px-5 py-3">Get A Free Estimate</a>
+    </div>
+  </div>
+
+  <!-- About -->
+  <section id="about">
+    <div class="container-xl">
+      <div class="row g-5 align-items-center">
+        <div class="col-lg-7">
+          <h1 class="display-5 text-uppercase mb-4">Boston's Trusted <span class="text-primary">Remodeling Experts</span></h1>
+          <h5 class="text-uppercase mb-3 text-muted">Built on Quality. Driven by Results.</h5>
+          <p class="text-muted">At Elite Contractors LLC, we bring craftsmanship and accountability to every project — from full kitchen remodels and roof replacements to solar installations and tree removal. We work closely with each client to deliver results that exceed expectations and stand the test of time.</p>
+          <div class="row py-2">
+            <div class="col-sm-6">
+              <p class="fw-bold mb-2"><i class="fa fa-check text-primary me-2"></i>Customer-First Approach</p>
+              <p class="fw-bold mb-2"><i class="fa fa-check text-primary me-2"></i>Competitive, Transparent Pricing</p>
+              <p class="fw-bold mb-2"><i class="fa fa-check text-primary me-2"></i>Licensed & Insured Professionals</p>
+            </div>
+            <div class="col-sm-6">
+              <p class="fw-bold mb-2"><i class="fa fa-check text-primary me-2"></i>Financing Available</p>
+              <p class="fw-bold mb-2"><i class="fa fa-check text-primary me-2"></i>Credit Cards Accepted</p>
+              <p class="fw-bold mb-2"><i class="fa fa-check text-primary me-2"></i>Permitting & Compliance Handled</p>
+            </div>
+          </div>
+          <a href="#contact" class="btn btn-primary px-4 py-2 mt-3">Get A Free Estimate</a>
+        </div>
+        <div class="col-lg-5">
+          <img src="/images/home-remodeling-02-kitchen-white.jpg" class="img-fluid w-100" style="object-fit:cover;min-height:380px;border-radius:6px;" alt="Kitchen remodel by Elite Contractors LLC Boston">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section id="services" class="section-bg">
+    <div class="container-xl">
+      <div class="text-center mb-5">
+        <h1 class="display-5 text-uppercase">Our <span class="text-primary">Services</span></h1>
+        <p class="text-muted">Full-service contracting across Greater Boston — one team, every trade.</p>
+      </div>
+      <div class="row g-4">
+
+        <div class="col-lg-4 col-md-6">
+          <div class="card h-100 text-center overflow-hidden">
+<<<<<<< HEAD
+            <img class="svc-img" src="/images/home-remodeling-02-kitchen-white.jpg" alt="Kitchen remodeling Boston">
+            <div class="svc-icon"><i class="fa fa-home fa-lg"></i></div>
+            <div class="card-body">
+              <h5 class="text-uppercase">Home Remodeling & Renovations</h5>
+              <p class="text-muted small text-start">Custom kitchen remodeling, full bathroom renovations, room additions, basement finishing, and exterior upgrades — porches, patios, and more.</p>
+=======
+            <img class="svc-img" src="/images/home-remodeling-02-kitchen-white.jpg" alt="Home Remodeling Boston">
+            <div class="svc-icon"><i class="fa fa-home fa-lg"></i></div>
+            <div class="card-body">
+              <h5 class="text-uppercase">Home Remodeling & Renovations</h5>
+              <p class="text-muted small text-start">Custom kitchen remodeling, full bathroom renovations, room
+                additions, basement finishing, and exterior upgrades including porches and patios.</p>
+>>>>>>> f858f4fa7051b7a669c9609cca7873122b511087
+              <a href="/services/home-remodeling" class="btn btn-sm btn-outline-primary mt-2">Learn More</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6">
+          <div class="card h-100 text-center overflow-hidden">
+<<<<<<< HEAD
+            <img class="svc-img" src="/images/roofing-siding-02-roof-stripped.jpg" alt="Roofing and siding Boston">
+            <div class="svc-icon"><i class="fa fa-hard-hat fa-lg"></i></div>
+            <div class="card-body">
+              <h5 class="text-uppercase">Roofing & Siding</h5>
+              <p class="text-muted small text-start">Leak repairs, full roof replacement, shingle installation, and siding repair or replacement — protecting your home's structure and curb appeal.</p>
+=======
+            <img class="svc-img" src="/images/roofing-siding-02-roof-stripped.jpg" alt="Roofing Boston">
+            <div class="svc-icon"><i class="fa fa-hard-hat fa-lg"></i></div>
+            <div class="card-body">
+              <h5 class="text-uppercase">Roofing & Siding</h5>
+              <p class="text-muted small text-start">Roof repair and full replacement, shingle installation, leak
+                repair, and siding repair or replacement for aesthetic and protective purposes.</p>
+>>>>>>> f858f4fa7051b7a669c9609cca7873122b511087
+              <a href="/services/roofing-siding" class="btn btn-sm btn-outline-primary mt-2">Learn More</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6">
+          <div class="card h-100 text-center overflow-hidden">
+<<<<<<< HEAD
+            <img class="svc-img" src="/images/interior-repairs-04-door-installation.jpg" alt="Interior repairs Boston">
+            <div class="svc-icon"><i class="fa fa-paint-roller fa-lg"></i></div>
+            <div class="card-body">
+              <h5 class="text-uppercase">Interior Repairs & Finishes</h5>
+              <p class="text-muted small text-start">Drywall patching, full interior painting, hardwood and tile flooring repair, and energy-efficient window and door installation.</p>
+=======
+            <img class="svc-img" src="/images/interior-repairs-02-hallway-kitchen.jpg" alt="Interior Repairs Boston">
+            <div class="svc-icon"><i class="fa fa-paint-roller fa-lg"></i></div>
+            <div class="card-body">
+              <h5 class="text-uppercase">Interior Repairs & Finishes</h5>
+              <p class="text-muted small text-start">Drywall patching and painting, hardwood and tile flooring repair,
+                and energy-efficient window and door installation.</p>
+>>>>>>> f858f4fa7051b7a669c9609cca7873122b511087
+              <a href="/services/interior-repairs" class="btn btn-sm btn-outline-primary mt-2">Learn More</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6">
+          <div class="card h-100 text-center overflow-hidden">
+<<<<<<< HEAD
+            <img class="svc-img" src="/images/landscaping-tree-services-05-aerial-drone.jpg" alt="Landscaping and tree removal Boston">
+            <div class="svc-icon"><i class="fa fa-tree fa-lg"></i></div>
+            <div class="card-body">
+              <h5 class="text-uppercase">Landscaping & Tree Services</h5>
+              <p class="text-muted small text-start">Safe, professional tree removal and stump grinding, plus full landscaping — trimming, planting, and outdoor design for your property.</p>
+=======
+            <img class="svc-img" src="/images/landscaping-tree-services-05-aerial-drone.jpg" alt="Landscaping Boston">
+            <div class="svc-icon"><i class="fa fa-tree fa-lg"></i></div>
+            <div class="card-body">
+              <h5 class="text-uppercase">Landscaping & Tree Services</h5>
+              <p class="text-muted small text-start">Safe professional tree removal and stump grinding, full landscaping
+                design, trimming, planting, and outdoor aesthetics.</p>
+>>>>>>> f858f4fa7051b7a669c9609cca7873122b511087
+              <a href="/services/landscaping-tree-services" class="btn btn-sm btn-outline-primary mt-2">Learn More</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6">
+          <div class="card h-100 text-center overflow-hidden">
+<<<<<<< HEAD
+            <img class="svc-img" src="/images/solar-energy-01-panel-installation.jpg" alt="Solar panel installation Boston">
+            <div class="svc-icon"><i class="fa fa-solar-panel fa-lg"></i></div>
+            <div class="card-body">
+              <h5 class="text-uppercase">Solar Energy Solutions</h5>
+              <p class="text-muted small text-start">Custom residential solar system design tailored to your energy needs, with complete panel installation and connection to your home's grid.</p>
+              <a href="/services/solar-energy" class="btn btn-sm btn-outline-primary mt-2">Learn More</a>
+=======
+            <img class="svc-img" src="/images/solar-energy-01-panel-installation.jpg" alt="Solar Energy Boston">
+            <div class="svc-icon"><i class="fa fa-solar-panel fa-lg"></i></div>
+            <div class="card-body">
+              <h5 class="text-uppercase">Solar Energy Solutions</h5>
+              <p class="text-muted small text-start">Custom residential solar system design tailored to your energy
+                needs, with complete panel installation and grid connection.</p>
+              <a href="/services/solar-energy" class="btn btn-sm btn-outline-primary mt-2">Learn More</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6">
+          <div class="card h-100 text-center overflow-hidden">
+            <img class="svc-img" src="/images/interior-repairs-04-door-installation.jpg" alt="Pest Control Boston">
+            <div class="svc-icon"><i class="fa fa-bug fa-lg"></i></div>
+            <div class="card-body">
+              <h5 class="text-uppercase">Pest Control</h5>
+              <p class="text-muted small text-start">Fast, reliable residential and commercial pest control. Safe
+                eco-friendly treatments, affordable rates, no hidden fees.</p>
+              <a href="/services/pest-control" class="btn btn-sm btn-outline-primary mt-2">Learn More</a>
+>>>>>>> f858f4fa7051b7a669c9609cca7873122b511087
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6">
+          <div class="card h-100 text-center overflow-hidden">
+<<<<<<< HEAD
+            <img class="svc-img" src="/images/roofing-siding-03-roof-close.jpg" alt="Construction consulting Boston">
+            <div class="svc-icon"><i class="fa fa-clipboard-list fa-lg"></i></div>
+            <div class="card-body">
+              <h5 class="text-uppercase">Consulting & Project Management</h5>
+              <p class="text-muted small text-start">Free on-site consultations, end-to-end project planning from design through completion, plus full permitting and compliance handling.</p>
+              <a href="/services/consulting-project-management" class="btn btn-sm btn-outline-primary mt-2">Learn More</a>
+=======
+            <img class="svc-img" src="/images/roofing-siding-03-roof-close.jpg" alt="Consulting Boston">
+            <div class="svc-icon"><i class="fa fa-clipboard-list fa-lg"></i></div>
+            <div class="card-body">
+              <h5 class="text-uppercase">Consulting & Project Management</h5>
+              <p class="text-muted small text-start">Free on-site consultations, end-to-end project planning and
+                management, plus full permitting and compliance handling.</p>
+              <a href="/services/consulting-project-management" class="btn btn-sm btn-outline-primary mt-2">Learn
+                More</a>
+>>>>>>> f858f4fa7051b7a669c9609cca7873122b511087
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact">
+    <div class="container-xl">
+      <div class="row g-5">
+        <div class="col-lg-4">
+          <h1 class="display-5 text-uppercase mb-4">Get A <span class="text-primary">Free Estimate</span></h1>
+          <p class="text-muted mb-4">We offer financing with competitive low rates and accept credit card payments. Licensed, insured, and committed to high-quality results across Greater Boston.</p>
+          <p><i class="fa fa-phone-alt text-primary me-2"></i><a href="tel:8574994440">(857) 499-4440</a></p>
+          <p><i class="fa fa-envelope text-primary me-2"></i><a href="mailto:info@elitecontractorsllc.biz">info@elitecontractorsllc.biz</a></p>
+          <p><i class="fa fa-map-marker-alt text-primary me-2"></i>Boston, MA — serving Greater Boston area</p>
+        </div>
+        <div class="col-lg-8">
+          <div class="card">
+            <div class="card-body p-4">
+              <div class="row g-3">
+                <div class="col-sm-6">
+                  <input type="text" class="form-control form-control-lg" placeholder="Your Name">
+                </div>
+                <div class="col-sm-6">
+                  <input type="email" class="form-control form-control-lg" placeholder="Your Email">
+                </div>
+                <div class="col-sm-6">
+                  <input type="tel" class="form-control form-control-lg" placeholder="Phone Number">
+                </div>
+                <div class="col-sm-6">
+                  <select class="form-select form-select-lg">
+                    <option value="">Service Needed</option>
+                    <option>Home Remodeling & Renovations</option>
+                    <option>Roofing & Siding</option>
+                    <option>Interior Repairs & Finishes</option>
+                    <option>Landscaping & Tree Services</option>
+                    <option>Solar Energy Solutions</option>
+                    <option>Consulting & Project Management</option>
+                    <option>Other</option>
+                  </select>
+                </div>
+                <div class="col-12">
+                  <textarea class="form-control" rows="4" placeholder="Describe your project..."></textarea>
+                </div>
+                <div class="col-12">
+                  <button class="btn btn-primary w-100 py-3">Request Free Estimate</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<<<<<<< HEAD
+  <!-- Gallery -->
+  <section id="gallery" class="section-bg">
+    <div class="container-xl">
+      <div class="text-center mb-5">
+        <h1 class="display-5 text-uppercase">Our <span class="text-primary">Work</span></h1>
+        <p class="text-muted">A sample of completed projects across Greater Boston.</p>
+      </div>
+      <div class="row g-4">
+
+        <div class="col-xl-4 col-md-6">
+          <div class="port-box">
+            <img src="/images/home-remodeling-02-kitchen-white.jpg" alt="Kitchen remodel Boston">
+            <div class="port-label">
+              <p class="h6 text-uppercase mb-1">Modern White Kitchen</p>
+              <small><i class="fa fa-tag text-primary me-1"></i>Home Remodeling</small>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-xl-4 col-md-6">
+          <div class="port-box">
+            <img src="/images/roofing-siding-01-aerial-exterior.jpg" alt="Roof replacement Boston">
+            <div class="port-label">
+              <p class="h6 text-uppercase mb-1">Full Roof Replacement</p>
+              <small><i class="fa fa-tag text-primary me-1"></i>Roofing & Siding</small>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-xl-4 col-md-6">
+          <div class="port-box">
+            <img src="/images/home-remodeling-10-bathroom-marble.jpg" alt="Luxury bathroom Boston">
+            <div class="port-label">
+              <p class="h6 text-uppercase mb-1">Luxury Marble Bathroom</p>
+              <small><i class="fa fa-tag text-primary me-1"></i>Home Remodeling</small>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-xl-4 col-md-6">
+          <div class="port-box">
+            <img src="/images/solar-energy-01-panel-installation.jpg" alt="Solar panel installation Boston">
+            <div class="port-label">
+              <p class="h6 text-uppercase mb-1">Solar Panel Installation</p>
+              <small><i class="fa fa-tag text-primary me-1"></i>Solar Energy</small>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-xl-4 col-md-6">
+          <div class="port-box">
+            <img src="/images/landscaping-tree-services-06-deck-pergola.jpg" alt="Deck and pergola Boston">
+            <div class="port-label">
+              <p class="h6 text-uppercase mb-1">Deck & Pergola Build</p>
+              <small><i class="fa fa-tag text-primary me-1"></i>Landscaping & Tree Services</small>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-xl-4 col-md-6">
+          <div class="port-box">
+            <img src="/images/interior-repairs-04-door-installation.jpg" alt="Door installation Boston">
+            <div class="port-label">
+              <p class="h6 text-uppercase mb-1">Premium Door Installation</p>
+              <small><i class="fa fa-tag text-primary me-1"></i>Interior Repairs</small>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <div class="text-center mt-5">
+        <a href="/gallery.html" class="btn btn-primary btn-lg px-5 py-3">
+          View Full Gallery <i class="fa fa-arrow-right ms-2"></i>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section>
+    <div class="container-xl">
+      <div class="text-center mb-5">
+        <h1 class="display-5 text-uppercase">What Our <span class="text-primary">Clients</span> Say</h1>
+      </div>
+      <div class="row g-4">
+        <div class="col-md-6">
+          <div class="card p-4 h-100">
+            <div class="d-flex align-items-center gap-3 mb-3">
+              <div style="width:64px;height:64px;background:var(--c-sky);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.5rem;color:var(--c-blue);flex-shrink:0;">
+                <i class="fa fa-user"></i>
+              </div>
+              <div>
+                <h5 class="mb-0 text-uppercase">Sarah M.</h5>
+                <small class="text-muted">Brookline, MA</small>
+                <div class="text-warning" style="font-size:.8rem;">★★★★★</div>
+              </div>
+            </div>
+            <p class="text-muted mb-0"><i class="fa fa-quote-left text-primary me-2"></i>Elite Contractors completely transformed our kitchen. Professional, on time, and the quality of work was outstanding. Would absolutely recommend to anyone in the Boston area.</p>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="card p-4 h-100">
+            <div class="d-flex align-items-center gap-3 mb-3">
+              <div style="width:64px;height:64px;background:var(--c-sky);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.5rem;color:var(--c-blue);flex-shrink:0;">
+                <i class="fa fa-user"></i>
+              </div>
+              <div>
+                <h5 class="mb-0 text-uppercase">James R.</h5>
+                <small class="text-muted">Newton, MA</small>
+                <div class="text-warning" style="font-size:.8rem;">★★★★★</div>
+=======
+  <<<<<<< HEAD <!-- Gallery -->
+    <!-- Gallery -->
+    <section id="gallery" class="section-bg">
+      <div class="container-xl">
+        <div class="text-center mb-5">
+          <h1 class="display-5 text-uppercase">Our <span class="text-primary">Work</span></h1>
+          <p class="text-muted">A sample of completed projects across Greater Boston.</p>
+        </div>
+        <div class="row g-4">
+
+          <div class="col-xl-4 col-md-6">
+            <div class="port-box">
+              <img src="/images/home-remodeling-02-kitchen-white.jpg" alt="Kitchen Remodel Boston">
+              <div class="port-label">
+                <p class="h6 text-uppercase mb-1">Modern White Kitchen</p>
+                <small><i class="fa fa-tag text-primary me-1"></i>Home Remodeling</small>
+              </div>
+            </div>
+            =======
+            <!-- Gallery -->
+            <section id="gallery" class="section-bg">
+              <div class="container-xl">
+                <div class="text-center mb-5">
+                  <h1 class="display-5 text-uppercase">Our <span class="text-primary">Gallery</span></h1>
+                  <p class="text-muted">Let's look at some of our past work.</p>
+                  >>>>>>> 79a422090493cb17bf89f385b7c30a38be452ad5
+                </div>
+                <div class="row g-4">
+
+                  <<<<<<< HEAD <div class="col-xl-4 col-md-6">
+                    <div class="port-box">
+                      <img src="/images/roofing-siding-01-aerial-exterior.jpg" alt="Roof Replacement Boston">
+                      <div class="port-label">
+                        <p class="h6 text-uppercase mb-1">Full Roof Replacement</p>
+                        <small><i class="fa fa-tag text-primary me-1"></i>Roofing & Siding</small>
+                      </div>
+                    </div>
+                </div>
+
+                <div class="col-xl-4 col-md-6">
+                  <div class="port-box">
+                    <img src="/images/home-remodeling-10-bathroom-marble.jpg" alt="Luxury Bathroom Boston">
+                    <div class="port-label">
+                      <p class="h6 text-uppercase mb-1">Luxury Marble Bathroom</p>
+                      <small><i class="fa fa-tag text-primary me-1"></i>Home Remodeling</small>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-xl-4 col-md-6">
+                  <div class="port-box">
+                    <img src="/images/solar-energy-01-panel-installation.jpg" alt="Solar Panel Installation Boston">
+                    <div class="port-label">
+                      <p class="h6 text-uppercase mb-1">Solar Panel Installation</p>
+                      <small><i class="fa fa-tag text-primary me-1"></i>Solar Energy</small>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-xl-4 col-md-6">
+                  <div class="port-box">
+                    <img src="/images/landscaping-tree-services-06-deck-pergola.jpg" alt="Deck & Pergola Boston">
+                    <div class="port-label">
+                      <p class="h6 text-uppercase mb-1">Deck & Pergola Build</p>
+                      <small><i class="fa fa-tag text-primary me-1"></i>Landscaping</small>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-xl-4 col-md-6">
+                  <div class="port-box">
+                    <img src="/images/interior-repairs-04-door-installation.jpg" alt="Door Installation Boston">
+                    <div class="port-label">
+                      <p class="h6 text-uppercase mb-1">Premium Door Installation</p>
+                      <small><i class="fa fa-tag text-primary me-1"></i>Interior Repairs</small>
+                    </div>
+                  </div>
+                </div>
+
+>>>>>>> f858f4fa7051b7a669c9609cca7873122b511087
+              </div>
+              <div class="text-center mt-5">
+                <a href="/gallery.html" class="btn btn-primary btn-lg px-5 py-3">
+                  View Full Gallery <i class="fa fa-arrow-right ms-2"></i>
+                </a>
+              </div>
+          </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="section-bg">
+      <div class="container-xl">
+        <div class="text-center mb-5">
+          <h1 class="display-5 text-uppercase">What Our <span class="text-primary">Happy Clients</span> Say</h1>
+        </div>
+        <div class="row g-4">
+
+          <div class="col-md-6">
+            <div class="card p-4 h-100">
+              <div class="d-flex align-items-center gap-3 mb-3">
+                <img src="https://themewagon.github.io/webuild/img/testimonial-1.jpg" class="rounded-circle" width="64"
+                  height="64" style="object-fit:cover;" alt="Client 1">
+                <div>
+                  <h5 class="mb-0 text-uppercase">Client Name</h5>
+                  <small class="text-muted">Profession</small>
+                  =======
+                  <div class="col-xl-4 col-md-6">
+                    <div class="card port-box">
+                      <img src="https://themewagon.github.io/webuild/img/portfolio-1.jpg" alt="Project 1">
+                      <div class="port-label">
+                        <p class="h6 text-uppercase mb-1">Project Name</p>
+                        <small class="text-muted"><i class="fa fa-map-marker-alt text-primary me-1"></i>123 Street, New
+                          York,
+                          USA</small>
+                        >>>>>>> 79a422090493cb17bf89f385b7c30a38be452ad5
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-xl-4 col-md-6">
+                    <div class="card port-box">
+                      <img src="https://themewagon.github.io/webuild/img/portfolio-2.jpg" alt="Project 2">
+                      <div class="port-label">
+                        <p class="h6 text-uppercase mb-1">Project Name</p>
+                        <small class="text-muted"><i class="fa fa-map-marker-alt text-primary me-1"></i>123 Street, New
+                          York,
+                          USA</small>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-xl-4 col-md-6">
+                    <div class="card port-box">
+                      <img src="https://themewagon.github.io/webuild/img/portfolio-3.jpg" alt="Project 3">
+                      <div class="port-label">
+                        <p class="h6 text-uppercase mb-1">Project Name</p>
+                        <small class="text-muted"><i class="fa fa-map-marker-alt text-primary me-1"></i>123 Street, New
+                          York,
+                          USA</small>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-xl-4 col-md-6">
+                    <div class="card port-box">
+                      <img src="https://themewagon.github.io/webuild/img/portfolio-4.jpg" alt="Project 4">
+                      <div class="port-label">
+                        <p class="h6 text-uppercase mb-1">Project Name</p>
+                        <small class="text-muted"><i class="fa fa-map-marker-alt text-primary me-1"></i>123 Street, New
+                          York,
+                          USA</small>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-xl-4 col-md-6">
+                    <div class="card port-box">
+                      <img src="https://themewagon.github.io/webuild/img/portfolio-5.jpg" alt="Project 5">
+                      <div class="port-label">
+                        <p class="h6 text-uppercase mb-1">Project Name</p>
+                        <small class="text-muted"><i class="fa fa-map-marker-alt text-primary me-1"></i>123 Street, New
+                          York,
+                          USA</small>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-xl-4 col-md-6">
+                    <div class="card port-box">
+                      <img src="https://themewagon.github.io/webuild/img/portfolio-6.jpg" alt="Project 6">
+                      <div class="port-label">
+                        <p class="h6 text-uppercase mb-1">Project Name</p>
+                        <small class="text-muted"><i class="fa fa-map-marker-alt text-primary me-1"></i>123 Street, New
+                          York,
+                          USA</small>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="section-bg">
+      <div class="container-xl">
+        <div class="text-center mb-5">
+          <h1 class="display-5 text-uppercase">What Our <span class="text-primary">Happy Clients</span> Say</h1>
+        </div>
+        <div class="row g-4">
+
+          <div class="col-md-6">
+            <div class="card p-4 h-100">
+              <div class="d-flex align-items-center gap-3 mb-3">
+                <img src="https://themewagon.github.io/webuild/img/testimonial-1.jpg" class="rounded-circle" width="64"
+                  height="64" style="object-fit:cover;" alt="Client 1">
+                <div>
+                  <h5 class="mb-0 text-uppercase">Client Name</h5>
+                  <small class="text-muted">Profession</small>
+                </div>
+              </div>
+              <p class="text-muted mb-0"><i class="fa fa-quote-left text-primary me-2"></i>Dolores sed duo clita tempor
+                justo dolor et stet lorem kasd labore dolore lorem ipsum. At lorem lorem magna ut labore et tempor erat.
+              </p>
+            </div>
+<<<<<<< HEAD
+            <p class="text-muted mb-0"><i class="fa fa-quote-left text-primary me-2"></i>Had them replace our entire roof and repaint the exterior. Crew was clean, efficient, and communicated every step. Best contractor experience I've had in 20 years of homeownership.</p>
+          </div>
+=======
+          </div>
+
+          <div class="col-md-6">
+            <div class="card p-4 h-100">
+              <div class="d-flex align-items-center gap-3 mb-3">
+                <img src="https://themewagon.github.io/webuild/img/testimonial-2.jpg" class="rounded-circle" width="64"
+                  height="64" style="object-fit:cover;" alt="Client 2">
+                <div>
+                  <h5 class="mb-0 text-uppercase">Client Name</h5>
+                  <small class="text-muted">Profession</small>
+                </div>
+              </div>
+              <p class="text-muted mb-0"><i class="fa fa-quote-left text-primary me-2"></i>Dolores sed duo clita tempor
+                justo dolor et stet lorem kasd labore dolore lorem ipsum. At lorem lorem magna ut labore et tempor erat.
+              </p>
+            </div>
+          </div>
+
+>>>>>>> f858f4fa7051b7a669c9609cca7873122b511087
+        </div>
+      </div>
+    </section>
+
+<<<<<<< HEAD
+  <!-- Footer -->
+  <footer class="site-footer py-5">
+    <div class="container-xl">
+      <div class="row g-5">
+        <div class="col-lg-5">
+          <img src="/images/logo.png" alt="Elite Contractors LLC" style="height:52px;" class="mb-3">
+          <p class="mt-2">At Elite Contractors LLC, we deliver exceptional home remodeling, roofing, landscaping, solar, and interior repairs across the Greater Boston area. Licensed, insured, and committed to quality.</p>
+          <p><i class="fa fa-map-marker-alt me-2"></i>Boston, MA</p>
+          <p><i class="fa fa-phone-alt me-2"></i><a href="tel:8574994440">(857) 499-4440</a></p>
+          <p><i class="fa fa-envelope me-2"></i><a href="mailto:info@elitecontractorsllc.biz">info@elitecontractorsllc.biz</a></p>
+          <div class="d-flex gap-2 mt-3">
+            <a href="#" class="btn btn-primary btn-icon"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.instagram.com/elite_contractors__llc/" class="btn btn-primary btn-icon"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.yelp.com/biz/elite-contractors-boston" class="btn btn-primary btn-icon"><i class="fab fa-yelp"></i></a>
+          </div>
+        </div>
+        <div class="col-lg-3 col-sm-6">
+          <h5 class="text-white text-uppercase mb-3">Quick Links</h5>
+          <div class="d-flex flex-column gap-2">
+            <a href="/"><i class="fa fa-angle-right me-2"></i>Home</a>
+            <a href="#services"><i class="fa fa-angle-right me-2"></i>Services</a>
+            <a href="/gallery.html"><i class="fa fa-angle-right me-2"></i>Gallery</a>
+            <a href="#about"><i class="fa fa-angle-right me-2"></i>About Us</a>
+            <a href="#contact"><i class="fa fa-angle-right me-2"></i>Contact Us</a>
+            <a href="#"><i class="fa fa-angle-right me-2"></i>Privacy Policy</a>
+          </div>
+        </div>
+        <div class="col-lg-4 col-sm-6">
+          <h5 class="text-white text-uppercase mb-3">Our Services</h5>
+          <div class="d-flex flex-column gap-2">
+            <a href="/services/home-remodeling"><i class="fa fa-angle-right me-2"></i>Home Remodeling & Renovations</a>
+            <a href="/services/roofing-siding"><i class="fa fa-angle-right me-2"></i>Roofing & Siding</a>
+            <a href="/services/interior-repairs"><i class="fa fa-angle-right me-2"></i>Interior Repairs & Finishes</a>
+            <a href="/services/landscaping-tree-services"><i class="fa fa-angle-right me-2"></i>Landscaping & Tree Services</a>
+            <a href="/services/solar-energy"><i class="fa fa-angle-right me-2"></i>Solar Energy Solutions</a>
+            <a href="/services/consulting-project-management"><i class="fa fa-angle-right me-2"></i>Consulting & Project Management</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <div class="footer-bar">
+    <div class="container-xl">
+      <div class="d-flex flex-column flex-md-row justify-content-between align-items-center py-3">
+        <small class="text-white-50">&copy; 2026 <a class="text-primary" href="/">Elite Contractors LLC</a>. All Rights Reserved.</small>
+        <small class="mt-2 mt-md-0"><a class="text-white-50 text-decoration-none" href="#">Do Not Sell My Personal Information</a></small>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@tabler/core@1.0.0-beta17/dist/js/tabler.min.js"></script>
+=======
+    <!-- Footer -->
+    <footer class="site-footer py-5">
+      <div class="container-xl">
+        <div class="row g-5">
+          <div class="col-lg-5">
+            <img src="/images/logo.png" alt="Elite Home Remodeling" style="height:52px;" class="mb-3">
+            <p class="mt-2">At Elite Contractors LLC, we deliver exceptional home remodeling, repairs, tree cutting,
+              pest
+              control, and solar solutions across the Greater Boston area.</p>
+            <p><i class="fa fa-map-marker-alt me-2"></i>Boston, MA</p>
+            <p><i class="fa fa-phone-alt me-2"></i><a href="tel:8574994440">(857) 499-4440</a></p>
+            <p><i class="fa fa-envelope me-2"></i><a href="/cdn-cgi/l/email-protection" class="__cf_email__"
+                data-cfemail="127b7c747d52777e7b6677717d7c66607371667d60617e7e713c717d7f">[email&#160;protected]</a></p>
+            <div class="d-flex gap-2 mt-3">
+              <a href="#" class="btn btn-primary btn-icon"><i class="fab fa-twitter"></i></a>
+              <a href="#" class="btn btn-primary btn-icon"><i class="fab fa-facebook-f"></i></a>
+              <a href="#" class="btn btn-primary btn-icon"><i class="fab fa-linkedin-in"></i></a>
+              <a href="#" class="btn btn-primary btn-icon"><i class="fab fa-instagram"></i></a>
+            </div>
+          </div>
+          <div class="col-lg-3 col-sm-6">
+            <h5 class="text-white text-uppercase mb-3">Quick Links</h5>
+            <div class="d-flex flex-column gap-2">
+              <a href="#"><i class="fa fa-angle-right me-2"></i>Home</a>
+              <a href="#services"><i class="fa fa-angle-right me-2"></i>Services</a>
+              <a href="#gallery"><i class="fa fa-angle-right me-2"></i>Gallery</a>
+              <a href="#about"><i class="fa fa-angle-right me-2"></i>About Us</a>
+              <a href="#contact"><i class="fa fa-angle-right me-2"></i>Contact Us</a>
+              <a href="#"><i class="fa fa-angle-right me-2"></i>Privacy Policy</a>
+            </div>
+          </div>
+          <div class="col-lg-4 col-sm-6">
+            <h5 class="text-white text-uppercase mb-3">Newsletter</h5>
+            <div class="input-group">
+              <input type="email" class="form-control" placeholder="Your Email Address">
+              <button class="btn btn-primary px-3">Sign Up</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <div class="footer-bar">
+      <div class="container-xl">
+        <div class="d-flex flex-column flex-md-row justify-content-between align-items-center py-3">
+          <div class="d-flex flex-column flex-md-row justify-content-between align-items-center py-3">
+            <small class="text-white-50">&copy; 2026 <a class="text-primary" href="#">Elite Contractors LLC</a>. All
+              Rights Reserved.</small>
+            <small class="bg-primary text-white px-3 py-1 mt-2 mt-md-0">
+              <a class="text-white text-decoration-none" href="#">Do Not Sell My Personal Information</a>
+            </small>
+          </div>
+        </div>
+      </div>
+
+      <script src="https://cdn.jsdelivr.net/npm/@tabler/core@1.0.0-beta17/dist/js/tabler.min.js"></script>
+>>>>>>> f858f4fa7051b7a669c9609cca7873122b511087
+</body>
+
+</html>

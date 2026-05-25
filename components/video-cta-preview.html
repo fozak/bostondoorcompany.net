@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Video CTA Preview — Elite Contractors LLC</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/core@1.0.0-beta17/dist/css/tabler.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    /* ── video-cta.css ── */
+    .video-cta-wrap {
+      position: relative;
+      width: 100%;
+      overflow: hidden;
+      background: #0d0d0d;
+      aspect-ratio: 16 / 9;
+      max-height: 90vh;
+      border-radius: 6px;
+    }
+    .video-cta-inner { position: relative; width: 100%; height: 100%; }
+    .video-cta-player {
+      position: absolute; inset: 0;
+      width: 100%; height: 100%;
+      object-fit: cover; display: block;
+    }
+    .video-cta-gradient {
+      position: absolute; inset: 0;
+      background: linear-gradient(to top, rgba(0,0,0,.80) 0%, rgba(0,0,0,.35) 50%, rgba(0,0,0,.10) 100%);
+      pointer-events: none; z-index: 1;
+    }
+    .video-cta-overlay {
+      position: absolute; inset: 0; z-index: 2;
+      display: flex; flex-direction: column;
+      justify-content: flex-end;
+      padding: 2.5rem 3rem; gap: 1rem;
+    }
+    .vcta-el {
+      opacity: 0; transform: translateY(18px);
+      transition: opacity .65s cubic-bezier(.22,1,.36,1), transform .65s cubic-bezier(.22,1,.36,1);
+      pointer-events: none;
+    }
+    .vcta-el.vcta-visible { opacity: 1; transform: translateY(0); pointer-events: auto; }
+    .video-cta-badge { display: inline-flex; }
+    .video-cta-badge .badge { letter-spacing: .08em; font-size: .75rem !important; font-weight: 700; border-radius: 3px; }
+    .video-cta-headline h2 {
+      font-size: clamp(1.8rem, 4vw, 3rem); line-height: 1.1;
+      letter-spacing: -.01em; text-shadow: 0 2px 12px rgba(0,0,0,.4); margin-bottom: .4rem;
+    }
+    .vcta-subline { font-size: clamp(.95rem,1.5vw,1.15rem); opacity: .82; letter-spacing: .04em; text-shadow: 0 1px 6px rgba(0,0,0,.5); }
+    .video-cta-btn-wrap { display: inline-flex; }
+    .vcta-btn {
+      font-weight: 700; letter-spacing: .03em; text-transform: uppercase;
+      font-size: .9rem; box-shadow: 0 4px 20px rgba(0,0,0,.35);
+      transition: transform .2s ease, box-shadow .2s ease;
+    }
+    .vcta-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 28px rgba(0,0,0,.45); }
+    .video-cta-progress { position: absolute; bottom: 0; left: 0; width: 100%; height: 3px; background: rgba(255,255,255,.15); z-index: 3; }
+    .video-cta-progress-bar { height: 100%; width: 0%; background: #206bc4; transition: width .25s linear; }
+
+    /* ── Demo chrome ── */
+    body { background: #f1f5f9; }
+    .demo-bar {
+      background: #1a1a2e;
+      padding: 1rem 1.5rem;
+      display: flex; align-items: center; gap: 1rem; flex-wrap: wrap;
+      border-bottom: 2px solid #206bc4;
+    }
+    .demo-bar label { color: #aab; font-size: .75rem; text-transform: uppercase; letter-spacing: .08em; }
+    .demo-bar select { background: #2a2a3e; color: #fff; border: 1px solid #444; padding: .35rem .8rem; border-radius: 4px; font-size: .85rem; }
+    .demo-bar .btn-demo {
+      background: #206bc4; color: #fff; border: none; padding: .4rem 1.2rem;
+      border-radius: 4px; font-size: .85rem; font-weight: 600; cursor: pointer;
+      transition: background .2s;
+    }
+    .demo-bar .btn-demo:hover { background: #1a5aad; }
+    .demo-note { color: #888; font-size: .75rem; margin-left: auto; }
+
+    /* Placeholder bg when no video */
+    .video-cta-placeholder {
+      position: absolute; inset: 0;
+      background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+      display: flex; align-items: center; justify-content: center;
+    }
+    .video-cta-placeholder span { color: rgba(255,255,255,.2); font-size: 1rem; letter-spacing: .1em; text-transform: uppercase; }
+  </style>
+</head>
+<body>
+
+<!-- Demo selector bar -->
+<div class="demo-bar">
+  <label>Variant</label>
+  <select id="variant-select">
+    <option value="drone">drone</option>
+    <option value="roofing">roofing</option>
+    <option value="interior">interior</option>
+    <option value="solar">solar</option>
+    <option value="landscaping">landscaping</option>
+  </select>
+  <button class="btn-demo" id="btn-replay">↺ Replay</button>
+  <span class="demo-note">Preview only — video src loads from your /videos/ folder</span>
+</div>
+
+<!-- This is exactly what you put in your page -->
+<div class="container-xl py-4">
+  <div id="cmp-video-cta" data-variant="drone"></div>
+</div>
+
+<script>
+// ── Inline config (mirrors video-cta-config.json) ──────────────────────────
+const CONFIGS = {
+  drone: {
+    badge: "Chestnut Hill — In Progress",
+    headline: "Building Boston's Future",
+    subline: "Licensed · Insured · On Time",
+    cta: "Get A Free Estimate",
+    link: "#contact",
+    timings: { badge: 1.5, headline: 3, cta: 5.5 }
+  },
+  roofing: {
+    badge: "Roofing & Siding",
+    headline: "Your Roof. Done Right.",
+    subline: "Full Replacements · Repairs · Siding",
+    cta: "Get A Free Estimate",
+    link: "#contact",
+    timings: { badge: 1, headline: 2.5, cta: 5 }
+  },
+  interior: {
+    badge: "Kitchen & Bath Remodeling",
+    headline: "Spaces That Inspire",
+    subline: "Custom Kitchens · Luxury Bathrooms · Full Renovations",
+    cta: "View Our Work",
+    link: "#gallery",
+    timings: { badge: 1, headline: 3, cta: 6 }
+  },
+  solar: {
+    badge: "Solar Energy Solutions",
+    headline: "Power Your Home Smarter",
+    subline: "Custom Solar Design · Full Installation · Grid Connection",
+    cta: "Get A Free Estimate",
+    link: "#contact",
+    timings: { badge: 1, headline: 2.5, cta: 5 }
+  },
+  landscaping: {
+    badge: "Landscaping & Tree Services",
+    headline: "Outside Is Everything",
+    subline: "Tree Removal · Decks · Outdoor Design",
+    cta: "Get A Free Estimate",
+    link: "#contact",
+    timings: { badge: 1, headline: 3, cta: 5.5 }
+  }
+};
+
+// ── Component HTML template ────────────────────────────────────────────────
+const TEMPLATE = `
+<div class="video-cta-wrap" id="video-cta-root">
+  <div class="video-cta-inner">
+    <div class="video-cta-placeholder"><span>Your video loads here</span></div>
+    <video id="vcta-video" class="video-cta-player" autoplay muted loop playsinline style="display:none"></video>
+    <div class="video-cta-gradient"></div>
+    <div class="video-cta-overlay">
+      <div class="video-cta-badge vcta-el" id="vcta-badge">
+        <span class="badge bg-primary text-uppercase fs-6 px-3 py-2"></span>
+      </div>
+      <div class="video-cta-headline vcta-el" id="vcta-headline">
+        <h2 class="display-4 text-white text-uppercase fw-bold mb-2"></h2>
+        <p class="text-white fs-4 mb-0 vcta-subline" style="opacity:.82"></p>
+      </div>
+      <div class="video-cta-btn-wrap vcta-el" id="vcta-cta">
+        <a href="#" class="btn btn-primary btn-lg px-5 py-3 vcta-btn">
+          <span class="vcta-btn-text"></span>
+          <i class="fa fa-arrow-right ms-2"></i>
+        </a>
+      </div>
+    </div>
+    <div class="video-cta-progress"><div class="video-cta-progress-bar" id="vcta-progress"></div></div>
+  </div>
+</div>`;
+
+// ── Core functions ─────────────────────────────────────────────────────────
+function showEl(el) {
+  if (el && !el.classList.contains('vcta-visible')) el.classList.add('vcta-visible');
+}
+
+function applyConfig(root, cfg) {
+  const badge    = root.querySelector('.video-cta-badge .badge');
+  const headline = root.querySelector('.video-cta-headline h2');
+  const subline  = root.querySelector('.vcta-subline');
+  const btnText  = root.querySelector('.vcta-btn-text');
+  const btn      = root.querySelector('.vcta-btn');
+  if (badge)    badge.textContent    = cfg.badge;
+  if (headline) headline.textContent = cfg.headline;
+  if (subline)  subline.textContent  = cfg.subline;
+  if (btnText)  btnText.textContent  = cfg.cta;
+  if (btn)      btn.href             = cfg.link;
+}
+
+// ── Demo: simulate video timing with a timer ───────────────────────────────
+let demoTimer = null;
+let demoTime  = 0;
+
+function startDemoTimer(root, timings) {
+  clearInterval(demoTimer);
+  demoTime = 0;
+
+  const badge    = root.querySelector('#vcta-badge');
+  const headline = root.querySelector('#vcta-headline');
+  const cta      = root.querySelector('#vcta-cta');
+  const bar      = root.querySelector('#vcta-progress');
+
+  // Reset
+  [badge, headline, cta].forEach(el => { if(el) el.classList.remove('vcta-visible'); });
+  if (bar) bar.style.width = '0%';
+
+  const totalDuration = 10; // simulate 10s video for demo
+
+  demoTimer = setInterval(() => {
+    demoTime += 0.1;
+    const pct = Math.min((demoTime / totalDuration) * 100, 100);
+    if (bar) bar.style.width = pct + '%';
+    if (timings.badge    && demoTime >= timings.badge)    showEl(badge);
+    if (timings.headline && demoTime >= timings.headline) showEl(headline);
+    if (timings.cta      && demoTime >= timings.cta)      showEl(cta);
+    if (demoTime >= totalDuration) clearInterval(demoTimer);
+  }, 100);
+}
+
+function loadVariant(variant) {
+  const slot = document.getElementById('cmp-video-cta');
+  const cfg  = CONFIGS[variant];
+  if (!cfg) return;
+
+  slot.innerHTML = TEMPLATE;
+  applyConfig(slot, cfg);
+  startDemoTimer(slot, cfg.timings);
+}
+
+// ── Controls ───────────────────────────────────────────────────────────────
+document.getElementById('variant-select').addEventListener('change', e => {
+  loadVariant(e.target.value);
+});
+
+document.getElementById('btn-replay').addEventListener('click', () => {
+  loadVariant(document.getElementById('variant-select').value);
+});
+
+// ── Init ───────────────────────────────────────────────────────────────────
+loadVariant('drone');
+</script>
+</body>
+</html>

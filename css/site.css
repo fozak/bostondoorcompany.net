@@ -1,0 +1,162 @@
+:root {
+  --c-blue:   #1a56db;
+  --c-blue-dk:#1042a8;
+  --c-navy:   #0d1b3e;
+  --c-sky:    #e8f0fe;
+
+   /* Override Tabler's tiny default */
+  --tblr-body-font-size: 1rem;
+  --tblr-body-line-height: 1.7;
+}
+
+/*html { font-size: 125%; }*/
+
+/* ── Buttons ───────────────────────────────────────────── */
+.btn-primary                { background: var(--c-blue)    !important; border-color: var(--c-blue)    !important; }
+.btn-primary:hover          { background: var(--c-blue-dk) !important; border-color: var(--c-blue-dk) !important; }
+.text-primary               { color: var(--c-blue) !important; }
+
+/* ── Topbar ────────────────────────────────────────────── */
+.topbar                     { background: var(--c-navy); padding: 1.4rem 0; }
+.topbar-item                { display: flex; align-items: center; gap: 1.1rem; padding: 0 2rem; }
+.topbar-item + .topbar-item { border-left: 1px solid rgba(255,255,255,.15); }
+.topbar-icon                { width: 52px; height: 52px; background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.15); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.3rem; color: #7eb3ff; flex-shrink: 0; }
+.topbar-label               { font-size: .7rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: rgba(255,255,255,.5); }
+.topbar-value               { font-size: .95rem; color: #fff; font-weight: 500; }
+
+/* ── Navbar ────────────────────────────────────────────── */
+.site-nav                   { background: var(--c-navy); border-bottom: 3px solid var(--c-blue); box-shadow: 0 2px 12px rgba(0,0,0,.18); }
+.site-nav .nav-link         { color: rgba(255,255,255,.85) !important; font-weight: 600; font-size: .95rem; letter-spacing: .03em; padding: 1.1rem .9rem !important; text-transform: uppercase; }
+.site-nav .nav-link:hover,
+.site-nav .nav-link.active  { color: #7eb3ff !important; }
+.nav-quote                  { background: var(--c-blue) !important; color: #fff !important; border-radius: 4px; padding: .7rem 1.4rem !important; margin-left: .5rem; }
+.nav-quote:hover            { background: var(--c-blue-dk) !important; color: #fff !important; }
+
+/* ── Page Hero ─────────────────────────────────────────── */
+.page-hero                          { background: var(--c-navy); padding: 3.5rem 0; border-bottom: 3px solid var(--c-blue); }
+.page-hero .breadcrumb-item,
+.page-hero .breadcrumb-item a       { color: rgba(255,255,255,.55); font-size: .8rem; }
+.page-hero .breadcrumb-item.active  { color: #7eb3ff; }
+
+/* ── Sections ──────────────────────────────────────────── */
+section        { padding: 5rem 0; }
+.section-bg    { background: var(--c-sky); }
+
+/* ── Stats Bar ─────────────────────────────────────────── */
+.stats-bar        { background: var(--c-blue); padding: 2rem 0; }
+.stat-item        { text-align: center; color: #fff; }
+.stat-item .stat-num   { font-size: 2.2rem; font-weight: 800; line-height: 1; }
+.stat-item .stat-label { font-size: .75rem; letter-spacing: .1em; text-transform: uppercase; opacity: .8; margin-top: .3rem; }
+
+/* ── Review Summary ────────────────────────────────────── */
+.review-summary        { background: var(--c-navy); padding: 2.5rem 0; }
+.rating-big            { font-size: 4rem; font-weight: 800; color: #fff; line-height: 1; }
+.stars-large           { color: #fbbf24; font-size: 1.4rem; gap: .15rem; }
+.review-platform-badge { display: inline-flex; align-items: center; gap: .5rem; background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.15); border-radius: 4px; padding: .45rem 1rem; color: rgba(255,255,255,.8); font-size: .8rem; font-weight: 600; }
+
+.rating-bar-row        { display: flex; align-items: center; gap: .75rem; margin-bottom: .5rem; }
+.rating-bar-label      { color: rgba(255,255,255,.7); font-size: .8rem; width: 48px; flex-shrink: 0; }
+.rating-bar-track      { flex: 1; height: 8px; background: rgba(255,255,255,.12); border-radius: 4px; overflow: hidden; }
+.rating-bar-fill       { height: 100%; background: #fbbf24; border-radius: 4px; }
+.rating-bar-count      { color: rgba(255,255,255,.5); font-size: .75rem; width: 24px; text-align: right; flex-shrink: 0; }
+
+/* ── Review Cards ──────────────────────────────────────── */
+.review-card         { background: #fff; border-radius: 8px; box-shadow: 0 2px 12px rgba(0,0,0,.07); padding: 1.75rem; height: 100%; display: flex; flex-direction: column; border-top: 3px solid transparent; transition: border-color .2s, box-shadow .2s; }
+.review-card:hover   { border-top-color: var(--c-blue); box-shadow: 0 6px 24px rgba(26,86,219,.12); }
+.review-stars        { color: #fbbf24; font-size: .9rem; gap: .1rem; margin-bottom: .75rem; }
+.review-text         { color: #374151; font-size: .85rem; line-height: 1.65; flex: 1; }
+.reviewer-name       { font-weight: 700; color: var(--c-navy); font-size: .9rem; }
+.reviewer-meta       { color: #9ca3af; font-size: .75rem; }
+.review-date         { color: #9ca3af; font-size: .75rem; margin-left: auto; }
+.yelp-badge          { display: inline-flex; align-items: center; gap: .35rem; background: #f5f5f5; border-radius: 3px; padding: .2rem .6rem; font-size: .7rem; font-weight: 700; color: #d32323; }
+
+/* ── Gallery ───────────────────────────────────────────── */
+.filter-tabs  { display: flex; flex-wrap: wrap; gap: .5rem; justify-content: center; margin-bottom: 2.5rem; }
+.filter-btn   { background: #fff; border: 2px solid #e0e0e0; color: #555; font-size: .78rem; font-weight: 700; letter-spacing: .07em; text-transform: uppercase; padding: .55rem 1.2rem; border-radius: 3px; cursor: pointer; transition: all .2s; }
+.filter-btn:hover,
+.filter-btn.active { background: var(--c-blue); border-color: var(--c-blue); color: #fff; }
+
+.gallery-grid { columns: 3; column-gap: 1rem; }
+@media (max-width: 992px) { .gallery-grid { columns: 2; } }
+@media (max-width: 576px) { .gallery-grid { columns: 1; } }
+
+.gallery-item           { break-inside: avoid; margin-bottom: 1rem; position: relative; overflow: hidden; border-radius: 6px; cursor: pointer; display: block; }
+.gallery-item.hidden    { display: none; }
+.gallery-item img       { width: 100%; display: block; transition: transform .4s ease; }
+.gallery-item:hover img { transform: scale(1.06); }
+
+.gallery-overlay              { position: absolute; inset: 0; background: linear-gradient(to top, rgba(13,27,62,.88) 0%, transparent 55%); opacity: 0; transition: opacity .3s; display: flex; flex-direction: column; justify-content: flex-end; padding: 1.2rem; }
+.gallery-item:hover .gallery-overlay { opacity: 1; }
+.gallery-overlay .cat-badge   { font-size: .65rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: #7eb3ff; margin-bottom: .3rem; }
+.gallery-overlay .img-title   { color: #fff; font-weight: 700; font-size: .9rem; margin: 0; }
+.gallery-overlay .zoom-icon   { position: absolute; top: 1rem; right: 1rem; width: 36px; height: 36px; background: var(--c-blue); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #fff; font-size: .85rem; }
+
+/* ── Lightbox ──────────────────────────────────────────── */
+.lightbox             { display: none; position: fixed; inset: 0; background: rgba(0,0,0,.92); z-index: 9999; align-items: center; justify-content: center; padding: 1rem; }
+.lightbox.open        { display: flex; }
+.lightbox-inner       { position: relative; max-width: 900px; width: 100%; }
+.lightbox-inner img   { width: 100%; border-radius: 6px; max-height: 80vh; object-fit: contain; }
+.lightbox-close       { position: absolute; top: -2.5rem; right: 0; background: none; border: none; color: #fff; font-size: 1.6rem; cursor: pointer; opacity: .7; }
+.lightbox-close:hover { opacity: 1; }
+.lightbox-caption     { color: rgba(255,255,255,.7); font-size: .85rem; margin-top: .75rem; text-align: center; }
+.lightbox-nav         { position: absolute; top: 50%; transform: translateY(-50%); background: var(--c-blue); border: none; color: #fff; width: 42px; height: 42px; border-radius: 50%; font-size: 1rem; cursor: pointer; display: flex; align-items: center; justify-content: center; }
+.lightbox-prev        { left: -56px; }
+.lightbox-next        { right: -56px; }
+@media (max-width: 768px) {
+  .lightbox-prev { left: -1px; }
+  .lightbox-next { right: -1px; }
+}
+
+/* ── Footer ────────────────────────────────────────────── */
+.site-footer      { background: var(--c-navy); color: rgba(255,255,255,.6); }
+.site-footer a    { color: rgba(255,255,255,.6); text-decoration: none; }
+.site-footer a:hover { color: #7eb3ff; }
+.footer-bar       { background: #070f22; border-top: 3px solid var(--c-blue); }
+
+/* ── Hero ──────────────────────────────────────────────── */
+.hero               { position: relative; height: 580px; overflow: hidden; }
+.hero img           { width: 100%; height: 100%; object-fit: cover; filter: brightness(.45); }
+.hero-caption       { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 1rem; }
+.hero-badge         { display: inline-block; background: var(--c-blue); color: #fff; font-size: .75rem; font-weight: 700; letter-spacing: .15em; text-transform: uppercase; padding: .35rem 1.2rem; border-radius: 2px; margin-bottom: 1.2rem; }
+
+/* ── Service Cards ─────────────────────────────────────── */
+.svc-img            { height: 200px; object-fit: cover; width: 100%; }
+.svc-icon           { width: 64px; height: 64px; background: var(--c-blue); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #fff !important; font-size: 1.4rem; box-shadow: 0 4px 14px rgba(26,86,219,.45); margin: -32px auto 0; position: relative; z-index: 1; }
+.svc-icon i         { color: #fff !important; }
+.card               { border: none; box-shadow: 0 2px 12px rgba(0,0,0,.07); }
+.card:hover         { box-shadow: 0 6px 24px rgba(0,0,0,.13); transition: box-shadow .25s; }
+
+/* ── Portfolio Preview ─────────────────────────────────── */
+.port-box           { position: relative; overflow: hidden; border-radius: 6px; }
+.port-box img       { height: 250px; object-fit: cover; width: 100%; display: block; transition: transform .4s; }
+.port-box:hover img { transform: scale(1.05); }
+.port-label         { position: absolute; bottom: 0; left: 0; right: 0; background: rgba(13,27,62,.82); padding: .85rem 1rem; color: #fff; }
+.port-label .h6     { color: #fff; }
+.port-label small   { color: rgba(255,255,255,.7); }
+
+/* Add to site.css after the :root block */
+body {
+  font-size: 1rem;        /* 16px base */
+  line-height: 1.7;
+}
+
+p {
+  font-size: 1rem;
+}
+
+.text-muted {
+  font-size: 1rem !important;
+}
+
+/* card body text */
+.card-body p,
+.accordion-body {
+  font-size: 1rem;
+}
+
+/* your small utility — make it less small */
+.text-muted.small,
+p.text-muted.small,
+small {
+  font-size: 0.9rem !important;
+}

@@ -1,0 +1,667 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Video Editor — Elite Contractors LLC</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/core@1.0.0-beta17/dist/css/tabler.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+
+    /* ── Reset ───────────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; }
+    body { margin: 0; background: #0f1117; font-family: system-ui, sans-serif; }
+
+    /* ── Top toolbar ─────────────────────────────────────── */
+    .toolbar {
+      background: #161b27;
+      border-bottom: 1px solid #2a2f3e;
+      padding: .6rem 1.2rem;
+      display: flex;
+      align-items: center;
+      gap: 1.2rem;
+      flex-wrap: wrap;
+    }
+
+    .toolbar-brand {
+      color: #206bc4;
+      font-size: .78rem;
+      font-weight: 800;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      white-space: nowrap;
+      margin-right: .5rem;
+    }
+
+    .tb-group {
+      display: flex;
+      align-items: center;
+      gap: .5rem;
+    }
+
+    .tb-label {
+      color: #6b7a99;
+      font-size: .68rem;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      white-space: nowrap;
+    }
+
+    /* File picker button */
+    .btn-file {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      gap: .4rem;
+      background: #206bc4;
+      color: #fff;
+      border: none;
+      padding: .38rem .9rem;
+      border-radius: 5px;
+      font-size: .78rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: background .2s;
+      white-space: nowrap;
+    }
+    .btn-file:hover { background: #1a5aad; }
+    .btn-file input[type=file] {
+      position: absolute;
+      inset: 0;
+      opacity: 0;
+      cursor: pointer;
+      width: 100%;
+    }
+
+    .video-name {
+      color: #7eb3ff;
+      font-size: .72rem;
+      font-family: monospace;
+      max-width: 140px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    /* Position buttons */
+    .pos-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3px;
+    }
+
+    .btn-pos {
+      background: #2a2f3e;
+      border: 1px solid #3a4055;
+      color: #8899bb;
+      width: 28px;
+      height: 28px;
+      border-radius: 4px;
+      font-size: .75rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background .15s, color .15s;
+    }
+    .btn-pos:hover  { background: #3a4055; color: #fff; }
+    .btn-pos.active { background: #206bc4; color: #fff; border-color: #206bc4; }
+
+    /* Color picker */
+    .color-swatch {
+      width: 32px;
+      height: 32px;
+      border-radius: 5px;
+      border: 2px solid #3a4055;
+      cursor: pointer;
+      padding: 0;
+      background: #fff;
+    }
+
+    /* Control buttons */
+    .btn-ctrl {
+      background: #2a2f3e;
+      color: #ccd;
+      border: 1px solid #3a4055;
+      padding: .38rem .85rem;
+      border-radius: 5px;
+      font-size: .75rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: background .15s;
+      white-space: nowrap;
+    }
+    .btn-ctrl:hover  { background: #3a4055; }
+    .btn-ctrl.blue   { background: #206bc4; color: #fff; border-color: #206bc4; }
+    .btn-ctrl.blue:hover { background: #1a5aad; }
+
+    /* Timer display */
+    .timer-display {
+      color: #7eb3ff;
+      font-size: .75rem;
+      font-family: monospace;
+      margin-left: auto;
+      white-space: nowrap;
+    }
+
+    /* ── Timing bar ──────────────────────────────────────── */
+    .timingbar {
+      background: #111520;
+      border-bottom: 1px solid #1e2330;
+      padding: .4rem 1.2rem;
+      display: flex;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .timing-item {
+      display: flex;
+      align-items: center;
+      gap: .35rem;
+      font-size: .68rem;
+      font-family: monospace;
+      color: #445;
+    }
+
+    .timing-dot {
+      width: 7px; height: 7px;
+      border-radius: 50%;
+      background: #2a2f3e;
+      transition: background .3s;
+      flex-shrink: 0;
+    }
+
+    .timing-dot.fired { background: #206bc4; }
+    .timing-item.fired { color: #7eb3ff; }
+
+    /* ── Video stage ─────────────────────────────────────── */
+    .stage {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      max-height: calc(100vh - 90px);
+      position: relative;
+      background: #000;
+      overflow: hidden;
+    }
+
+    .stage video,
+    .stage .mock-bg {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: 0;
+    }
+
+    .stage .mock-bg {
+      background: linear-gradient(135deg, #1a2a1a 0%, #2c3e2c 35%, #1a3a2a 65%, #0d1f0d 100%);
+      animation: mock-pan 14s ease-in-out infinite alternate;
+    }
+
+    @keyframes mock-pan {
+      0%   { filter: brightness(1);    }
+      50%  { filter: brightness(1.12); }
+      100% { filter: brightness(.92);  }
+    }
+
+    .mock-bg::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: repeating-linear-gradient(
+        45deg, transparent, transparent 40px,
+        rgba(255,255,255,.012) 40px, rgba(255,255,255,.012) 41px
+      );
+    }
+
+    /* ── Overlay — position absolute over video ──────────── */
+    .video-cta-overlay {
+      position: absolute;
+      inset: 0;
+      z-index: 2;
+      pointer-events: none;
+    }
+
+    /* Gradient — always bottom */
+    .video-cta-gradient {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    /* Content block — positioned by JS */
+    .video-cta-content {
+      position: absolute;
+      z-index: 1;
+      display: flex;
+      flex-direction: column;
+      gap: .75rem;
+      padding: 2rem 2.5rem;
+      max-width: 75%;
+      pointer-events: auto;
+    }
+
+    /* ── Position variants ───────────────────────────────── */
+    .pos-bl .video-cta-content { bottom: 1.5rem; left: 0;   right: auto; top: auto;    text-align: left;  }
+    .pos-tl .video-cta-content { top: 1.5rem;   left: 0;   right: auto; bottom: auto; text-align: left;  }
+    .pos-br .video-cta-content { bottom: 1.5rem; right: 0;  left: auto;  top: auto;    text-align: right; }
+    .pos-tr .video-cta-content { top: 1.5rem;   right: 0;  left: auto;  bottom: auto; text-align: right; }
+
+    /* Gradient direction matches position */
+    .pos-bl .video-cta-gradient,
+    .pos-br .video-cta-gradient {
+      background: linear-gradient(to top, rgba(0,0,0,.85) 0%, rgba(0,0,0,.3) 55%, rgba(0,0,0,.05) 100%);
+    }
+    .pos-tl .video-cta-gradient,
+    .pos-tr .video-cta-gradient {
+      background: linear-gradient(to bottom, rgba(0,0,0,.85) 0%, rgba(0,0,0,.3) 55%, rgba(0,0,0,.05) 100%);
+    }
+
+    /* Right align chips */
+    .pos-br .vcta-chips-wrap,
+    .pos-tr .vcta-chips-wrap {
+      justify-content: flex-end;
+    }
+
+    /* Right align CTA */
+    .pos-br #vcta-cta,
+    .pos-tr #vcta-cta {
+      justify-content: flex-end;
+    }
+
+    /* ── Timed elements ──────────────────────────────────── */
+    .vcta-el {
+      opacity: 0;
+      transform: translateY(14px);
+      transition: opacity .65s cubic-bezier(.22,1,.36,1), transform .65s cubic-bezier(.22,1,.36,1);
+    }
+    .vcta-el.vcta-visible { opacity: 1; transform: translateY(0); }
+
+    /* Top positions animate down instead */
+    .pos-tl .vcta-el,
+    .pos-tr .vcta-el { transform: translateY(-14px); }
+    .pos-tl .vcta-el.vcta-visible,
+    .pos-tr .vcta-el.vcta-visible { transform: translateY(0); }
+
+    /* ── Badge ───────────────────────────────────────────── */
+    .vcta-badge-text {
+      letter-spacing: .09em;
+      font-size: .72rem !important;
+      font-weight: 700;
+      border-radius: 3px;
+      text-transform: uppercase;
+      padding: .4rem 1rem;
+    }
+
+    /* ── Headline ────────────────────────────────────────── */
+    .vcta-headline-text {
+      font-size: clamp(1.8rem, 4vw, 3.2rem);
+      line-height: 1.08;
+      letter-spacing: -.015em;
+      text-shadow: 0 3px 16px rgba(0,0,0,.5);
+      margin: 0 0 .3rem;
+      color: #fff; /* overridden by color picker */
+    }
+
+    .vcta-sub {
+      font-size: clamp(.9rem, 1.5vw, 1.1rem);
+      opacity: .85;
+      letter-spacing: .04em;
+      text-shadow: 0 1px 8px rgba(0,0,0,.5);
+      margin: 0;
+      color: #fff; /* overridden by color picker */
+    }
+
+    /* ── Chips ───────────────────────────────────────────── */
+    .vcta-chips-wrap {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .45rem;
+    }
+
+    .vcta-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: .35rem;
+      background: rgba(255,255,255,.10);
+      border: 1px solid rgba(255,255,255,.20);
+      font-size: .7rem;
+      font-weight: 600;
+      letter-spacing: .05em;
+      padding: .25rem .7rem;
+      border-radius: 3px;
+      text-transform: uppercase;
+      color: #fff; /* overridden by color picker */
+    }
+
+    /* ── CTA buttons ─────────────────────────────────────── */
+    #vcta-cta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .65rem;
+    }
+
+    #vcta-cta .btn {
+      font-weight: 700;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+      font-size: .82rem;
+      box-shadow: 0 4px 20px rgba(0,0,0,.4);
+    }
+
+    /* ── Progress bar ────────────────────────────────────── */
+    .video-progress {
+      position: absolute;
+      bottom: 0; left: 0;
+      width: 100%; height: 3px;
+      background: rgba(255,255,255,.12);
+      z-index: 5;
+    }
+
+    .video-progress-bar {
+      height: 100%;
+      width: 0%;
+      background: #206bc4;
+      transition: width .1s linear;
+    }
+
+    /* ── No video placeholder ────────────────────────────── */
+    .no-video-hint {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: .75rem;
+      z-index: 1;
+      pointer-events: none;
+    }
+
+    .no-video-hint i   { font-size: 2.5rem; color: rgba(255,255,255,.15); }
+    .no-video-hint span { color: rgba(255,255,255,.25); font-size: .8rem; letter-spacing: .1em; text-transform: uppercase; }
+
+  </style>
+</head>
+<body>
+
+<!-- ── Toolbar ──────────────────────────────────────────── -->
+<div class="toolbar">
+
+  <span class="toolbar-brand">🎬 Video Editor</span>
+
+  <!-- Video file picker -->
+  <div class="tb-group">
+    <span class="tb-label">Video</span>
+    <label class="btn-file">
+      <i class="fa fa-folder-open"></i> Choose file
+      <input type="file" id="inp-video" accept="videos/mp4,videos/*">
+    </label>
+    <span class="video-name" id="video-name">no file</span>
+  </div>
+
+  <!-- Position -->
+  <div class="tb-group">
+    <span class="tb-label">Position</span>
+    <div class="pos-grid">
+      <button class="btn-pos" data-pos="tl" title="Top Left">↖</button>
+      <button class="btn-pos" data-pos="tr" title="Top Right">↗</button>
+      <button class="btn-pos active" data-pos="bl" title="Bottom Left">↙</button>
+      <button class="btn-pos" data-pos="br" title="Bottom Right">↘</button>
+    </div>
+  </div>
+
+  <!-- Font color -->
+  <div class="tb-group">
+    <span class="tb-label">Font Color</span>
+    <input type="color" class="color-swatch" id="inp-color" value="#ffffff" title="Headline & text color">
+  </div>
+
+  <!-- Playback controls -->
+  <div class="tb-group">
+    <button class="btn-ctrl blue" id="btn-replay">↺ Replay</button>
+    <button class="btn-ctrl"      id="btn-skip">⏩ Skip</button>
+  </div>
+
+  <span class="timer-display" id="timer-display">t = 0.0s</span>
+
+</div>
+
+<!-- ── Timing indicators ────────────────────────────────── -->
+<div class="timingbar">
+  <div class="timing-item" id="ti-badge">
+    <div class="timing-dot" id="td-badge"></div>
+    badge @ <span id="tt-badge">1.5s</span>
+  </div>
+  <div class="timing-item" id="ti-headline">
+    <div class="timing-dot" id="td-headline"></div>
+    headline @ <span id="tt-headline">3.0s</span>
+  </div>
+  <div class="timing-item" id="ti-chips">
+    <div class="timing-dot" id="td-chips"></div>
+    chips @ <span id="tt-chips">4.5s</span>
+  </div>
+  <div class="timing-item" id="ti-cta">
+    <div class="timing-dot" id="td-cta"></div>
+    cta @ <span id="tt-cta">6.0s</span>
+  </div>
+</div>
+
+<!-- ── Stage ────────────────────────────────────────────── -->
+<div class="stage pos-bl" id="stage">
+
+  <!-- Mock background (hidden when real video loads) -->
+  <div class="mock-bg" id="mock-bg"></div>
+
+  <!-- No video hint -->
+  <div class="no-video-hint" id="no-video-hint">
+    <i class="fa fa-film"></i>
+    <span>Choose a video file above</span>
+  </div>
+
+  <!-- Real video (hidden until file chosen) -->
+  <video id="main-video" autoplay muted loop playsinline style="display:none"></video>
+
+  <!-- Overlay — injected on top of video -->
+  <div class="video-cta-overlay" id="overlay">
+    <div class="video-cta-gradient"></div>
+    <div class="video-cta-content">
+
+      <div class="vcta-el" id="vcta-badge">
+        <span class="badge bg-primary vcta-badge-text">Chestnut Hill, MA — In Progress</span>
+      </div>
+
+      <div class="vcta-el" id="vcta-headline">
+        <h1 class="vcta-headline-text fw-bold text-uppercase mb-0">New Construction</h1>
+        <p class="vcta-sub mb-0">Foundation · Structural Steel · Framing</p>
+      </div>
+
+      <div class="vcta-el" id="vcta-chips">
+        <div class="vcta-chips-wrap">
+          <span class="vcta-chip"><i class="fa fa-map-marker-alt text-primary me-1"></i>Chestnut Hill, MA</span>
+          <span class="vcta-chip"><i class="fa fa-hard-hat text-primary me-1"></i>New Construction</span>
+          <span class="vcta-chip"><i class="fa fa-check-circle text-primary me-1"></i>Licensed &amp; Insured</span>
+          <span class="vcta-chip"><i class="fa fa-file-alt text-primary me-1"></i>Permitted</span>
+        </div>
+      </div>
+
+      <div class="vcta-el" id="vcta-cta">
+        <a href="#" class="btn btn-primary btn-lg px-5 py-3">
+          Get A Free Estimate <i class="fa fa-arrow-right ms-2"></i>
+        </a>
+        <a href="tel:8574994440" class="btn btn-outline-light btn-lg px-4 py-3">
+          <i class="fa fa-phone me-2"></i>(857) 499-4440
+        </a>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Progress bar -->
+  <div class="video-progress">
+    <div class="video-progress-bar" id="vcta-progress"></div>
+  </div>
+
+</div>
+
+<script>
+(function () {
+
+  // ── Config ───────────────────────────────────────────────
+  const TIMINGS  = { badge: 1.5, headline: 3.0, chips: 4.5, cta: 6.0 };
+  const DURATION = 10; // simulated duration when no video
+
+  // ── State ────────────────────────────────────────────────
+  let timer    = null;
+  let mockTime = 0;
+  let hasVideo = false;
+  let curColor = '#ffffff';
+
+  // ── Elements ─────────────────────────────────────────────
+  const stage    = document.getElementById('stage');
+  const video    = document.getElementById('main-video');
+  const mockBg   = document.getElementById('mock-bg');
+  const noHint   = document.getElementById('no-video-hint');
+  const bar      = document.getElementById('vcta-progress');
+  const timeEl   = document.getElementById('timer-display');
+  const badge    = document.getElementById('vcta-badge');
+  const headline = document.getElementById('vcta-headline');
+  const chips    = document.getElementById('vcta-chips');
+  const cta      = document.getElementById('vcta-cta');
+
+  // ── Show / hide helpers ──────────────────────────────────
+  function show(el) { if (el) el.classList.add('vcta-visible'); }
+  function hide(el) { if (el) el.classList.remove('vcta-visible'); }
+
+  function fireIndicator(key, on) {
+    document.getElementById('td-' + key).classList.toggle('fired', on);
+    document.getElementById('ti-' + key).classList.toggle('fired', on);
+  }
+
+  // ── Apply font color ─────────────────────────────────────
+  function applyColor(color) {
+    curColor = color;
+    document.querySelector('.vcta-headline-text').style.color = color;
+    document.querySelector('.vcta-sub').style.color           = color;
+    document.querySelectorAll('.vcta-chip').forEach(c => c.style.color = color);
+  }
+
+  // ── Apply position ───────────────────────────────────────
+  function applyPosition(pos) {
+    stage.className = stage.className.replace(/pos-\w+/, '');
+    stage.classList.add('pos-' + pos);
+    document.querySelectorAll('.btn-pos').forEach(b => {
+      b.classList.toggle('active', b.dataset.pos === pos);
+    });
+  }
+
+  // ── Reset overlay ────────────────────────────────────────
+  function reset() {
+    clearInterval(timer);
+    mockTime = 0;
+    [badge, headline, chips, cta].forEach(hide);
+    if (bar)    bar.style.width        = '0%';
+    if (timeEl) timeEl.textContent     = 't = 0.0s';
+    ['badge','headline','chips','cta'].forEach(k => fireIndicator(k, false));
+  }
+
+  // ── Trigger element reveals ──────────────────────────────
+  function checkTimings(t) {
+    if (t >= TIMINGS.badge)    { show(badge);    fireIndicator('badge',    true); }
+    if (t >= TIMINGS.headline) { show(headline); fireIndicator('headline', true); }
+    if (t >= TIMINGS.chips)    { show(chips);    fireIndicator('chips',    true); }
+    if (t >= TIMINGS.cta)      { show(cta);      fireIndicator('cta',      true); }
+  }
+
+  // ── Start — real video ───────────────────────────────────
+  function startRealVideo() {
+    reset();
+    video.currentTime = 0;
+    video.play();
+
+    video.addEventListener('timeupdate', function onTick() {
+      const t   = video.currentTime;
+      const dur = video.duration || 1;
+      if (bar)    bar.style.width    = ((t / dur) * 100) + '%';
+      if (timeEl) timeEl.textContent = 't = ' + t.toFixed(1) + 's';
+      checkTimings(t);
+    });
+  }
+
+  // ── Start — mock timer (no video) ────────────────────────
+  function startMock() {
+    reset();
+    timer = setInterval(() => {
+      mockTime += 0.1;
+      const pct = Math.min((mockTime / DURATION) * 100, 100);
+      if (bar)    bar.style.width    = pct + '%';
+      if (timeEl) timeEl.textContent = 't = ' + mockTime.toFixed(1) + 's';
+      checkTimings(mockTime);
+      if (mockTime >= DURATION) clearInterval(timer);
+    }, 100);
+  }
+
+  function startPlayback() {
+    hasVideo ? startRealVideo() : startMock();
+  }
+
+  // ── Video file picker ────────────────────────────────────
+  document.getElementById('inp-video').addEventListener('change', function () {
+    const file = this.files[0];
+    if (!file) return;
+
+    const url = URL.createObjectURL(file);
+    video.src = url;
+    video.style.display = 'block';
+    mockBg.style.display = 'none';
+    noHint.style.display = 'none';
+    hasVideo = true;
+
+    // Show filename
+    document.getElementById('video-name').textContent = file.name;
+
+    video.addEventListener('loadedmetadata', () => {
+      startRealVideo();
+    }, { once: true });
+  });
+
+  // ── Position buttons ─────────────────────────────────────
+  document.querySelectorAll('.btn-pos').forEach(btn => {
+    btn.addEventListener('click', () => applyPosition(btn.dataset.pos));
+  });
+
+  // ── Font color picker ────────────────────────────────────
+  document.getElementById('inp-color').addEventListener('input', function () {
+    applyColor(this.value);
+  });
+
+  // ── Replay / Skip ────────────────────────────────────────
+  document.getElementById('btn-replay').addEventListener('click', startPlayback);
+
+  document.getElementById('btn-skip').addEventListener('click', () => {
+    reset();
+    if (hasVideo) {
+      const dur = video.duration || 10;
+      video.currentTime = dur;
+      if (bar)    bar.style.width    = '100%';
+      if (timeEl) timeEl.textContent = 't = ' + dur.toFixed(1) + 's';
+    } else {
+      mockTime = DURATION;
+      if (bar)    bar.style.width    = '100%';
+      if (timeEl) timeEl.textContent = 't = ' + DURATION + '.0s';
+    }
+    [badge, headline, chips, cta].forEach(show);
+    ['badge','headline','chips','cta'].forEach(k => fireIndicator(k, true));
+  });
+
+  // ── Auto start mock on load ──────────────────────────────
+  startMock();
+
+})();
+</script>
+
+</body>
+</html>

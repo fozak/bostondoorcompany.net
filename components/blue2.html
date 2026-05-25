@@ -1,0 +1,517 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Elite Home Remodeling &amp; Renovations — Boston</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/core@1.0.0-beta17/dist/css/tabler.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    :root {
+      --c-blue:     #1a56db;
+      --c-blue-dk:  #1042a8;
+      --c-navy:     #0d1b3e;
+      --c-sky:      #e8f0fe;
+    }
+
+    /* ── Tabler primary override → blue ── */
+    .btn-primary    { background: var(--c-blue) !important; border-color: var(--c-blue) !important; }
+    .btn-primary:hover { background: var(--c-blue-dk) !important; border-color: var(--c-blue-dk) !important; }
+    .text-primary   { color: var(--c-blue) !important; }
+    .border-primary { border-color: var(--c-blue) !important; }
+
+    /* ── Topbar ── */
+    .topbar {
+      background: var(--c-navy);
+      padding: 1.4rem 0;
+    }
+    .topbar-item {
+      display: flex;
+      align-items: center;
+      gap: 1.1rem;
+      padding: 0 2rem;
+    }
+    .topbar-item + .topbar-item {
+      border-left: 1px solid rgba(255,255,255,.15);
+    }
+    .topbar-icon {
+      width: 52px; height: 52px;
+      background: rgba(255,255,255,.08);
+      border: 1px solid rgba(255,255,255,.15);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.3rem;
+      color: #7eb3ff;
+      flex-shrink: 0;
+    }
+    .topbar-label { font-size: .7rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: rgba(255,255,255,.5); }
+    .topbar-value { font-size: .95rem; color: #fff; font-weight: 500; }
+
+    /* ── Navbar ── */
+    .site-nav {
+      background: var(--c-navy);
+      border-bottom: 3px solid var(--c-blue);
+      box-shadow: 0 2px 12px rgba(0,0,0,.18);
+    }
+    .site-nav .nav-link {
+      color: rgba(255,255,255,.85) !important;
+      font-weight: 600;
+      font-size: .95rem;
+      letter-spacing: .03em;
+      padding: 1.1rem .9rem !important;
+      text-transform: uppercase;
+    }
+    .site-nav .nav-link:hover,
+    .site-nav .nav-link.active { color: #7eb3ff !important; }
+    .site-nav .dropdown-menu { border-top: 3px solid var(--c-blue); border-radius: 0; }
+    .nav-quote {
+      background: var(--c-blue) !important;
+      color: #fff !important;
+      border-radius: 4px;
+      padding: .7rem 1.4rem !important;
+      margin-left: .5rem;
+    }
+    .nav-quote:hover { background: var(--c-blue-dk) !important; color: #fff !important; }
+
+    /* ── Hero ── */
+    .hero { position: relative; height: 580px; overflow: hidden; }
+    .hero img { width: 100%; height: 100%; object-fit: cover; filter: brightness(.45); }
+    .hero-caption {
+      position: absolute; inset: 0;
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      text-align: center; padding: 1rem;
+    }
+    .hero-badge {
+      display: inline-block;
+      background: var(--c-blue);
+      color: #fff;
+      font-size: .75rem;
+      font-weight: 700;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+      padding: .35rem 1.2rem;
+      border-radius: 2px;
+      margin-bottom: 1.2rem;
+    }
+
+    /* ── Section defaults ── */
+    section { padding: 5rem 0; }
+    .section-bg { background: var(--c-sky); }
+    .section-title { font-weight: 800; letter-spacing: -.01em; }
+    .section-title span { color: var(--c-blue); }
+
+    /* ── Global font scale 125% ── */
+    html { font-size: 125%; }
+
+    /* ── Service cards ── */
+    .svc-img { height: 200px; object-fit: cover; width: 100%; }
+    .svc-icon {
+      width: 64px; height: 64px;
+      background: var(--c-blue);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      color: #fff !important;
+      font-size: 1.4rem;
+      box-shadow: 0 4px 14px rgba(26,86,219,.45);
+      margin: -32px auto 0;
+      position: relative;
+      z-index: 1;
+    }
+    .svc-icon i { color: #fff !important; }
+    .card { border: none; box-shadow: 0 2px 12px rgba(0,0,0,.07); }
+    .card:hover { box-shadow: 0 6px 24px rgba(0,0,0,.13); transition: box-shadow .25s; }
+
+    /* ── Portfolio ── */
+    .port-box { position: relative; overflow: hidden; border-radius: 6px; }
+    .port-box img { height: 250px; object-fit: cover; width: 100%; display: block; transition: transform .4s; }
+    .port-box:hover img { transform: scale(1.05); }
+    .port-label {
+      position: absolute; bottom: 0; left: 0; right: 0;
+      background: rgba(13,27,62,.82);
+      padding: .85rem 1rem;
+      color: #fff;
+    }
+    .port-label .h6 { color: #fff; }
+    .port-label small { color: rgba(255,255,255,.7); }
+
+    /* ── Footer ── */
+    .site-footer { background: var(--c-navy); color: rgba(255,255,255,.6); }
+    .site-footer a { color: rgba(255,255,255,.6); text-decoration: none; }
+    .site-footer a:hover { color: #7eb3ff; }
+    .footer-bar { background: #070f22; border-top: 3px solid var(--c-blue); }
+  </style>
+</head>
+<body>
+
+<!-- Topbar -->
+<div class="topbar d-none d-lg-block">
+  <div class="container-xl">
+    <div class="d-flex justify-content-center">
+      <div class="topbar-item">
+        <div class="topbar-icon"><i class="fa fa-map-marker-alt"></i></div>
+        <div>
+          <div class="topbar-label">Our Office</div>
+          <div class="topbar-value">Boston, MA</div>
+        </div>
+      </div>
+      <div class="topbar-item">
+        <div class="topbar-icon"><i class="fa fa-envelope"></i></div>
+        <div>
+          <div class="topbar-label">Email Us</div>
+          <div class="topbar-value"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="f49d9a929bb491989d8091979b9a80869597809b8687989897da979b99">[email&#160;protected]</a></div>
+        </div>
+      </div>
+      <div class="topbar-item">
+        <div class="topbar-icon"><i class="fa fa-phone-alt"></i></div>
+        <div>
+          <div class="topbar-label">Call Us</div>
+          <div class="topbar-value">(857) 499-4440</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg site-nav sticky-top">
+  <div class="container-xl">
+    <a class="navbar-brand" href="#">
+      <img src="/images/logo.png" alt="Elite Home Remodeling" style="height:64px;">
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="nav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+        <li class="nav-item"><a class="nav-link" href="#gallery">Gallery</a></li>
+        <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">More</a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">Privacy Policy</a></li>
+            <li><a class="dropdown-item" href="#">Do Not Sell My Personal Information</a></li>
+          </ul>
+        </li>
+        <li class="nav-item d-none d-lg-block">
+          <a class="nav-link nav-quote ms-3" href="#contact">Get A Free Estimate <i class="ti ti-arrow-right"></i></a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Hero -->
+<div class="hero">
+  <img src="https://themewagon.github.io/webuild/img/carousel-1.jpg" alt="Build Your Dream House">
+  <div class="hero-caption">
+    <span class="hero-badge">Boston's #1 Remodeling Company</span>
+    <h1 class="display-3 text-uppercase text-white mb-2">Elite Home Remodeling &amp; Renovations</h1>
+    <p class="text-white fs-4 mb-4" style="opacity:.85;">Licensed · Trusted · Boston Strong</p>
+    <a href="#contact" class="btn btn-primary btn-lg px-5 py-3">Get A Free Estimate</a>
+  </div>
+</div>
+
+<!-- About -->
+<section id="about">
+  <div class="container-xl">
+    <div class="row g-5 align-items-center">
+      <div class="col-lg-7">
+        <h1 class="display-5 text-uppercase mb-4">We are <span class="text-primary">Boston's Trusted</span> Remodeling Company</h1>
+        <h5 class="text-uppercase mb-3 text-muted">Customer Focused Approach</h5>
+        <p class="text-muted">At Elite Contractors LLC, we pride ourselves on delivering exceptional home remodeling, repairs, tree cutting, pest control, and solar solutions. Our focus on customer satisfaction drives us to offer personalized service, innovative solutions, and the highest level of craftsmanship. From start to finish, we work closely with our clients to bring their vision to life, ensuring their home improvement projects exceed expectations.</p>
+        <div class="row py-2">
+          <div class="col-sm-6">
+            <p class="fw-bold mb-2"><i class="fa fa-check text-primary me-2"></i>Customer Focused Approach</p>
+            <p class="fw-bold mb-2"><i class="fa fa-check text-primary me-2"></i>Competitive Pricing</p>
+            <p class="fw-bold mb-2"><i class="fa fa-check text-primary me-2"></i>Licensed Professionals</p>
+          </div>
+          <div class="col-sm-6">
+            <p class="fw-bold mb-2"><i class="fa fa-check text-primary me-2"></i>Financing Available</p>
+            <p class="fw-bold mb-2"><i class="fa fa-check text-primary me-2"></i>Credit Cards Accepted</p>
+            <p class="fw-bold mb-2"><i class="fa fa-check text-primary me-2"></i>High Quality Results</p>
+          </div>
+        </div>
+        <a href="#contact" class="btn btn-primary px-4 py-2 mt-3">Get A Free Estimate</a>
+      </div>
+      <div class="col-lg-5">
+        <img src="https://themewagon.github.io/webuild/img/about.jpg" class="img-fluid w-100" style="object-fit:cover;min-height:380px;" alt="About us">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Services -->
+<section id="services" class="section-bg">
+  <div class="container-xl">
+    <div class="text-center mb-5">
+      <h1 class="display-5 text-uppercase">Our <span class="text-primary">Services</span></h1>
+      <p class="text-muted">Let us help you make your dream a reality.</p>
+    </div>
+    <div class="row g-4">
+
+      <div class="col-lg-4 col-md-6">
+        <div class="card h-100 text-center overflow-hidden">
+          <img class="svc-img" src="https://themewagon.github.io/webuild/img/service-1.jpg" alt="Home Remodels">
+          <div class="svc-icon"><i class="fa fa-home text-primary fa-lg"></i></div>
+          <div class="card-body">
+            <h5 class="text-uppercase">Home Remodels &amp; Upgrades</h5>
+            <p class="text-muted small text-start">Kitchen remodeling, bathroom renovations, room additions, basement finishing, and exterior renovations including siding, roofing, porches, and patios.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-md-6">
+        <div class="card h-100 text-center overflow-hidden">
+          <img class="svc-img" src="https://themewagon.github.io/webuild/img/service-2.jpg" alt="Home Repairs">
+          <div class="svc-icon"><i class="fa fa-tools text-primary fa-lg"></i></div>
+          <div class="card-body">
+            <h5 class="text-uppercase">Roof Replacement &amp; Repairs</h5>
+            <p class="text-muted small text-start">Leak repairs, shingle replacement, siding repair, drywall &amp; painting, flooring repair, and window &amp; door installation.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-md-6">
+        <div class="card h-100 text-center overflow-hidden">
+          <img class="svc-img" src="https://themewagon.github.io/webuild/img/service-3.jpg" alt="Tree Cutting">
+          <div class="svc-icon"><i class="fa fa-tree text-primary fa-lg"></i></div>
+          <div class="card-body">
+            <h5 class="text-uppercase">Tree Cutting &amp; Landscaping</h5>
+            <p class="text-muted small text-start">Safe and professional tree removal including stump grinding, and full landscaping services.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-md-6">
+        <div class="card h-100 text-center overflow-hidden">
+          <img class="svc-img" src="https://themewagon.github.io/webuild/img/service-4.jpg" alt="Solar Panels">
+          <div class="svc-icon"><i class="fa fa-solar-panel text-primary fa-lg"></i></div>
+          <div class="card-body">
+            <h5 class="text-uppercase">Solar Panel Installation</h5>
+            <p class="text-muted small text-start">Custom solar energy system design tailored to your needs, with complete installation and connection to your home.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-md-6">
+        <div class="card h-100 text-center overflow-hidden">
+          <img class="svc-img" src="https://themewagon.github.io/webuild/img/service-5.jpg" alt="Pest Control">
+          <div class="svc-icon"><i class="fa fa-bug text-primary fa-lg"></i></div>
+          <div class="card-body">
+            <h5 class="text-uppercase">Pest Control</h5>
+            <p class="text-muted small text-start">Fast, reliable pest control with safe eco-friendly treatments. Affordable rates, no hidden fees — family-friendly service.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-md-6">
+        <div class="card h-100 text-center overflow-hidden">
+          <img class="svc-img" src="https://themewagon.github.io/webuild/img/service-6.jpg" alt="Consulting">
+          <div class="svc-icon"><i class="fa fa-clipboard-list text-primary fa-lg"></i></div>
+          <div class="card-body">
+            <h5 class="text-uppercase">Consulting &amp; Project Mgmt</h5>
+            <p class="text-muted small text-start">Free initial consultations, end-to-end project planning, and full permitting &amp; compliance handling for all projects.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Contact -->
+<section id="contact">
+  <div class="container-xl">
+    <div class="row g-5">
+      <div class="col-lg-4">
+        <h1 class="display-5 text-uppercase mb-4">Get A <span class="text-primary">Free Estimate</span></h1>
+        <p class="text-muted mb-4">We offer financing with competitive low rates and accept credit card payments. Licensed and committed to high quality results.</p>
+        <p><i class="fa fa-phone-alt text-primary me-2"></i><a href="tel:8574994440">(857) 499-4440</a></p>
+        <p><i class="fa fa-envelope text-primary me-2"></i><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="adc4c3cbc2edc8c1c4d9c8cec2c3d9dfccced9c2dfdec1c1ce83cec2c0">[email&#160;protected]</a></p>
+      </div>
+      <div class="col-lg-8">
+        <div class="card">
+          <div class="card-body p-4">
+            <div class="row g-3">
+              <div class="col-sm-6">
+                <input type="text" class="form-control form-control-lg" placeholder="Your Name">
+              </div>
+              <div class="col-sm-6">
+                <input type="email" class="form-control form-control-lg" placeholder="Your Email">
+              </div>
+              <div class="col-sm-6">
+                <input type="date" class="form-control form-control-lg">
+              </div>
+              <div class="col-sm-6">
+                <input type="time" class="form-control form-control-lg">
+              </div>
+              <div class="col-12">
+                <textarea class="form-control" rows="4" placeholder="Message"></textarea>
+              </div>
+              <div class="col-12">
+                <button class="btn btn-primary w-100 py-3">Request Free Estimate</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Gallery -->
+<section id="gallery" class="section-bg">
+  <div class="container-xl">
+    <div class="text-center mb-5">
+      <h1 class="display-5 text-uppercase">Our <span class="text-primary">Gallery</span></h1>
+      <p class="text-muted">Let's look at some of our past work.</p>
+    </div>
+    <div class="row g-4">
+
+      <div class="col-xl-4 col-md-6">
+        <div class="card port-box">
+          <img src="https://themewagon.github.io/webuild/img/portfolio-1.jpg" alt="Project 1">
+          <div class="port-label">
+            <p class="h6 text-uppercase mb-1">Project Name</p>
+            <small class="text-muted"><i class="fa fa-map-marker-alt text-primary me-1"></i>123 Street, New York, USA</small>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-xl-4 col-md-6">
+        <div class="card port-box">
+          <img src="https://themewagon.github.io/webuild/img/portfolio-2.jpg" alt="Project 2">
+          <div class="port-label">
+            <p class="h6 text-uppercase mb-1">Project Name</p>
+            <small class="text-muted"><i class="fa fa-map-marker-alt text-primary me-1"></i>123 Street, New York, USA</small>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-xl-4 col-md-6">
+        <div class="card port-box">
+          <img src="https://themewagon.github.io/webuild/img/portfolio-3.jpg" alt="Project 3">
+          <div class="port-label">
+            <p class="h6 text-uppercase mb-1">Project Name</p>
+            <small class="text-muted"><i class="fa fa-map-marker-alt text-primary me-1"></i>123 Street, New York, USA</small>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-xl-4 col-md-6">
+        <div class="card port-box">
+          <img src="https://themewagon.github.io/webuild/img/portfolio-4.jpg" alt="Project 4">
+          <div class="port-label">
+            <p class="h6 text-uppercase mb-1">Project Name</p>
+            <small class="text-muted"><i class="fa fa-map-marker-alt text-primary me-1"></i>123 Street, New York, USA</small>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-xl-4 col-md-6">
+        <div class="card port-box">
+          <img src="https://themewagon.github.io/webuild/img/portfolio-5.jpg" alt="Project 5">
+          <div class="port-label">
+            <p class="h6 text-uppercase mb-1">Project Name</p>
+            <small class="text-muted"><i class="fa fa-map-marker-alt text-primary me-1"></i>123 Street, New York, USA</small>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-xl-4 col-md-6">
+        <div class="card port-box">
+          <img src="https://themewagon.github.io/webuild/img/portfolio-6.jpg" alt="Project 6">
+          <div class="port-label">
+            <p class="h6 text-uppercase mb-1">Project Name</p>
+            <small class="text-muted"><i class="fa fa-map-marker-alt text-primary me-1"></i>123 Street, New York, USA</small>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Testimonials -->
+<section class="section-bg">
+  <div class="container-xl">
+    <div class="text-center mb-5">
+      <h1 class="display-5 text-uppercase">What Our <span class="text-primary">Happy Clients</span> Say</h1>
+    </div>
+    <div class="row g-4">
+
+      <div class="col-md-6">
+        <div class="card p-4 h-100">
+          <div class="d-flex align-items-center gap-3 mb-3">
+            <img src="https://themewagon.github.io/webuild/img/testimonial-1.jpg" class="rounded-circle" width="64" height="64" style="object-fit:cover;" alt="Client 1">
+            <div>
+              <h5 class="mb-0 text-uppercase">Client Name</h5>
+              <small class="text-muted">Profession</small>
+            </div>
+          </div>
+          <p class="text-muted mb-0"><i class="fa fa-quote-left text-primary me-2"></i>Dolores sed duo clita tempor justo dolor et stet lorem kasd labore dolore lorem ipsum. At lorem lorem magna ut labore et tempor erat.</p>
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <div class="card p-4 h-100">
+          <div class="d-flex align-items-center gap-3 mb-3">
+            <img src="https://themewagon.github.io/webuild/img/testimonial-2.jpg" class="rounded-circle" width="64" height="64" style="object-fit:cover;" alt="Client 2">
+            <div>
+              <h5 class="mb-0 text-uppercase">Client Name</h5>
+              <small class="text-muted">Profession</small>
+            </div>
+          </div>
+          <p class="text-muted mb-0"><i class="fa fa-quote-left text-primary me-2"></i>Dolores sed duo clita tempor justo dolor et stet lorem kasd labore dolore lorem ipsum. At lorem lorem magna ut labore et tempor erat.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="site-footer py-5">
+  <div class="container-xl">
+    <div class="row g-5">
+      <div class="col-lg-5">
+        <img src="/images/logo.png" alt="Elite Home Remodeling" style="height:52px;" class="mb-3">
+        <p class="mt-2">At Elite Contractors LLC, we deliver exceptional home remodeling, repairs, tree cutting, pest control, and solar solutions across the Greater Boston area.</p>
+        <p><i class="fa fa-map-marker-alt me-2"></i>Boston, MA</p>
+        <p><i class="fa fa-phone-alt me-2"></i><a href="tel:8574994440">(857) 499-4440</a></p>
+        <p><i class="fa fa-envelope me-2"></i><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="127b7c747d52777e7b6677717d7c66607371667d60617e7e713c717d7f">[email&#160;protected]</a></p>
+        <div class="d-flex gap-2 mt-3">
+          <a href="#" class="btn btn-primary btn-icon"><i class="fab fa-twitter"></i></a>
+          <a href="#" class="btn btn-primary btn-icon"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" class="btn btn-primary btn-icon"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#" class="btn btn-primary btn-icon"><i class="fab fa-instagram"></i></a>
+        </div>
+      </div>
+      <div class="col-lg-3 col-sm-6">
+        <h5 class="text-white text-uppercase mb-3">Quick Links</h5>
+        <div class="d-flex flex-column gap-2">
+          <a href="#"><i class="fa fa-angle-right me-2"></i>Home</a>
+          <a href="#services"><i class="fa fa-angle-right me-2"></i>Services</a>
+          <a href="#gallery"><i class="fa fa-angle-right me-2"></i>Gallery</a>
+          <a href="#about"><i class="fa fa-angle-right me-2"></i>About Us</a>
+          <a href="#contact"><i class="fa fa-angle-right me-2"></i>Contact Us</a>
+          <a href="#"><i class="fa fa-angle-right me-2"></i>Privacy Policy</a>
+        </div>
+      </div>
+      <div class="col-lg-4 col-sm-6">
+        <h5 class="text-white text-uppercase mb-3">Newsletter</h5>
+        <div class="input-group">
+          <input type="email" class="form-control" placeholder="Your Email Address">
+          <button class="btn btn-primary px-3">Sign Up</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+<div class="footer-bar">
+  <div class="container-xl">
+    <div class="d-flex flex-column flex-md-row justify-content-between align-items-center py-3">
+      <small class="text-white-50">&copy; 2025 <a class="text-primary

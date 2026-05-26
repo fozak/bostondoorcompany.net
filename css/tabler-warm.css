@@ -1,0 +1,360 @@
+/*
+ * tabler-warm.css
+ * Drop this AFTER tabler.min.css to restyle Tabler's blue theme
+ * to a warm brick/mahogany palette.
+ *
+ * Usage:
+ *   <link rel="stylesheet" href="tabler.min.css">
+ *   <link rel="stylesheet" href="tabler-warm.css">
+ */
+
+/* ─── 1. CORE PALETTE OVERRIDES ──────────────────────────────────────────── */
+:root {
+  /* Primary → mahogany brown (replaces Tabler blue #206bc4) */
+  --tblr-primary:             #7B3F2A;
+  --tblr-primary-rgb:         123, 63, 42;
+  --tblr-primary-lt:          #f5ece8;
+  --tblr-primary-lt-rgb:      245, 236, 232;
+  --tblr-primary-fg:          #fff;
+
+  /* Darker shade used for hover / active */
+  --tblr-primary-dark:        #5c2d1a;
+
+  /* Secondary → warm brick red */
+  --tblr-secondary:           #9B4521;
+  --tblr-secondary-rgb:       155, 69, 33;
+
+  /* Accent used in links, badges, active nav */
+  --tblr-link-color:          #7B3F2A;
+  --tblr-link-hover-color:    #5c2d1a;
+
+  /* Body & surface backgrounds */
+  --tblr-body-bg:             #f7f3ef;        /* warm linen */
+  --tblr-body-color:          #2e1f17;        /* deep espresso text */
+
+  --tblr-bg-surface:          #fdf9f6;        /* card / modal surface */
+  --tblr-bg-surface-secondary:#f0e9e2;        /* sidebar, muted areas */
+  --tblr-bg-surface-tertiary: #e8ddd4;
+
+  /* Borders */
+  --tblr-border-color:        #d9cdc4;
+  --tblr-border-color-active: #7B3F2A;
+
+  /* Navbar */
+  --tblr-navbar-bg:           #2c1a0e;        /* dark walnut */
+  --tblr-navbar-color:        #e8d8cc;
+  --tblr-navbar-active-color: #d4a678;        /* brass gold */
+  --tblr-navbar-border-color: #3d2414;
+
+  /* Sidebar */
+  --tblr-sidebar-bg:          #1e1108;
+  --tblr-sidebar-color:       #c9b8a8;
+  --tblr-sidebar-active-bg:   #7B3F2A;
+  --tblr-sidebar-active-color:#fff;
+  --tblr-sidebar-hover-bg:    rgba(123,63,42,.15);
+  --tblr-sidebar-border-color:#2e1a0a;
+
+  /* Cards */
+  --tblr-card-bg:             #fdf9f6;
+  --tblr-card-border-color:   #ddd0c6;
+  --tblr-card-box-shadow:     0 1px 4px rgba(44,26,14,.10);
+
+  /* Buttons / form controls */
+  --tblr-input-bg:            #fdf9f6;
+  --tblr-input-border-color:  #c9b8a8;
+  --tblr-input-focus-border-color: #7B3F2A;
+  --tblr-input-focus-box-shadow:   0 0 0 .2rem rgba(123,63,42,.20);
+
+  /* Table */
+  --tblr-table-bg:            transparent;
+  --tblr-table-striped-bg:    rgba(123,63,42,.04);
+  --tblr-table-hover-bg:      rgba(123,63,42,.08);
+
+  /* Muted text */
+  --tblr-muted:               #8c7060;
+
+  /* Success / warning / danger keep their standard hues but desaturated */
+  --tblr-success:             #3d7a4a;
+  --tblr-warning:             #b87333;    /* copper */
+  --tblr-danger:              #a33020;
+
+  /* Font — swap to a serif/slab for headings via @import below */
+  --tblr-font-sans-serif: 'Lato', system-ui, sans-serif;
+}
+
+/* ─── 2. GOOGLE FONTS ─────────────────────────────────────────────────────── */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Lato:wght@300;400;700&display=swap');
+
+/* ─── 3. HEADINGS → Playfair Display ─────────────────────────────────────── */
+h1, h2, h3, h4,
+.h1, .h2, .h3, .h4,
+.card-title,
+.page-title,
+.navbar-brand {
+  font-family: 'Playfair Display', Georgia, serif;
+  color: #2c1a0e;
+}
+
+/* ─── 4. BODY BACKGROUND ─────────────────────────────────────────────────── */
+body {
+  background-color: var(--tblr-body-bg);
+  color: var(--tblr-body-color);
+}
+
+/* ─── 5. NAVBAR ──────────────────────────────────────────────────────────── */
+.navbar,
+.navbar-dark {
+  background-color: var(--tblr-navbar-bg) !important;
+  border-bottom: 1px solid var(--tblr-navbar-border-color);
+}
+
+.navbar .nav-link,
+.navbar-dark .nav-link {
+  color: var(--tblr-navbar-color) !important;
+}
+
+.navbar .nav-link:hover,
+.navbar .nav-link.active,
+.navbar-dark .nav-link:hover,
+.navbar-dark .nav-link.active {
+  color: var(--tblr-navbar-active-color) !important;
+}
+
+.navbar-brand,
+.navbar-brand:hover {
+  color: #f0e0cc !important;
+}
+
+/* ─── 6. SIDEBAR ─────────────────────────────────────────────────────────── */
+.navbar-vertical,
+.navbar-vertical.navbar-dark {
+  background-color: var(--tblr-sidebar-bg) !important;
+  border-right: 1px solid var(--tblr-sidebar-border-color);
+}
+
+.navbar-vertical .nav-link {
+  color: var(--tblr-sidebar-color) !important;
+  border-radius: 4px;
+}
+
+.navbar-vertical .nav-link:hover {
+  background-color: var(--tblr-sidebar-hover-bg) !important;
+  color: #f0e0cc !important;
+}
+
+.navbar-vertical .nav-link.active {
+  background-color: var(--tblr-sidebar-active-bg) !important;
+  color: var(--tblr-sidebar-active-color) !important;
+}
+
+/* ─── 7. PRIMARY BUTTON ──────────────────────────────────────────────────── */
+.btn-primary {
+  background-color: var(--tblr-primary);
+  border-color: var(--tblr-primary);
+  color: #fff;
+}
+
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active {
+  background-color: var(--tblr-primary-dark) !important;
+  border-color: var(--tblr-primary-dark) !important;
+  color: #fff !important;
+}
+
+.btn-outline-primary {
+  color: var(--tblr-primary);
+  border-color: var(--tblr-primary);
+}
+
+.btn-outline-primary:hover {
+  background-color: var(--tblr-primary);
+  border-color: var(--tblr-primary);
+  color: #fff;
+}
+
+/* ─── 8. CARDS ───────────────────────────────────────────────────────────── */
+.card {
+  background-color: var(--tblr-card-bg);
+  border-color: var(--tblr-card-border-color);
+  box-shadow: var(--tblr-card-box-shadow);
+}
+
+.card-header {
+  background-color: #f0e9e2;
+  border-bottom-color: var(--tblr-card-border-color);
+}
+
+.card-footer {
+  background-color: #f0e9e2;
+  border-top-color: var(--tblr-card-border-color);
+}
+
+/* ─── 9. LINKS ────────────────────────────────────────────────────────────── */
+a {
+  color: var(--tblr-link-color);
+}
+
+a:hover {
+  color: var(--tblr-link-hover-color);
+}
+
+/* ─── 10. BADGES / PILLS ──────────────────────────────────────────────────── */
+.badge.bg-primary,
+.bg-primary {
+  background-color: var(--tblr-primary) !important;
+}
+
+.badge.bg-secondary,
+.bg-secondary {
+  background-color: var(--tblr-secondary) !important;
+}
+
+/* ─── 11. FORM CONTROLS ──────────────────────────────────────────────────── */
+.form-control,
+.form-select {
+  background-color: var(--tblr-input-bg);
+  border-color: var(--tblr-input-border-color);
+  color: var(--tblr-body-color);
+}
+
+.form-control:focus,
+.form-select:focus {
+  border-color: var(--tblr-input-focus-border-color);
+  box-shadow: var(--tblr-input-focus-box-shadow);
+  background-color: #fff;
+}
+
+/* ─── 12. TABLES ──────────────────────────────────────────────────────────── */
+.table > :not(caption) > * > * {
+  background-color: var(--tblr-table-bg);
+  color: var(--tblr-body-color);
+}
+
+.table-striped > tbody > tr:nth-of-type(odd) > * {
+  background-color: var(--tblr-table-striped-bg);
+}
+
+.table-hover > tbody > tr:hover > * {
+  background-color: var(--tblr-table-hover-bg);
+}
+
+.table th {
+  color: var(--tblr-muted);
+  border-bottom-color: var(--tblr-border-color);
+}
+
+/* ─── 13. PAGE WRAPPER / CONTENT AREA ───────────────────────────────────── */
+.page-wrapper,
+.page-body {
+  background-color: var(--tblr-body-bg);
+}
+
+/* ─── 14. SUBHEADER / PAGE HEADER ────────────────────────────────────────── */
+.page-header {
+  border-bottom-color: var(--tblr-border-color);
+}
+
+/* ─── 15. DROPDOWNS ──────────────────────────────────────────────────────── */
+.dropdown-menu {
+  background-color: var(--tblr-bg-surface);
+  border-color: var(--tblr-border-color);
+}
+
+.dropdown-item:hover,
+.dropdown-item:focus {
+  background-color: var(--tblr-primary-lt);
+  color: var(--tblr-primary);
+}
+
+.dropdown-item.active,
+.dropdown-item:active {
+  background-color: var(--tblr-primary);
+  color: #fff;
+}
+
+/* ─── 16. PAGINATION ─────────────────────────────────────────────────────── */
+.page-item.active .page-link {
+  background-color: var(--tblr-primary);
+  border-color: var(--tblr-primary);
+}
+
+.page-link {
+  color: var(--tblr-primary);
+}
+
+.page-link:hover {
+  color: var(--tblr-primary-dark);
+  background-color: var(--tblr-primary-lt);
+  border-color: var(--tblr-border-color);
+}
+
+/* ─── 17. ALERTS ─────────────────────────────────────────────────────────── */
+.alert-primary {
+  background-color: var(--tblr-primary-lt);
+  border-color: #d9c4ba;
+  color: var(--tblr-primary);
+}
+
+/* ─── 18. PROGRESS BARS ──────────────────────────────────────────────────── */
+.progress-bar {
+  background-color: var(--tblr-primary);
+}
+
+/* ─── 19. BREADCRUMBS ────────────────────────────────────────────────────── */
+.breadcrumb-item a {
+  color: var(--tblr-primary);
+}
+
+/* ─── 20. TABS ───────────────────────────────────────────────────────────── */
+.nav-tabs .nav-link.active,
+.nav-tabs .nav-item.show .nav-link {
+  color: var(--tblr-primary);
+  border-bottom-color: var(--tblr-primary);
+}
+
+.nav-tabs .nav-link:hover {
+  color: var(--tblr-primary);
+}
+
+.nav-pills .nav-link.active {
+  background-color: var(--tblr-primary);
+}
+
+/* ─── 21. HIGHLIGHTS / SELECTION ────────────────────────────────────────── */
+::selection {
+  background-color: rgba(123, 63, 42, 0.20);
+  color: #2c1a0e;
+}
+
+/* ─── 22. SCROLLBAR (Webkit) ─────────────────────────────────────────────── */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #f0e9e2;
+}
+::-webkit-scrollbar-thumb {
+  background: #c9a898;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #7B3F2A;
+}
+
+/* ─── 23. HR / DIVIDERS ──────────────────────────────────────────────────── */
+hr {
+  border-color: var(--tblr-border-color);
+  opacity: 1;
+}
+
+/* ─── 24. MUTED TEXT ─────────────────────────────────────────────────────── */
+.text-muted {
+  color: var(--tblr-muted) !important;
+}
+
+/* ─── 25. STATUS INDICATORS / AVATARS ───────────────────────────────────── */
+.avatar-list-stacked .avatar {
+  border-color: var(--tblr-bg-surface);
+}

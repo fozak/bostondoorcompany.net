@@ -131,6 +131,16 @@ h1, h2, h3, h4, h5, h6,
   color: #fff !important;
 }
 
+/* ── FIX: .topbar-icon custom class (not a Tabler class, needs explicit rule) ── */
+.topbar-icon {
+  background-color: #8b3a1f !important;
+  color: #fff !important;
+}
+.topbar-icon i,
+.topbar-icon svg {
+  color: #fff !important;
+}
+
 /* ═══════════════════════════════════════════════════════════════════════════
    6. NAVBAR  (#cmp-navbar)
    ═══════════════════════════════════════════════════════════════════════════ */
@@ -160,7 +170,7 @@ h1, h2, h3, h4, h5, h6,
 .navbar-dark .nav-link.active,
 #cmp-navbar .nav-link:hover,
 #cmp-navbar .nav-link.active {
-  color: #c8a060 !important;   /* gold on hover */
+  color: #c8a060 !important;
 }
 
 .navbar-toggler-icon {
@@ -185,9 +195,22 @@ nav .btn-primary {
   border-color: #a8804a !important;
 }
 
+/* ── FIX: .nav-quote custom class → gold ── */
+.nav-quote {
+  background-color: #c8a060 !important;
+  color: #fff !important;
+  border-radius: 4px;
+  padding: .375rem .875rem !important;
+  font-weight: 700;
+}
+.nav-quote:hover,
+.nav-quote:focus {
+  background-color: #a8804a !important;
+  color: #fff !important;
+}
+
 /* ═══════════════════════════════════════════════════════════════════════════
    7. STATS BAR  (#cmp-stats-bar)
-   That blue strip — override background + any icon circles
    ═══════════════════════════════════════════════════════════════════════════ */
 #cmp-stats-bar,
 #cmp-stats-bar > *,
@@ -218,7 +241,6 @@ nav .btn-primary {
 /* ═══════════════════════════════════════════════════════════════════════════
    8. HERO
    ═══════════════════════════════════════════════════════════════════════════ */
-/* hero badge → gold */
 .hero-badge {
   background-color: #c8a060 !important;
   color: #fff !important;
@@ -227,7 +249,6 @@ nav .btn-primary {
   letter-spacing: .06em !important;
 }
 
-/* hero CTA button → gold */
 .hero .btn-primary,
 .hero-caption .btn-primary,
 .hero a.btn-primary {
@@ -245,7 +266,6 @@ nav .btn-primary {
 
 /* ═══════════════════════════════════════════════════════════════════════════
    9. SERVICE ICON CIRCLES  (#cmp-services)
-   Every possible Tabler pattern for a colored circle icon
    ═══════════════════════════════════════════════════════════════════════════ */
 #cmp-services .rounded-circle,
 #cmp-services .avatar,
@@ -255,11 +275,10 @@ nav .btn-primary {
 #cmp-services [class*="bg-primary"],
 #cmp-services [class*="bg-blue"],
 #cmp-services [class*="icon"] {
-  background-color: #c8a060 !important;   /* gold circles */
+  background-color: #c8a060 !important;
   color: #fff !important;
 }
 
-/* also catch them if outside #cmp-services but inside a .card */
 .card .rounded-circle.bg-primary,
 .card .rounded-circle.bg-blue,
 .card .avatar.bg-primary,
@@ -268,9 +287,18 @@ nav .btn-primary {
   color: #fff !important;
 }
 
+/* ── FIX: .svc-icon custom class — was bleeding blue from site.css var(--c-blue) ── */
+.svc-icon {
+  background-color: #c8a060 !important;
+  color: #fff !important;
+}
+.svc-icon i,
+.svc-icon svg {
+  color: #fff !important;
+}
+
 /* ═══════════════════════════════════════════════════════════════════════════
    10. BUTTONS — global
-   Primary → brick red. Gold reserved for hero/navbar CTA.
    ═══════════════════════════════════════════════════════════════════════════ */
 .btn-primary {
   background-color: #8b3a1f !important;
@@ -428,10 +456,9 @@ footer {
 [style*="4299e1"] { background-color: #c8a060 !important; }
 
 /* ═══════════════════════════════════════════════════════════════════════════
-   20. GOLD DESIGN UPGRADES  (stolen from reference)
+   20. GOLD DESIGN UPGRADES
    ═══════════════════════════════════════════════════════════════════════════ */
 
-/* ── A: Section header label → gold ALL-CAPS + gold rule ── */
 .section-label {
   display: block;
   font-size: .7rem;
@@ -448,7 +475,6 @@ footer {
   margin-top: 0;
 }
 
-/* gold underline rule — add <span class="gold-rule"></span> under label */
 .gold-rule {
   display: block;
   width: 36px;
@@ -458,7 +484,6 @@ footer {
   margin: .4rem 0 .7rem;
 }
 
-/* ── B: Dark espresso section ── */
 .section-dark {
   background-color: #2a1206 !important;
   color: #e8d8cc;
@@ -487,7 +512,6 @@ footer {
   border-color: #a8804a !important;
 }
 
-/* ── C: Gold section (for CTA banner) ── */
 .section-gold {
   background-color: #c8a060 !important;
   color: #fff !important;
@@ -503,7 +527,6 @@ footer {
   color: #fff !important;
 }
 
-/* ── D: Numbered feature list ── */
 .feature-list { list-style: none; padding: 0; margin: 0; }
 
 .feature-list li {
@@ -528,7 +551,6 @@ footer {
 .feature-text { font-size: .875rem; color: #2a1206; line-height: 1.4; }
 .feature-sub  { font-size: .75rem; color: #8c6050; margin-top: .1rem; }
 
-/* ── E: Gold stat blocks ── */
 .stat-gold {
   background-color: #c8a060;
   color: #fff;
@@ -578,7 +600,6 @@ footer {
   margin-top: .25rem;
 }
 
-/* ── F: Dark CTA banner (bottom of page) ── */
 .cta-banner {
   background-color: #2a1206;
   padding: 3rem 0;
@@ -605,15 +626,12 @@ footer {
   border-color: #a8804a;
 }
 
-/* ── G: about section text-primary span → gold ── */
 #about .text-primary,
 #about span.text-primary {
   color: #c8a060 !important;
 }
 
-/* ── H: section headings with .text-primary spans → gold ── */
 .text-center .text-primary,
 .text-center span.text-primary {
   color: #c8a060 !important;
 }
-

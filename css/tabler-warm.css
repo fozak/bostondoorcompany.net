@@ -195,6 +195,22 @@ nav .btn-primary {
   border-color: #a8804a !important;
 }
 
+.nav-quote {
+  white-space: nowrap;
+  font-size: .8rem;
+}
+
+.site-nav {
+  --site-navbar-height: 112px;
+  min-height: var(--site-navbar-height);
+}
+
+.site-nav .navbar-brand-image,
+.site-nav .navbar-brand img {
+  height: var(--site-navbar-height);
+  width: auto;
+}
+
 /* ── FIX: .nav-quote custom class → gold ── */
 .nav-quote {
   background-color: #c8a060 !important;

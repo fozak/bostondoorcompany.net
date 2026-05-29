@@ -1,36 +1,29 @@
-<nav class="navbar navbar-expand-lg site-nav sticky-top">
+<header class="navbar navbar-expand-lg site-nav sticky-top">
   <div class="container-xl">
 
-    <!-- Logo -->
-    <a class="navbar-brand" href="/">
-      <img src="/images/logo.png" alt="Boston Door Company" style="height:120px;">
-    </a>
+    <!-- Brand -->
+<a class="navbar-brand" href="/">
+  <img src="/images/logo.png" alt="Boston Elite Doors">
+</a>
 
-    <!-- Phone + Toggler group (always visible on mobile) -->
+    <!-- Mobile: phone + toggler -->
     <div class="d-flex align-items-center gap-2 ms-auto d-lg-none">
-      <a href="tel:8574994440"
-         class="btn btn-sm"
-         style="background:#1A56DB;color:#fff;font-weight:700;white-space:nowrap;border-radius:6px;padding:.35rem .75rem;"
-         aria-label="Call Boston Door Company"
+      <a href="tel:6175396365"
+         class="btn btn-sm btn-primary"
+         aria-label="Call Boston Elite Doors"
          onclick="gtag('event','phone_click',{location:'navbar_mobile'})">
         <i class="fa fa-phone me-1"></i>(617) 539-6365
       </a>
       <button class="navbar-toggler" type="button"
-              data-bs-toggle="collapse" data-bs-target="#nav"
-              aria-controls="nav" aria-expanded="false" aria-label="Toggle navigation">
+              data-bs-toggle="collapse" data-bs-target="#navbar-menu"
+              aria-controls="navbar-menu" aria-expanded="false"
+              aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
     </div>
 
-    <!-- Desktop toggler (hidden on mobile, replaced by group above) -->
-    <button class="navbar-toggler d-none d-lg-block" type="button"
-            data-bs-toggle="collapse" data-bs-target="#nav"
-            aria-controls="nav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <!-- Nav links -->
-    <div class="collapse navbar-collapse" id="nav">
+    <!-- Nav collapse -->
+    <div class="collapse navbar-collapse" id="navbar-menu">
       <ul class="navbar-nav ms-auto align-items-lg-center">
         <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
         <li class="nav-item"><a class="nav-link" href="/#services">Services</a></li>
@@ -38,25 +31,21 @@
         <li class="nav-item"><a class="nav-link" href="/reviews.html">Reviews</a></li>
         <li class="nav-item"><a class="nav-link" href="/#about">About</a></li>
         <li class="nav-item"><a class="nav-link" href="/#contact">Contact</a></li>
-
-        <!-- Desktop: phone number inline in nav -->
-        <li class="nav-item d-none d-lg-flex align-items-center ms-2">
-          <a href="tel:8574994440"
-             class="nav-link"
-             style="color:#1A56DB;font-weight:700;white-space:nowrap;"
-             onclick="gtag('event','phone_click',{location:'navbar_desktop'})">
-            <i class="fa fa-phone me-1"></i>(617) 539-6365
-          </a>
-        </li>
-
-        <!-- Desktop: CTA button -->
-        <li class="nav-item d-none d-lg-block">
-          <a class="nav-link nav-quote ms-2" href="/#contact">
-            Get A Free Estimate <i class="ti ti-arrow-right"></i>
-          </a>
-        </li>
       </ul>
+
+      <!-- Desktop right side -->
+      <div class="navbar-nav d-none d-lg-flex align-items-center gap-3 ms-3">
+        <a href="tel:6175396365"
+           class="nav-link"
+           style="white-space:nowrap;font-weight:700;"
+           onclick="gtag('event','phone_click',{location:'navbar_desktop'})">
+          <i class="fa fa-phone me-1"></i>(617) 539-6365
+        </a>
+        <a class="btn nav-quote" href="/#contact" style="white-space:nowrap;">
+          Get A Free Estimate <i class="ti ti-arrow-right ms-1"></i>
+        </a>
+      </div>
     </div>
 
   </div>
-</nav>
+</header>

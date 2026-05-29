@@ -1,11 +1,5 @@
-// gallery.js — driven by GitHub API, no hardcoded HTML needed
-// Drop new images into /images with the naming convention and they appear automatically.
-
 const GITHUB_API = '/images/gallery.json';
 const RAW_BASE   = window.location.origin + '/images/';
-const IMAGE_EXTS = /\.(jpg|jpeg|png|gif|webp)$/i;
-const NAMED_RE   = /^([\w-]+?)-(\d+)-(.+)\.(jpg|jpeg|png|gif|webp)$/i;
-const SKIP       = ['logo.png'];
 
 const CAT_LABELS = {
   'door-repair':          'Door Repair',
@@ -27,30 +21,37 @@ const CAT_ICONS = {
   'custom-doors':         'fa-star',
 };
 
+const FILE_RE = /^([\w-]+?)-(\d+)(?:-(.+))?\.(jpg|jpeg|png|gif|webp)$/i;
+
 function categoryFromName(filename) {
-  const m = filename.match(NAMED_RE);
-  return m ? m[1] : null;
+  // try longest known category match first
+  for (const cat of Object.keys(CAT_LABELS)) {
+    if (filename.startsWith(cat + '-')) return cat;
+  }
+  return null;
 }
 
-function titleFromName(filename) {
-  const m = filename.match(NAMED_RE);
-  if (!m) return filename;
-  return m[3]
-    .split('-')
-    .map(w => w.charAt(0).toUpperCase() + w.slice(1))
-    .join(' ');
+function titleFromName(filename, cat) {
+  if (!cat) return filename;
+  const rest = filename.slice(cat.length + 1); // strip "door-repair-"
+  const m = rest.match(/^(\d+)(?:-(.+))?\.\w+$/i);
+  if (!m) return labelFor(cat);
+  if (!m[2]) return labelFor(cat) + ' ' + m[1];
+  return m[2].split('-').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ');
 }
 
 function labelFor(cat) {
+  if (!cat) return 'Other';
   return CAT_LABELS[cat] || cat.split('-').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ');
 }
 
 function iconFor(cat) {
+  if (!cat) return 'fa-image';
   return CAT_ICONS[cat] || 'fa-image';
 }
 
 const CACHE_KEY = 'bec_gallery_v1';
-const CACHE_TTL = 60 * 60 * 1000; // 1 hour
+const CACHE_TTL = 60 * 60 * 1000;
 
 function skeletonHTML(n) {
   return Array.from({length: n}, () =>
@@ -63,7 +64,7 @@ styleEl.textContent = '@keyframes pulse { 0%,100%{opacity:1} 50%{opacity:.4} }';
 document.head.appendChild(styleEl);
 
 async function loadGallery() {
-  const grid = document.getElementById('galleryGrid');
+  const grid  = document.getElementById('galleryGrid');
   const tabsEl = document.querySelector('.filter-tabs');
   if (!grid) return;
 
@@ -82,46 +83,53 @@ async function loadGallery() {
   if (!files) {
     try {
       const res = await fetch(GITHUB_API);
-      if (!res.ok) throw new Error('GitHub API ' + res.status);
-      const all = await res.json();
-      files = all;
+      if (!res.ok) throw new Error('gallery.json ' + res.status);
+      files = await res.json();
       try { sessionStorage.setItem(CACHE_KEY, JSON.stringify({ data: files, ts: Date.now() })); } catch (_) {}
     } catch (e) {
-      grid.innerHTML = '<div class="text-danger p-4">Failed to load images: ' + e.message + '</div>';
+      grid.innerHTML = '<div class="text-danger p-4">Failed to load gallery: ' + e.message + '</div>';
       return;
     }
   }
 
+  // filter to only files with a known category
+  files = files.filter(f => categoryFromName(f.name) !== null);
+
+  // sort by category order then number
+  const catOrder = Object.keys(CAT_LABELS);
   files.sort((a, b) => {
-    const ma = a.name.match(NAMED_RE);
-    const mb = b.name.match(NAMED_RE);
-    if (!ma || !mb) return 0;
-    if (ma[1] !== mb[1]) return ma[1].localeCompare(mb[1]);
-    return parseInt(ma[2]) - parseInt(mb[2]);
+    const ca = categoryFromName(a.name);
+    const cb = categoryFromName(b.name);
+    const ia = catOrder.indexOf(ca);
+    const ib = catOrder.indexOf(cb);
+    if (ia !== ib) return ia - ib;
+    const na = parseInt(a.name.replace(ca + '-', '')) || 0;
+    const nb = parseInt(b.name.replace(cb + '-', '')) || 0;
+    return na - nb;
   });
 
-  const catsInFiles = new Set(files.map(f => categoryFromName(f.name)));
-  const orderedCats = Object.keys(CAT_LABELS).filter(c => catsInFiles.has(c));
-  catsInFiles.forEach(c => { if (!CAT_LABELS[c]) orderedCats.push(c); });
+  // build category tabs
+  const catsInFiles = [...new Set(files.map(f => categoryFromName(f.name)))];
 
   if (tabsEl) {
-    tabsEl.innerHTML = `<button class="filter-btn active" data-filter="all">All Projects</button>` +
-      orderedCats.map(cat =>
+    tabsEl.innerHTML =
+      `<button class="filter-btn active" data-filter="all">All Projects</button>` +
+      catsInFiles.map(cat =>
         `<button class="filter-btn" data-filter="${cat}">
           <i class="fa ${iconFor(cat)} me-1"></i>${labelFor(cat)}
         </button>`
       ).join('');
   }
 
+  // render items
   grid.innerHTML = files.map(f => {
     const cat   = categoryFromName(f.name);
-    const title = titleFromName(f.name);
+    const title = titleFromName(f.name, cat);
     const label = labelFor(cat);
     const src   = RAW_BASE + encodeURIComponent(f.name);
-    const alt   = `${title} — Boston`;
     return `
       <div class="gallery-item" data-category="${cat}">
-        <img src="${src}" alt="${alt}" loading="lazy">
+        <img src="${src}" alt="${title} — Boston" loading="lazy">
         <div class="gallery-overlay">
           <div class="zoom-icon"><i class="fa fa-expand"></i></div>
           <div class="cat-badge">${label}</div>

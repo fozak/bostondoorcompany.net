@@ -1,0 +1,29 @@
+You are classifying door restoration photos for a filing system.
+
+FOUNDATION: The project has 3 doors:
+- cs-990  = ornate carved double door, arched glass panels, decorative hardware
+- cs-993  = simpler double door, arched glass, less ornate  
+- cs-1000 = different building, brick arch surround
+
+CONVENTION: {address}.{door-id}.{work}.{stage}.{ext}
+
+VOCABULARY:
+work:  entry | finish | hardware | hinge | weatherstrip | surround | interior | carving | panel | threshold
+stage: before | after | process
+door-id: d1 (single door set per address unless clearly different door on same property)
+ext: always .jpg
+
+RULES:
+- before = dark, weathered, worn finish
+- after  = warm honey tone, clean, finished
+- process = mid-work, tools visible, partially stripped
+- If you cannot confidently identify address, work, or stage → return null
+- Only return a name when you are certain
+
+RETURN only valid JSON, no preamble, no markdown fences:
+{
+  "IMG_1596.JPG": "cs-990.d1.entry.before.jpg",
+  "IMG_1604.JPG": "cs-993.d1.entry.before.jpg",
+  "IMG_2027.HEIC": null,
+  "IMG_2442.MOV": null
+}

@@ -160,5 +160,51 @@
       { "label": "Property",  "value": "Weld Mansion — Victorian estate c.1885" },
       { "label": "Status",    "value": "Completed" }
     ]
-  }
+  },
+  {
+  "id": "mit-cambridge",
+  "title": "Historic Door Restoration",
+  "subtitle": "MIT Campus — Cambridge, MA",
+  "location": "Cambridge, MA",
+  "address": "MIT Campus, Cambridge",
+  "client": "MIT",
+  "service": "door-restoration",
+  "door_type": "Historic painted wood with iron strap hinges",
+  "property": "MIT institutional building — early 20th century",
+  "finish": "Paint restoration",
+  "description": [
+    "A landmark institutional entry on the MIT campus in Cambridge — large painted wood double doors set within a granite arch surround, fitted with original ornate iron strap hinges and period hardware. The doors had accumulated decades of paint buildup, surface damage, and hardware corrosion.",
+    "Boston Door Company restored the full entry: surface preparation, wood damage repair, hardware disassembly and servicing, and finish restoration. The distinctive ironwork strap hinges were cleaned, treated, and reinstalled to their original condition."
+  ],
+  "doors": [
+    {
+      "id": "mit",
+      "label": "MIT Campus — Exterior Entry",
+      "scope": "exterior",
+      "description": "Historic painted wood double doors with ornate iron strap hinges set in a granite arch surround. Decades of deferred maintenance had left the finish deteriorated and hardware corroded.",
+      "work": [
+        "Complete surface preparation and paint restoration",
+        "Wood damage repaired",
+        "Iron strap hinges disassembled, cleaned, and reinstalled",
+        "Hardware serviced and reinstalled",
+        "Doors reinstalled and full function verified"
+      ],
+      "card_image": "mit.d1.entry.after.1",
+      "pairs": [
+        { "label": "Entry", "before": "mit.d1.entry.before.1", "after": "mit.d1.entry.after.1" }
+      ],
+      "after": [
+        "mit.d1.entry.after.1"
+      ]
+    }
+  ],
+  "meta": [
+    { "label": "Location",  "value": "Cambridge, MA" },
+    { "label": "Client",    "value": "MIT" },
+    { "label": "Service",   "value": "Door Restoration & Refinishing" },
+    { "label": "Scope",     "value": "1 door set — MIT Campus entry" },
+    { "label": "Property",  "value": "MIT institutional building — early 20th century" },
+    { "label": "Status",    "value": "Completed" }
+  ]
+}
 ]

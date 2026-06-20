@@ -219,7 +219,63 @@
   ]
 }
   ],
-  "services": []
-
+ "services": [
+  {
+    "id": "door-function",
+    "title": "Door Function",
+    "icon": "fa-tools",
+    "description": "Adjustment, structural repairs, and weatherstripping. Full hardware services including replacement, selection, sourcing, and installation. Door installation included.",
+    "href": "/door-repair.html",
+    "image": "mit.d1.hardware.after.1",
+    "gallery": [
+      "mit.d1.hinge.after.1",
+      "mit.d1.hinge.after.2",
+      "mit.d1.hinge.after.3",
+      "cs-990.d1.hardware.after.1",
+      "cs-990.d1.hardware.after.2",
+      "cs-990.d1.hardware.after.3",
+      "cs-990.d1.threshold.after.1",
+      "cs-990.d1.threshold.after.2"
+    ]
+  },
+  {
+    "id": "door-restoration",
+    "title": "Front Door & Entryway Restoration",
+    "icon": "fa-paint-brush",
+    "description": "Museum-quality finish, complete restoration, finish maintenance, new construction finish, natural oil finish, and detailed fabrication for historic and period entry doors.",
+    "href": "/door-restoration.html",
+    "image": "cs-990.d1.entry.after.1",
+    "gallery": [
+      "cs-990.d1.entry.after.2",
+      "cs-990.d1.entry.after.3",
+      "cs-990.d1.entry.after.4",
+      "cs-990.d1.carving.after.1",
+      "cs-990.d1.carving.after.2",
+      "cs-993.d1.entry.after.1",
+      "cs-993.d1.entry.after.2",
+      "cs-1000.d1.entry.after.1",
+      "cs-1000.d1.entry.after.2",
+      "mit.d1.entry.after.4"
+    ]
+  },
+  {
+    "id": "consulting",
+    "title": "Consulting",
+    "icon": "fa-comments",
+    "description": "Hardware guidance, finish selection, and restoration feasibility for homeowners, management companies, multi-unit buildings, and businesses.",
+    "href": "/consulting.html",
+    "image": "cs-990.d1.carving.after.1",
+    "gallery": [
+      "cs-990.d1.carving.after.2",
+      "cs-990.d1.carving.after.3",
+      "cs-990.d1.finish.after.1",
+      "cs-990.d1.finish.after.2",
+      "cs-993.d1.panel.after.1",
+      "cs-993.d1.panel.after.2",
+      "mit.d1.damage.before.1",
+      "mit.d1.damage.before.2"
+    ]
+  }
+]
 
 }

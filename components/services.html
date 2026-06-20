@@ -1,43 +1,119 @@
+<!-- services.html component — loaded by your loader -->
 <section id="services" class="section-bg">
   <div class="container-xl">
     <div class="text-center mb-5">
       <h1 class="display-5 text-uppercase">Our <span class="text-primary">Services</span></h1>
       <p class="text-muted">Expert door restoration, repair, and installation across Greater Boston.</p>
     </div>
-    <div class="row g-4 justify-content-center">
-      <div class="col-lg-4 col-md-6">
-        <div class="card h-100 text-center overflow-hidden">
-          <img class="svc-img" src="/images/door-repair-01.jpg" alt="Door repair Boston">
-          <div class="svc-icon"><i class="fa fa-tools fa-lg"></i></div>
-          <div class="card-body">
-            <h5 class="text-uppercase">Door Function</h5>
-            <p class="text-muted small text-start">Adjustment, structural repairs, and weatherstripping. Full hardware services including replacement, selection, sourcing, and installation. Door installation included.</p>
-            <a href="/door-repair.html" class="btn btn-sm btn-outline-primary mt-2">Learn More</a>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-4 col-md-6">
-        <div class="card h-100 text-center overflow-hidden">
-          <img class="svc-img" src="/images/door-restoration-01.jpg" alt="Door restoration Boston">
-          <div class="svc-icon"><i class="fa fa-paint-brush fa-lg"></i></div>
-          <div class="card-body">
-            <h5 class="text-uppercase">Front Door &amp; Entryway Restoration</h5>
-            <p class="text-muted small text-start">Museum-quality finish, complete restoration, finish maintenance, new construction finish, natural oil finish, and detailed fabrication for historic and period entry doors.</p>
-            <a href="/door-restoration.html" class="btn btn-sm btn-outline-primary mt-2">Learn More</a>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-4 col-md-6">
-        <div class="card h-100 text-center overflow-hidden">
-          <img class="svc-img" src="/images/finish-carpentry-01.jpg" alt="Door consulting Boston">
-          <div class="svc-icon"><i class="fa fa-comments fa-lg"></i></div>
-          <div class="card-body">
-            <h5 class="text-uppercase">Consulting</h5>
-            <p class="text-muted small text-start">Hardware guidance, finish selection, and restoration feasibility for homeowners, management companies, multi-unit buildings, and businesses.</p>
-            <a href="/consulting.html" class="btn btn-sm btn-outline-primary mt-2">Learn More</a>
-          </div>
-        </div>
-      </div>
-    </div>
+    <div class="row g-4 justify-content-center" id="services-grid"></div>
   </div>
 </section>
+<div id="services-modals"></div>
+
+<style>
+.svc-modal{display:none;position:fixed;inset:0;background:rgba(0,0,0,.75);z-index:9999;overflow-y:auto;}
+.svc-modal:target{display:block;}
+.svc-modal-box{background:#fff;width:100%;max-width:1100px;margin:0 auto;border-radius:12px;overflow:hidden;}
+.svc-hero{position:relative;height:420px;overflow:hidden;}
+.svc-hero img{width:100%;height:100%;object-fit:cover;display:block;}
+.svc-hero-overlay{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(0,0,0,.35),rgba(0,0,0,.72));padding:2.5rem;}
+.svc-hero-close{position:absolute;top:1rem;right:1rem;display:inline-flex;align-items:center;justify-content:center;width:2rem;height:2rem;background:rgba(255,255,255,.15);border-radius:50%;text-decoration:none;color:#fff;font-size:1.25rem;line-height:1;}
+.svc-gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:4px;padding:1rem;}
+.svc-gallery img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:4px;}
+.svc-img{width:100%;height:220px;object-fit:cover;display:block;}
+</style>
+
+<script>
+(function () {
+  const img = (stem) => `/assets/${stem}.jpg`
+  const svcModalId = (id) => `svc-modal-${id}`
+
+  function renderCard(svc) {
+    const mid = svcModalId(svc.id)
+    return `
+      <div class="col-lg-4 col-md-6">
+        <div class="card h-100 text-center overflow-hidden">
+          <a href="#${mid}">
+            <img class="svc-img" src="${img(svc.image)}" alt="${svc.title}">
+          </a>
+          <div class="svc-icon"><i class="fa ${svc.icon} fa-lg"></i></div>
+          <div class="card-body">
+            <h5 class="text-uppercase">${svc.title}</h5>
+            <p class="text-muted small text-start">${svc.description}</p>
+            <a href="#${mid}" class="btn btn-sm btn-outline-primary mt-2">Learn More</a>
+          </div>
+        </div>
+      </div>`
+  }
+
+  function renderModal(svc) {
+    const mid = svcModalId(svc.id)
+    const gallery = (svc.gallery || []).map(s =>
+      `<img src="${img(s)}" alt="${svc.title}" loading="lazy">`
+    ).join('')
+    return `
+      <div id="${mid}" class="svc-modal">
+        <div class="svc-modal-box">
+          <div class="svc-hero">
+            <img src="${img(svc.image)}" alt="${svc.title}">
+            <div class="svc-hero-overlay">
+              <nav aria-label="breadcrumb">
+                <ol class="breadcrumb mb-2">
+                  <li class="breadcrumb-item"><a href="/" class="text-white-50">Home</a></li>
+                  <li class="breadcrumb-item"><a href="#" class="text-white-50">Services</a></li>
+                  <li class="breadcrumb-item active text-white">${svc.title}</li>
+                </ol>
+              </nav>
+              <h2 class="display-6 text-white text-uppercase mb-2">${svc.title}</h2>
+              <p class="text-white mb-4" style="opacity:.8;max-width:560px;">${svc.description}</p>
+              <div class="d-flex flex-wrap gap-3">
+                <a href="tel:6175396365" class="btn btn-primary btn-lg px-4"
+                  onclick="gtag('event','phone_click',{location:'service_modal'})">
+                  <i class="fa fa-phone me-2"></i>(617) 539-6365
+                </a>
+                <a href="#contact" class="btn btn-outline-light btn-lg px-4"
+                  onclick="document.getElementById('${mid}').style.display='none'">
+                  Get A Free Estimate
+                </a>
+              </div>
+              <div class="d-flex flex-wrap gap-4 mt-4" style="opacity:.8;">
+                <span class="text-white small"><i class="fa fa-check-circle text-primary me-1"></i>Licensed &amp; Insured</span>
+                <span class="text-white small"><i class="fa fa-check-circle text-primary me-1"></i>Greater Boston</span>
+                <span class="text-white small"><i class="fa fa-check-circle text-primary me-1"></i>Free Estimates</span>
+                <span class="text-white small"><i class="fa fa-check-circle text-primary me-1"></i>5-Star Rated</span>
+              </div>
+            </div>
+            <a href="#" class="svc-hero-close" aria-label="Close">&times;</a>
+          </div>
+          ${gallery ? `
+          <div style="padding:1rem 1.5rem .5rem;border-top:1px solid #e5e5e5;">
+            <p style="font-size:11px;text-transform:uppercase;letter-spacing:.08em;font-weight:600;color:#666;margin-bottom:.75rem;">Example Projects</p>
+          </div>
+          <div class="svc-gallery">${gallery}</div>` : ''}
+        </div>
+      </div>`
+  }
+
+  fetch('/assets/db.json')
+    .then(r => {
+      if (!r.ok) throw new Error(`db.json ${r.status}`)
+      return r.json()
+    })
+    .then(data => {
+      const services = data.services
+      const cards  = []
+      const modals = []
+      services.forEach(svc => {
+        cards.push(renderCard(svc))
+        modals.push(renderModal(svc))
+      })
+      document.getElementById('services-grid').innerHTML  = cards.join('')
+      document.getElementById('services-modals').innerHTML = modals.join('')
+    })
+    .catch(err => {
+      console.error('[services]', err.message)
+      document.getElementById('services-grid').innerHTML =
+        '<p class="text-muted text-center col-12">Services unavailable — please try again later.</p>'
+    })
+})()
+</script>

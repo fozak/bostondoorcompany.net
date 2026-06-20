@@ -1,0 +1,107 @@
+[
+  {
+    "id": "990-centre-jamaica-plain",
+    "title": "Natural Finish Restoration",
+    "location": "Jamaica Plain, MA",
+    "address": "990 & 1000 Centre St",
+    "client": "Evergreen Management",
+    "service": "door-restoration",
+    "door_type": "Historic hardwood double entry",
+    "property": "Residential/Commercial — c.1890",
+    "finish": "Epifanes Natural Oil Varnish",
+    "description": [
+      "Three sets of historic carved hardwood entry doors at 990 and 1000 Centre Street, Jamaica Plain — a landmark building with ornate Art Nouveau double doors that had been neglected for years. The existing finish had oxidized and peeled, obscuring the intricate carved details beneath.",
+      "We performed complete abatement of the existing finish, repaired visible wood damage, and rebuilt the surface with Epifanes natural oil varnish across 3–5 coats. Hardware was fully disassembled, serviced, and reinstalled. A broken hinge was repaired and matched. Weatherstripping and door sweeps were replaced throughout."
+    ],
+    "work": [
+      "Complete abatement of current finish",
+      "Visible wood damage repaired",
+      "Epifanes natural oil varnish — 3–5 coats exterior",
+      "Interior cleaned, prepped, and topcoated",
+      "Hardware disassembled, maintained, and reinstalled",
+      "Broken hinge repaired and replaced",
+      "Weatherstripping and door sweeps replaced",
+      "Doors reinstalled with full function verified",
+      "Surrounding woodwork cleaned and finished"
+    ],
+    "meta": [
+      { "label": "Location",  "value": "Jamaica Plain, MA" },
+      { "label": "Client",    "value": "Evergreen Management" },
+      { "label": "Service",   "value": "Door Restoration & Refinishing" },
+      { "label": "Door Type", "value": "Historic hardwood double entry" },
+      { "label": "Finish",    "value": "Epifanes Natural Oil Varnish" },
+      { "label": "Doors",     "value": "3 sets — 990, 990 #3 & 1000 Centre St" },
+      { "label": "Property",  "value": "Residential/Commercial — c.1890" },
+      { "label": "Status",    "value": "Completed" }
+    ],
+    "doors": [
+      {
+        "id": "cs-990",
+        "label": "990 Centre St — Main Entry",
+        "card_image": "cs-990.d1.entry.after.01",
+        "pairs": [
+          { "label": "Entry",    "before": "cs-990.d1.entry.before.01",    "after": "cs-990.d1.entry.after.01" },
+          { "label": "Carving",  "before": "cs-990.d1.carving.before.01",  "after": "cs-990.d1.carving.after.01" },
+          { "label": "Hardware", "before": "cs-990.d1.hardware.before.01", "after": "cs-990.d1.hardware.after.01" },
+          { "label": "Interior", "before": "cs-990.d1.interior.before.01", "after": "cs-990.d1.interior.after.01" }
+        ],
+        "after": [
+          "cs-990.d1.entry.after.01",
+          "cs-990.d1.entry.after.02",
+          "cs-990.d1.entry.after.03",
+          "cs-990.d1.carving.after.01",
+          "cs-990.d1.carving.after.02",
+          "cs-990.d1.carving.after.03",
+          "cs-990.d1.hardware.after.01",
+          "cs-990.d1.finish.after.01",
+          "cs-990.d1.finish.after.02",
+          "cs-990.d1.interior.after.01",
+          "cs-990.d1.interior.after.02",
+          "cs-990.d1.threshold.after.01",
+          "cs-990.d1.surround.after.01"
+        ]
+      },
+      {
+        "id": "cs-993",
+        "label": "990 Centre St #3 — Unit Entry",
+        "card_image": "cs-993.d1.entry.after.01",
+        "pairs": [
+          { "label": "Entry",    "before": "cs-993.d1.entry.before.01",    "after": "cs-993.d1.entry.after.01" },
+          { "label": "Hardware", "before": "cs-993.d1.hardware.before.01", "after": "cs-993.d1.hardware.after.01" },
+          { "label": "Carving",  "before": "cs-993.d1.carving.before.01",  "after": "cs-993.d1.carving.after.01" }
+        ],
+        "after": [
+          "cs-993.d1.entry.after.01",
+          "cs-993.d1.entry.after.02",
+          "cs-993.d1.entry.after.03",
+          "cs-993.d1.hardware.after.01",
+          "cs-993.d1.carving.after.01",
+          "cs-993.d1.finish.after.01"
+        ]
+      },
+      {
+        "id": "cs-1000",
+        "label": "1000 Centre St — Main Entry",
+        "card_image": "cs-1000.d1.entry.after.01",
+        "pairs": [
+          { "label": "Entry",    "before": "cs-1000.d1.entry.before.01",    "after": "cs-1000.d1.entry.after.01" },
+          { "label": "Surround", "before": "cs-1000.d1.surround.before.01", "after": "cs-1000.d1.surround.after.01" },
+          { "label": "Interior", "before": "cs-1000.d1.interior.before.01", "after": "cs-1000.d1.interior.after.01" }
+        ],
+        "after": [
+          "cs-1000.d1.entry.after.01",
+          "cs-1000.d1.entry.after.02",
+          "cs-1000.d1.entry.after.03",
+          "cs-1000.d1.surround.after.01",
+          "cs-1000.d1.surround.after.02",
+          "cs-1000.d1.interior.after.01",
+          "cs-1000.d1.interior.after.02",
+          "cs-1000.d1.finish.after.01",
+          "cs-1000.d1.finish.after.02"
+        ]
+      }
+    ]
+  }
+
+]
+

@@ -52,15 +52,23 @@ function attachFormHandler() {
   });
 }
 
+function execScripts(el) {
+  el.querySelectorAll('script').forEach(old => {
+    const s = document.createElement('script');
+    [...old.attributes].forEach(a => s.setAttribute(a.name, a.value));
+    s.textContent = old.textContent;
+    old.replaceWith(s);
+  });
+}
+
 async function loadComponent(el) {
   const name = el.id.replace('cmp-', '');
   try {
     const res = await fetch(`/components/${name}.html`);
     if (!res.ok) throw new Error(`Failed to load ${name}.html`);
     el.innerHTML = await res.text();
-
+    execScripts(el);
     if (name === 'form') attachFormHandler();
-
   } catch (e) {
     console.warn('[components]', e.message);
   }

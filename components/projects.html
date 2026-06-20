@@ -42,7 +42,11 @@
     'custom-doors':         { label: 'Custom Doors',                   icon: 'fa-star' }
   }
 
-  const img     = (projectId, stem) => `/assets/${projectId}.${stem}.jpg`
+  //const img     = (projectId, stem) => `/assets/${projectId}.${stem}.jpg`
+
+  const img = (projectId, stem) => `/assets/${stem}.jpg`
+
+  
   const modalId = (projectId, doorId) => `modal-${projectId}--${doorId}`
 
   function renderCard(project, door) {

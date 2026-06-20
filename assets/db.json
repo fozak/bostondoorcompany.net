@@ -1,4 +1,5 @@
-[
+{
+  "projects": [
   {
     "id": "990-centre-jamaica-plain",
     "title": "Historic Entry Door Restoration",
@@ -217,4 +218,8 @@
     { "label": "Status",    "value": "Completed" }
   ]
 }
-]
+  ],
+  "services": []
+
+
+}

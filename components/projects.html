@@ -201,7 +201,8 @@
       if (!r.ok) throw new Error(`db.json ${r.status}`)
       return r.json()
     })
-    .then(projects => {
+     .then(data => {
+      const projects = data.projects
       const cards  = []
       const modals = []
 

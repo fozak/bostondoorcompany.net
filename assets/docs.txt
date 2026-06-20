@@ -1,0 +1,55 @@
+poweshell scrip to export5:36 PMClaude responded: Here's the full documentation section to add:Here's the full documentation section to add:
+
+AI-Assisted Photo Pipeline
+Problem
+
+Raw project photos arrive as unstructured camera files — IMG_1596.JPG, IMG_2028.HEIC, etc. — with no indication of which door, which address, before or after, or what category (entry, hardware, carving, etc.). Hundreds of files across multiple projects.
+Step 1 — Load thumbnails for review
+
+All raw files from the project folder were uploaded as thumbnails for visual review in Claude. Claude examined each thumbnail and assigned a semantic mapping:
+json{
+  "IMG_1596.JPG": "cs-990.d1.entry.before.jpg",
+  "IMG_2028.HEIC": "cs-990.d1.carving.before.jpg",
+  "IMG_2218.HEIC": "cs-990.d1.entry.after.jpg",
+  ...
+  "IMG_2027.HEIC": null
+}
+Each file was classified by:
+
+Address slug — cs-990, cs-993, cs-1000, mit
+Door number — d1 (one door set per address)
+Category — entry, carving, hardware, interior, threshold, finish, panel, damage, hinge
+Before or after — based on visual state of the door (weathered/failed finish = before, restored = after)
+Sequence number — .1, .2, .3 etc. for multiple shots in same category
+null — file excluded (video, duplicate, irrelevant)
+
+Step 2 — PowerShell export script
+
+Claude generated a PowerShell script that:
+
+Takes the mapping as a hashtable $moves = @{ "IMG_1596.JPG" = "cs-990.d1.entry.before.1.jpg" ... }
+Searches recursively under C:\python\bostonelitedoors.com for each source file by name
+Converts/shrinks using ImageMagick to ≤100KB (resize 900×900, quality 60–70, retry at 700×700 if still over)
+Writes renamed output directly to /assets/
+
+powershellforeach ($src in $moves.Keys) {
+    $found = Get-ChildItem -Path "C:\python\bostonelitedoors.com" `
+             -Recurse -Filter $src | Select-Object -First 1
+    $destPath = Join-Path $assetsDir $moves[$src]
+    & magick $found.FullName -resize "900x900>" -quality 70 $destPath
+    if ((Get-Item $destPath).Length -gt 102400) {
+        & magick $found.FullName -resize "700x700>" -quality 60 $destPath
+    }
+}
+Step 3 — Build db.json pairs
+
+After files landed in /assets/, Claude audited the actual filenames in the dir listing and built the pairs[] and after[] arrays in db.json — only referencing stems that actually exist on disk. No guessing, no broken references.
+Before/after pairing logic
+
+True matched pairs (same angle before and after) exist only where the photographer shot both states. Where no matched before exists for a category, that category is gallery-only (appears in after[] but not pairs[]). The JS automatically deduplicates — anything already shown as a pair is excluded from the gallery.
+Result
+
+~100 source files processed across 2 projects
+Semantic filenames in /assets/ matching db.json exactly
+Zero broken image references
+db.json pairs[] only contains categories with both before AND after confirmed on disk

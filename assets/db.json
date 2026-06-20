@@ -161,7 +161,7 @@
       { "label": "Status",    "value": "Completed" }
     ]
   },
-  {
+{
   "id": "mit-cambridge",
   "title": "Historic Door Restoration",
   "subtitle": "MIT Campus — Cambridge, MA",
@@ -189,12 +189,22 @@
         "Hardware serviced and reinstalled",
         "Doors reinstalled and full function verified"
       ],
-      "card_image": "mit.d1.entry.after.1",
+      "card_image": "mit.d1.entry.after.4",
       "pairs": [
-        { "label": "Entry", "before": "mit.d1.entry.before.1", "after": "mit.d1.entry.after.1" }
+        { "label": "Entry", "before": "mit.d1.entry.before.3", "after": "mit.d1.entry.after.4" }
       ],
       "after": [
-        "mit.d1.entry.after.1"
+        "mit.d1.entry.after.1",
+        "mit.d1.entry.after.2",
+        "mit.d1.entry.after.3",
+        "mit.d1.entry.after.4",
+        "mit.d1.entry.after.5",
+        "mit.d1.entry.after.6",
+        "mit.d1.entry.after.7",
+        "mit.d1.hinge.after.1",
+        "mit.d1.hinge.after.2",
+        "mit.d1.hinge.after.3",
+        "mit.d1.hardware.after.1"
       ]
     }
   ],

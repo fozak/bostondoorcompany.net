@@ -12,8 +12,8 @@
     "finish": "Epifanes Natural Oil Varnish",
     "description": [
       "990 Centre Street, Jamaica Plain is the historic Weld Mansion — a landmark Victorian estate built around 1885 and converted into residential condominiums. The property sits on landscaped grounds directly adjacent to the Arnold Arboretum, one of the world's great botanical collections. The buildings retain much of their original architectural character, including the ornate carved hardwood entry doors that are among the most distinctive features of the estate.",
-      "Boston Door Company was engaged to restore five sets of entry doors across the two main buildings at 990 and 1000 Centre Street — exterior and interior sets at both addresses, plus a second exterior set serving unit #3 at 990. All doors are original period hardwood, heavily carved in the Victorian manner, with arched glass panels and matching period hardware. Decades of deferred maintenance had left the finishes oxidized, checked, and in places completely failed.",
-      "The full scope covered complete abatement of existing finishes, wood damage repair, and 3–5 coats of Epifanes natural oil varnish on all exterior faces. Interior faces were cleaned, prepped, and topcoated throughout. Surrounding woodwork at both 1000 Centre sets was included. All hardware was disassembled, serviced, and reinstalled; a broken hinge at the main 990 entry was repaired and matched to the original. The restored doors now reflect the architectural quality of the Weld Mansion as built."
+      "Boston Door Company was engaged to restore five sets of entry doors across the two main buildings at 990 and 1000 Centre Street. All doors are original period hardwood, heavily carved in the Victorian manner, with arched glass panels and matching period hardware. Decades of deferred maintenance had left the finishes oxidized, checked, and in places completely failed.",
+      "The full scope covered complete abatement of existing finishes, wood damage repair, and 3–5 coats of Epifanes natural oil varnish on all exterior faces. Interior faces were cleaned, prepped, and topcoated throughout. All hardware was disassembled, serviced, and reinstalled; a broken hinge at the main 990 entry was repaired and matched to the original."
     ],
     "doors": [
       {
@@ -32,147 +32,122 @@
         ],
         "card_image": "cs-990.d1.entry.after.1",
         "pairs": [
-          { "label": "Entry",    "before": "cs-990.d1.entry.before.1",    "after": "cs-990.d1.entry.after.1" },
-          { "label": "Carving",  "before": "cs-990.d1.carving.before.1",  "after": "cs-990.d1.carving.after.1" },
-          { "label": "Hardware", "before": "cs-990.d1.hardware.before.1", "after": "cs-990.d1.hardware.after.1" },
-          { "label": "Interior", "before": "cs-990.d1.interior.before.1", "after": "cs-990.d1.interior.after.1" }
+          { "label": "Entry",    "before": "cs-990.d1.entry.before.1",   "after": "cs-990.d1.entry.after.1" },
+          { "label": "Carving",  "before": "cs-990.d1.carving.before",   "after": "cs-990.d1.carving.after.1" },
+          { "label": "Interior", "before": "cs-990.d1.interior.before.1","after": "cs-990.d1.interior.after" }
         ],
         "after": [
           "cs-990.d1.entry.after.1",
           "cs-990.d1.entry.after.2",
           "cs-990.d1.entry.after.3",
+          "cs-990.d1.entry.after.4",
+          "cs-990.d1.entry.after.5",
+          "cs-990.d1.entry.after.6",
+          "cs-990.d1.entry.after.7",
+          "cs-990.d1.entry.after.8",
+          "cs-990.d1.entry.after.9",
+          "cs-990.d1.entry.after.10",
+          "cs-990.d1.entry.after.11",
+          "cs-990.d1.entry.after.12",
+          "cs-990.d1.entry.after.13",
+          "cs-990.d1.entry.after.14",
+          "cs-990.d1.entry.after.15",
+          "cs-990.d1.entry.after.16",
           "cs-990.d1.carving.after.1",
           "cs-990.d1.carving.after.2",
           "cs-990.d1.carving.after.3",
+          "cs-990.d1.carving.after.4",
           "cs-990.d1.hardware.after.1",
+          "cs-990.d1.hardware.after.2",
+          "cs-990.d1.hardware.after.3",
+          "cs-990.d1.hardware.after.4",
+          "cs-990.d1.hardware.after.5",
+          "cs-990.d1.hardware.after.6",
+          "cs-990.d1.hardware.after.7",
+          "cs-990.d1.hardware.after.8",
+          "cs-990.d1.hardware.after.9",
+          "cs-990.d1.hardware.after.10",
           "cs-990.d1.finish.after.1",
           "cs-990.d1.finish.after.2",
-          "cs-990.d1.interior.after.1",
           "cs-990.d1.threshold.after.1",
-          "cs-990.d1.surround.after.1"
+          "cs-990.d1.threshold.after.2",
+          "cs-990.d1.threshold.after.3"
         ]
       },
       {
         "id": "cs-993",
         "label": "990 Centre St #3 — Exterior Entry",
         "scope": "exterior",
-        "description": "The exterior entry doors serving unit #3 at 990 Centre Street — a second double door set on the same building, simpler in profile than the main entry but sharing the same period hardwood construction and arched glass detailing. Finish failure was similar in character to the main entry. Hardware was serviced in place; replacement was assessed and not required.",
+        "description": "The exterior entry doors serving unit #3 at 990 Centre Street — a second double door set on the same building, sharing the same period hardwood construction and arched glass detailing. Finish failure was similar in character to the main entry. Hardware was serviced in place.",
         "work": [
           "Complete abatement of existing exterior finish",
           "Visible wood damage repaired",
           "Exterior prepped and finished with Epifanes natural oil varnish — 3–5 coats",
           "Interior face cleaned, prepped, and topcoated with natural oil varnish",
           "Hardware disassembled, maintained, and reinstalled",
-          "Hardware replacement assessed — not required",
           "Doors reinstalled and full function verified"
         ],
         "card_image": "cs-993.d1.entry.after.1",
         "pairs": [
-          { "label": "Entry",    "before": "cs-993.d1.entry.before.1",    "after": "cs-993.d1.entry.after.1" },
-          { "label": "Hardware", "before": "cs-993.d1.hardware.before.1", "after": "cs-993.d1.hardware.after.1" },
-          { "label": "Carving",  "before": "cs-993.d1.carving.before.1",  "after": "cs-993.d1.carving.after.1" }
+          { "label": "Entry", "before": "cs-993.d1.entry.before.1", "after": "cs-993.d1.entry.after.1" }
         ],
         "after": [
           "cs-993.d1.entry.after.1",
           "cs-993.d1.entry.after.2",
           "cs-993.d1.entry.after.3",
-          "cs-993.d1.hardware.after.1",
+          "cs-993.d1.entry.after.4",
+          "cs-993.d1.entry.after.5",
+          "cs-993.d1.entry.after.6",
+          "cs-993.d1.entry.after.7",
+          "cs-993.d1.entry.after.8",
+          "cs-993.d1.entry.after.9",
+          "cs-993.d1.entry.after.10",
+          "cs-993.d1.entry.after.11",
+          "cs-993.d1.entry.after.12",
+          "cs-993.d1.entry.after.13",
+          "cs-993.d1.entry.after.14",
+          "cs-993.d1.entry.after.15",
+          "cs-993.d1.entry.after.16",
+          "cs-993.d1.entry.after.17",
+          "cs-993.d1.entry.after.18",
           "cs-993.d1.carving.after.1",
-          "cs-993.d1.finish.after.1"
-        ]
-      },
-      {
-        "id": "cs-993",
-        "label": "990 Centre St #3 — Interior Entry",
-        "scope": "interior",
-        "description": "The interior door set at unit #3, 990 Centre Street. Restored to the same standard as the exterior set, with surrounding woodwork cleaned and refinished as part of the scope. The full entryway — doors, interior face, and surrounding millwork — was brought into a consistent natural oil finish, completing the restoration from street to interior.",
-        "work": [
-          "Complete abatement of existing finish",
-          "Visible wood damage repaired",
-          "Exterior face finished with Epifanes natural oil varnish — 3–5 coats",
-          "Interior face cleaned, prepped, and topcoated with natural oil varnish",
-          "Surrounding woodwork cleaned and refinished",
-          "Hardware disassembled, maintained, and reinstalled",
-          "Hardware replacement assessed — not required",
-          "Doors reinstalled and full function verified"
-        ],
-        "card_image": "cs-993.d1.entry.after.1",
-        "pairs": [
-          { "label": "Entry",    "before": "cs-993.d1.entry.before.1",    "after": "cs-993.d1.entry.after.1" },
-          { "label": "Surround", "before": "cs-993.d1.surround.before.1", "after": "cs-993.d1.surround.after.1" },
-          { "label": "Interior", "before": "cs-993.d1.interior.before.1", "after": "cs-993.d1.interior.after.1" }
-        ],
-        "after": [
-          "cs-993.d1.entry.after.1",
-          "cs-993.d1.entry.after.2",
-          "cs-993.d1.surround.after.1",
-          "cs-993.d1.surround.after.2",
-          "cs-993.d1.interior.after.1",
-          "cs-993.d1.interior.after.2",
-          "cs-993.d1.finish.after.1"
+          "cs-993.d1.carving.after.2",
+          "cs-993.d1.panel.after.1",
+          "cs-993.d1.panel.after.2",
+          "cs-993.d1.panel.after.3"
         ]
       },
       {
         "id": "cs-1000",
         "label": "1000 Centre St — Exterior Entry",
         "scope": "exterior",
-        "description": "The main exterior entry doors at 1000 Centre Street, the adjacent building on the Weld Mansion estate. A different architectural character from 990 — a brick arch surround frames the double door set, giving the entry a more formal presence. Restoration scope matched the 990 exterior sets, with the surrounding woodwork refinished as an additional line item to complete the entryway.",
+        "description": "The main exterior entry doors at 1000 Centre Street, the adjacent building on the Weld Mansion estate. A brick arch surround frames the double door set. Restoration scope matched the 990 exterior sets.",
         "work": [
           "Complete abatement of existing exterior finish",
           "Visible wood damage repaired",
           "Exterior prepped and finished with Epifanes natural oil varnish — 3–5 coats",
           "Interior face cleaned, prepped, and topcoated with natural oil varnish",
-          "Surrounding woodwork refinished — cleaned, prepped, and topcoated",
           "Hardware disassembled, maintained, and reinstalled",
-          "Hardware replacement assessed — not required",
           "Doors reinstalled and full function verified"
         ],
         "card_image": "cs-1000.d1.entry.after.1",
         "pairs": [
-          { "label": "Entry",    "before": "cs-1000.d1.entry.before.1",    "after": "cs-1000.d1.entry.after.1" },
-          { "label": "Surround", "before": "cs-1000.d1.surround.before.1", "after": "cs-1000.d1.surround.after.1" },
-          { "label": "Interior", "before": "cs-1000.d1.interior.before.1", "after": "cs-1000.d1.interior.after.1" }
+          { "label": "Entry", "before": "cs-1000.d1.entry.before.1", "after": "cs-1000.d1.entry.after.1" }
         ],
         "after": [
           "cs-1000.d1.entry.after.1",
           "cs-1000.d1.entry.after.2",
           "cs-1000.d1.entry.after.3",
-          "cs-1000.d1.surround.after.1",
-          "cs-1000.d1.surround.after.2",
-          "cs-1000.d1.interior.after.1",
-          "cs-1000.d1.interior.after.2",
-          "cs-1000.d1.finish.after.1"
-        ]
-      },
-      {
-        "id": "cs-1000",
-        "label": "1000 Centre St — Interior Entry",
-        "scope": "interior",
-        "description": "The interior door set at 1000 Centre Street, completing the full restoration of both buildings on the estate. Refinished to the same standard as the exterior set, with surrounding woodwork included. The entire entryway at 1000 — exterior face, interior face, and millwork surround — now reads as a unified natural oil finish, consistent with the restored doors at 990 across the grounds.",
-        "work": [
-          "Complete abatement of existing finish",
-          "Visible wood damage repaired",
-          "Finished with Epifanes natural oil varnish",
-          "Interior face cleaned, prepped, and topcoated with natural oil varnish",
-          "Surrounding woodwork refinished — cleaned, prepped, and topcoated",
-          "Hardware disassembled, maintained, and reinstalled",
-          "Hardware replacement assessed — not required",
-          "Doors reinstalled and full function verified"
-        ],
-        "card_image": "cs-1000.d1.entry.after.1",
-        "pairs": [
-          { "label": "Entry",    "before": "cs-1000.d1.entry.before.1",    "after": "cs-1000.d1.entry.after.1" },
-          { "label": "Surround", "before": "cs-1000.d1.surround.before.1", "after": "cs-1000.d1.surround.after.1" },
-          { "label": "Interior", "before": "cs-1000.d1.interior.before.1", "after": "cs-1000.d1.interior.after.1" }
-        ],
-        "after": [
-          "cs-1000.d1.entry.after.1",
-          "cs-1000.d1.entry.after.2",
-          "cs-1000.d1.surround.after.1",
-          "cs-1000.d1.surround.after.2",
-          "cs-1000.d1.interior.after.1",
-          "cs-1000.d1.interior.after.2",
-          "cs-1000.d1.finish.after.1"
+          "cs-1000.d1.entry.after.4",
+          "cs-1000.d1.entry.after.5",
+          "cs-1000.d1.entry.after.6",
+          "cs-1000.d1.entry.after.7",
+          "cs-1000.d1.entry.after.8",
+          "cs-1000.d1.entry.after.9",
+          "cs-1000.d1.entry.after.10",
+          "cs-1000.d1.entry.after.11",
+          "cs-1000.d1.entry.after.12",
+          "cs-1000.d1.entry.after.13"
         ]
       }
     ],
@@ -181,7 +156,7 @@
       { "label": "Client",    "value": "Evergreen Management" },
       { "label": "Service",   "value": "Door Restoration & Refinishing" },
       { "label": "Finish",    "value": "Epifanes Natural Oil Varnish" },
-      { "label": "Scope",     "value": "5 door sets — 990 & 1000 Centre St" },
+      { "label": "Scope",     "value": "3 door sets — 990 & 1000 Centre St" },
       { "label": "Property",  "value": "Weld Mansion — Victorian estate c.1885" },
       { "label": "Status",    "value": "Completed" }
     ]

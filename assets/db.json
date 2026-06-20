@@ -17,7 +17,7 @@
     ],
     "doors": [
       {
-        "id": "cs-990-ext",
+        "id": "cs-990",
         "label": "990 Centre St — Exterior Entry",
         "scope": "exterior",
         "description": "The main exterior double doors at 990 Centre Street — the most architecturally significant set on the property. Ornate carved hardwood with arched glass panels and original Victorian hardware. Finish had failed across most of the surface with visible weathering and checking in the wood. A broken hinge required repair and matching before reinstallation.",
@@ -30,30 +30,30 @@
           "All hardware disassembled, maintained, and reinstalled",
           "Doors reinstalled and full function verified"
         ],
-        "card_image": "cs-990-ext.d1.entry.after.01",
+        "card_image": "cs-990.d1.entry.after.1",
         "pairs": [
-          { "label": "Entry",    "before": "cs-990-ext.d1.entry.before.01",    "after": "cs-990-ext.d1.entry.after.01" },
-          { "label": "Carving",  "before": "cs-990-ext.d1.carving.before.01",  "after": "cs-990-ext.d1.carving.after.01" },
-          { "label": "Hardware", "before": "cs-990-ext.d1.hardware.before.01", "after": "cs-990-ext.d1.hardware.after.01" },
-          { "label": "Interior", "before": "cs-990-ext.d1.interior.before.01", "after": "cs-990-ext.d1.interior.after.01" }
+          { "label": "Entry",    "before": "cs-990.d1.entry.before.1",    "after": "cs-990.d1.entry.after.1" },
+          { "label": "Carving",  "before": "cs-990.d1.carving.before.1",  "after": "cs-990.d1.carving.after.1" },
+          { "label": "Hardware", "before": "cs-990.d1.hardware.before.1", "after": "cs-990.d1.hardware.after.1" },
+          { "label": "Interior", "before": "cs-990.d1.interior.before.1", "after": "cs-990.d1.interior.after.1" }
         ],
         "after": [
-          "cs-990-ext.d1.entry.after.01",
-          "cs-990-ext.d1.entry.after.02",
-          "cs-990-ext.d1.entry.after.03",
-          "cs-990-ext.d1.carving.after.01",
-          "cs-990-ext.d1.carving.after.02",
-          "cs-990-ext.d1.carving.after.03",
-          "cs-990-ext.d1.hardware.after.01",
-          "cs-990-ext.d1.finish.after.01",
-          "cs-990-ext.d1.finish.after.02",
-          "cs-990-ext.d1.interior.after.01",
-          "cs-990-ext.d1.threshold.after.01",
-          "cs-990-ext.d1.surround.after.01"
+          "cs-990.d1.entry.after.1",
+          "cs-990.d1.entry.after.2",
+          "cs-990.d1.entry.after.3",
+          "cs-990.d1.carving.after.1",
+          "cs-990.d1.carving.after.2",
+          "cs-990.d1.carving.after.3",
+          "cs-990.d1.hardware.after.1",
+          "cs-990.d1.finish.after.1",
+          "cs-990.d1.finish.after.2",
+          "cs-990.d1.interior.after.1",
+          "cs-990.d1.threshold.after.1",
+          "cs-990.d1.surround.after.1"
         ]
       },
       {
-        "id": "cs-993-ext",
+        "id": "cs-993",
         "label": "990 Centre St #3 — Exterior Entry",
         "scope": "exterior",
         "description": "The exterior entry doors serving unit #3 at 990 Centre Street — a second double door set on the same building, simpler in profile than the main entry but sharing the same period hardwood construction and arched glass detailing. Finish failure was similar in character to the main entry. Hardware was serviced in place; replacement was assessed and not required.",
@@ -66,23 +66,23 @@
           "Hardware replacement assessed — not required",
           "Doors reinstalled and full function verified"
         ],
-        "card_image": "cs-993-ext.d1.entry.after.01",
+        "card_image": "cs-993.d1.entry.after.1",
         "pairs": [
-          { "label": "Entry",    "before": "cs-993-ext.d1.entry.before.01",    "after": "cs-993-ext.d1.entry.after.01" },
-          { "label": "Hardware", "before": "cs-993-ext.d1.hardware.before.01", "after": "cs-993-ext.d1.hardware.after.01" },
-          { "label": "Carving",  "before": "cs-993-ext.d1.carving.before.01",  "after": "cs-993-ext.d1.carving.after.01" }
+          { "label": "Entry",    "before": "cs-993.d1.entry.before.1",    "after": "cs-993.d1.entry.after.1" },
+          { "label": "Hardware", "before": "cs-993.d1.hardware.before.1", "after": "cs-993.d1.hardware.after.1" },
+          { "label": "Carving",  "before": "cs-993.d1.carving.before.1",  "after": "cs-993.d1.carving.after.1" }
         ],
         "after": [
-          "cs-993-ext.d1.entry.after.01",
-          "cs-993-ext.d1.entry.after.02",
-          "cs-993-ext.d1.entry.after.03",
-          "cs-993-ext.d1.hardware.after.01",
-          "cs-993-ext.d1.carving.after.01",
-          "cs-993-ext.d1.finish.after.01"
+          "cs-993.d1.entry.after.1",
+          "cs-993.d1.entry.after.2",
+          "cs-993.d1.entry.after.3",
+          "cs-993.d1.hardware.after.1",
+          "cs-993.d1.carving.after.1",
+          "cs-993.d1.finish.after.1"
         ]
       },
       {
-        "id": "cs-993-int",
+        "id": "cs-993",
         "label": "990 Centre St #3 — Interior Entry",
         "scope": "interior",
         "description": "The interior door set at unit #3, 990 Centre Street. Restored to the same standard as the exterior set, with surrounding woodwork cleaned and refinished as part of the scope. The full entryway — doors, interior face, and surrounding millwork — was brought into a consistent natural oil finish, completing the restoration from street to interior.",
@@ -96,24 +96,24 @@
           "Hardware replacement assessed — not required",
           "Doors reinstalled and full function verified"
         ],
-        "card_image": "cs-993-int.d1.entry.after.01",
+        "card_image": "cs-993.d1.entry.after.1",
         "pairs": [
-          { "label": "Entry",    "before": "cs-993-int.d1.entry.before.01",    "after": "cs-993-int.d1.entry.after.01" },
-          { "label": "Surround", "before": "cs-993-int.d1.surround.before.01", "after": "cs-993-int.d1.surround.after.01" },
-          { "label": "Interior", "before": "cs-993-int.d1.interior.before.01", "after": "cs-993-int.d1.interior.after.01" }
+          { "label": "Entry",    "before": "cs-993.d1.entry.before.1",    "after": "cs-993.d1.entry.after.1" },
+          { "label": "Surround", "before": "cs-993.d1.surround.before.1", "after": "cs-993.d1.surround.after.1" },
+          { "label": "Interior", "before": "cs-993.d1.interior.before.1", "after": "cs-993.d1.interior.after.1" }
         ],
         "after": [
-          "cs-993-int.d1.entry.after.01",
-          "cs-993-int.d1.entry.after.02",
-          "cs-993-int.d1.surround.after.01",
-          "cs-993-int.d1.surround.after.02",
-          "cs-993-int.d1.interior.after.01",
-          "cs-993-int.d1.interior.after.02",
-          "cs-993-int.d1.finish.after.01"
+          "cs-993.d1.entry.after.1",
+          "cs-993.d1.entry.after.2",
+          "cs-993.d1.surround.after.1",
+          "cs-993.d1.surround.after.2",
+          "cs-993.d1.interior.after.1",
+          "cs-993.d1.interior.after.2",
+          "cs-993.d1.finish.after.1"
         ]
       },
       {
-        "id": "cs-1000-ext",
+        "id": "cs-1000",
         "label": "1000 Centre St — Exterior Entry",
         "scope": "exterior",
         "description": "The main exterior entry doors at 1000 Centre Street, the adjacent building on the Weld Mansion estate. A different architectural character from 990 — a brick arch surround frames the double door set, giving the entry a more formal presence. Restoration scope matched the 990 exterior sets, with the surrounding woodwork refinished as an additional line item to complete the entryway.",
@@ -127,25 +127,25 @@
           "Hardware replacement assessed — not required",
           "Doors reinstalled and full function verified"
         ],
-        "card_image": "cs-1000-ext.d1.entry.after.01",
+        "card_image": "cs-1000.d1.entry.after.1",
         "pairs": [
-          { "label": "Entry",    "before": "cs-1000-ext.d1.entry.before.01",    "after": "cs-1000-ext.d1.entry.after.01" },
-          { "label": "Surround", "before": "cs-1000-ext.d1.surround.before.01", "after": "cs-1000-ext.d1.surround.after.01" },
-          { "label": "Interior", "before": "cs-1000-ext.d1.interior.before.01", "after": "cs-1000-ext.d1.interior.after.01" }
+          { "label": "Entry",    "before": "cs-1000.d1.entry.before.1",    "after": "cs-1000.d1.entry.after.1" },
+          { "label": "Surround", "before": "cs-1000.d1.surround.before.1", "after": "cs-1000.d1.surround.after.1" },
+          { "label": "Interior", "before": "cs-1000.d1.interior.before.1", "after": "cs-1000.d1.interior.after.1" }
         ],
         "after": [
-          "cs-1000-ext.d1.entry.after.01",
-          "cs-1000-ext.d1.entry.after.02",
-          "cs-1000-ext.d1.entry.after.03",
-          "cs-1000-ext.d1.surround.after.01",
-          "cs-1000-ext.d1.surround.after.02",
-          "cs-1000-ext.d1.interior.after.01",
-          "cs-1000-ext.d1.interior.after.02",
-          "cs-1000-ext.d1.finish.after.01"
+          "cs-1000.d1.entry.after.1",
+          "cs-1000.d1.entry.after.2",
+          "cs-1000.d1.entry.after.3",
+          "cs-1000.d1.surround.after.1",
+          "cs-1000.d1.surround.after.2",
+          "cs-1000.d1.interior.after.1",
+          "cs-1000.d1.interior.after.2",
+          "cs-1000.d1.finish.after.1"
         ]
       },
       {
-        "id": "cs-1000-int",
+        "id": "cs-1000",
         "label": "1000 Centre St — Interior Entry",
         "scope": "interior",
         "description": "The interior door set at 1000 Centre Street, completing the full restoration of both buildings on the estate. Refinished to the same standard as the exterior set, with surrounding woodwork included. The entire entryway at 1000 — exterior face, interior face, and millwork surround — now reads as a unified natural oil finish, consistent with the restored doors at 990 across the grounds.",
@@ -159,20 +159,20 @@
           "Hardware replacement assessed — not required",
           "Doors reinstalled and full function verified"
         ],
-        "card_image": "cs-1000-int.d1.entry.after.01",
+        "card_image": "cs-1000.d1.entry.after.1",
         "pairs": [
-          { "label": "Entry",    "before": "cs-1000-int.d1.entry.before.01",    "after": "cs-1000-int.d1.entry.after.01" },
-          { "label": "Surround", "before": "cs-1000-int.d1.surround.before.01", "after": "cs-1000-int.d1.surround.after.01" },
-          { "label": "Interior", "before": "cs-1000-int.d1.interior.before.01", "after": "cs-1000-int.d1.interior.after.01" }
+          { "label": "Entry",    "before": "cs-1000.d1.entry.before.1",    "after": "cs-1000.d1.entry.after.1" },
+          { "label": "Surround", "before": "cs-1000.d1.surround.before.1", "after": "cs-1000.d1.surround.after.1" },
+          { "label": "Interior", "before": "cs-1000.d1.interior.before.1", "after": "cs-1000.d1.interior.after.1" }
         ],
         "after": [
-          "cs-1000-int.d1.entry.after.01",
-          "cs-1000-int.d1.entry.after.02",
-          "cs-1000-int.d1.surround.after.01",
-          "cs-1000-int.d1.surround.after.02",
-          "cs-1000-int.d1.interior.after.01",
-          "cs-1000-int.d1.interior.after.02",
-          "cs-1000-int.d1.finish.after.01"
+          "cs-1000.d1.entry.after.1",
+          "cs-1000.d1.entry.after.2",
+          "cs-1000.d1.surround.after.1",
+          "cs-1000.d1.surround.after.2",
+          "cs-1000.d1.interior.after.1",
+          "cs-1000.d1.interior.after.2",
+          "cs-1000.d1.finish.after.1"
         ]
       }
     ],

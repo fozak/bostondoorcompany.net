@@ -217,6 +217,52 @@
     { "label": "Property",  "value": "MIT institutional building — early 20th century" },
     { "label": "Status",    "value": "Completed" }
   ]
+},
+{
+  "id": "71-marlborough-boston",
+  "title": "Historic Entry Door Restoration",
+  "subtitle": "71 Marlborough Street — Back Bay",
+  "location": "Boston, MA",
+  "address": "71 Marlborough St",
+  "service": "door-restoration",
+  "door_type": "Historic hardwood double entry with glass lights and brass kick plates",
+  "property": "Back Bay brownstone — late 19th century",
+  "finish": "Natural oil varnish",
+  "description": [
+    "71 Marlborough Street is a landmark Back Bay brownstone on one of Boston's most distinguished residential streets. The historic hardwood double entry features full-length glass lights, original brass kick plates, and a arched transom above — characteristic of the refined Federal-era rowhouse architecture of the neighborhood.",
+    "Boston Door Company restored the full entry. The existing finish had oxidized and failed across most of the surface, leaving the wood weathered and grey. The restoration brought the doors back to a rich, deep natural finish that reveals the quality of the original hardwood."
+  ],
+  "doors": [
+    {
+      "id": "71-marlborough",
+      "label": "71 Marlborough St — Exterior Entry",
+      "scope": "exterior",
+      "description": "Historic hardwood double entry doors with full-length glass lights, brass kick plates, and arched transom. Finish had failed across the surface with significant weathering and oxidation.",
+      "work": [
+        "Complete abatement of existing exterior finish",
+        "Exterior prepped and finished with natural oil varnish",
+        "Hardware serviced and reinstalled",
+        "Doors reinstalled and full function verified"
+      ],
+      "card_image": "71-marlborough.d1.entry.after.1",
+      "pairs": [
+        { "label": "Entry", "before": "71-marlborough.d1.entry.before.1", "after": "71-marlborough.d1.entry.after.1" }
+      ],
+      "after": [
+        "71-marlborough.d1.entry.after.1",
+        "71-marlborough.d1.entry.after.2",
+        "71-marlborough.d1.entry.after.3"
+      ]
+    }
+  ],
+  "meta": [
+    { "label": "Location",  "value": "Boston, MA" },
+    { "label": "Service",   "value": "Door Restoration & Refinishing" },
+    { "label": "Finish",    "value": "Natural Oil Varnish" },
+    { "label": "Scope",     "value": "1 door set — 71 Marlborough St entry" },
+    { "label": "Property",  "value": "Back Bay brownstone — late 19th century" },
+    { "label": "Status",    "value": "Completed" }
+  ]
 }
   ],
  "services": [
@@ -276,6 +322,73 @@
       "mit.d1.damage.before.2"
     ]
   }
+],
+"customers": [
+  {
+    "id": "homeowners",
+    "title": "Home Owners",
+    "image": "cs-990.d1.entry.after.5",
+    "benefits": [
+      "Restore your front door to better-than-original condition",
+      "Increase curb appeal and property value",
+      "Protect your investment with museum-quality finishes",
+      "Expert guidance on hardware, finish, and wood repair"
+    ]
+  },
+  {
+    "id": "management-companies",
+    "title": "Management Companies",
+    "image": "cs-993.d1.entry.after.3",
+    "benefits": [
+      "Single vendor for multi-property door maintenance",
+      "Scheduled service to minimize tenant disruption",
+      "Detailed documentation for property records",
+      "Priority scheduling for managed portfolios"
+    ]
+  },
+  {
+    "id": "residential-commercial",
+    "title": "Residential & Commercial",
+    "image": "cs-1000.d1.entry.after.3",
+    "benefits": [
+      "Full-scope restoration for any entry type or size",
+      "Code-compliant work for commercial properties",
+      "Experience with landmark and historic buildings",
+      "From single units to full building entries"
+    ]
+  },
+  {
+    "id": "multi-unit-buildings",
+    "title": "Multi-Unit Buildings",
+    "image": "cs-993.d1.entry.after.5",
+    "benefits": [
+      "Coordinated restoration across all building entries",
+      "Consistent finish and hardware across units",
+      "Phased scheduling to keep entries operational",
+      "Volume pricing for larger building scopes"
+    ]
+  },
+  {
+    "id": "private-residences",
+    "title": "Private Residences",
+    "image": "71-marlborough.d1.entry.after.1",
+    "benefits": [
+      "White-glove service for high-end properties",
+      "Discreet, professional crew with attention to detail",
+      "Custom finish matching and period-accurate restoration",
+      "Hardware sourcing and selection included"
+    ]
+  },
+  {
+    "id": "businesses",
+    "title": "Business",
+    "image": "mit.d1.entry.after.1",
+    "benefits": [
+      "Make a strong first impression on every client",
+      "Fast turnaround to minimize business disruption",
+      "Institutional and commercial entry experience",
+      "Ongoing maintenance programs available"
+    ]
+  }
 ]
-
 }

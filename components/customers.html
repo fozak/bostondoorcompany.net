@@ -1,0 +1,59 @@
+<!-- customers.html component -->
+<section id="customers" class="section-bg">
+  <div class="container-xl">
+    <div class="text-center mb-5">
+      <h1 class="display-5 text-uppercase">Customers<span class="text-primary"></span></h1>
+      <p class="text-muted">Trusted by homeowners, property managers, and institutions across Greater Boston.</p>
+    </div>
+    <div class="row g-4 justify-content-center" id="customers-grid"></div>
+  </div>
+</section>
+
+<style>
+.cust-img{width:100%;height:220px;object-fit:cover;display:block;}
+.cust-title-bar{background:#4a2e1a;padding:.65rem 1rem;}
+.cust-title-bar h2{color:#fff;margin:0;font-size:.85rem;letter-spacing:.07em;}
+.cust-benefits{list-style:none;padding:.75rem 1rem;margin:0;}
+.cust-benefits li{font-size:.82rem;color:#555;padding:.3rem 0;border-bottom:1px solid #f0f0f0;display:flex;gap:.5rem;align-items:flex-start;}
+.cust-benefits li:last-child{border-bottom:none;}
+.cust-benefits li::before{content:"✓";color:#4a2e1a;font-weight:700;flex-shrink:0;margin-top:1px;}
+</style>
+
+<script>
+(function () {
+  const img = (stem) => `/assets/${stem}.jpg`
+
+  function renderCustomerCard(c) {
+    const benefits = c.benefits.map(b =>
+      `<li>${b}</li>`
+    ).join('')
+    return `
+      <div class="col-lg-4 col-md-6">
+        <div class="card h-100 overflow-hidden">
+          <img class="cust-img" src="${img(c.image)}" alt="${c.title}">
+          <div class="cust-title-bar">
+            <h2 class="text-uppercase">${c.title}</h2>
+          </div>
+          <div class="card-body p-0">
+            <ul class="cust-benefits">${benefits}</ul>
+          </div>
+        </div>
+      </div>`
+  }
+
+  fetch('/assets/db.json')
+    .then(r => {
+      if (!r.ok) throw new Error(`db.json ${r.status}`)
+      return r.json()
+    })
+    .then(data => {
+      const cards = data.customers.map(renderCustomerCard)
+      document.getElementById('customers-grid').innerHTML = cards.join('')
+    })
+    .catch(err => {
+      console.error('[customers]', err.message)
+      document.getElementById('customers-grid').innerHTML =
+        '<p class="text-muted text-center col-12">Content unavailable — please try again later.</p>'
+    })
+})()
+</script>

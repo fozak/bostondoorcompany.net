@@ -402,30 +402,30 @@
     ]
   }
 ],
-"our_customers": [
-  {
-    "id": "mit",
-    "name": "Massachusetts Institute of Technology",
-    "short": "MIT",
-    "logo": "https://upload.wikimedia.org/wikipedia/commons/0/0c/MIT_logo.svg"
-  },
-  {
-    "id": "bu",
-    "name": "Boston University",
-    "short": "BU",
-    "logo": "https://upload.wikimedia.org/wikipedia/commons/9/9c/Boston_University_wordmark.svg"
-  },
-  {
-    "id": "nu",
-    "name": "Northeastern University",
-    "short": "NU",
-    "logo": "https://upload.wikimedia.org/wikipedia/commons/0/04/Northeastern_Wordmark.svg"
-  },
-  {
-    "id": "japanese-embassy",
-    "name": "Consulate General of Japan in Boston",
-    "short": "Japanese Embassy",
-    "logo": "https://upload.wikimedia.org/wikipedia/commons/9/9e/Flag_of_Japan.svg"
-  }
-]
+  "our_customers": [
+    {
+      "id": "mit",
+      "name": "Massachusetts Institute of Technology",
+      "short": "MIT",
+      "logo": "https://commons.wikimedia.org/wiki/Special:FilePath/MIT_logo_2003-2023.svg"
+    },
+    {
+      "id": "bu",
+      "name": "Boston University",
+      "short": "BU",
+      "logo": "https://commons.wikimedia.org/wiki/Special:FilePath/Boston_University_wordmark.svg"
+    },
+    {
+      "id": "nu",
+      "name": "Northeastern University",
+      "short": "NU",
+      "logo": "https://commons.wikimedia.org/wiki/Special:FilePath/Northeastern_Wordmark.svg"
+    },
+    {
+      "id": "japanese-embassy",
+      "name": "Consulate General of Japan in Boston",
+      "short": "Japanese Embassy",
+      "logo": "https://commons.wikimedia.org/wiki/Special:FilePath/Flag_of_Japan.svg"
+    }
+  ]
 }

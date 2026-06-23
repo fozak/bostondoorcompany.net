@@ -68,7 +68,9 @@ async function loadComponent(el) {
     if (!res.ok) throw new Error(`Failed to load ${name}.html`);
     el.innerHTML = await res.text();
     execScripts(el);
-    if (name === 'form') attachFormHandler();
+    //if (name === 'form') attachFormHandler();
+     attachFormHandler();  //added
+
   } catch (e) {
     console.warn('[components]', e.message);
   }

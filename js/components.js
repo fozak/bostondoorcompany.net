@@ -1,6 +1,6 @@
 // components.js - Dynamically load HTML components into elements with id="cmp-<name>"
 
-const SCRIPT_URL = "https://script.google.com/macros/s/1l3RHymF0v5MnYLbNFYFxuHGGpcpro2ErqNTWdsTBCv4/exec";
+const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbx4_3t24ZxFop0H_G8pUsQt7LCqXoNFmxRSEWz2J4-okzRivXOysTm0Bf5tLvJ4NaA/exec";
 
 function attachFormHandler() {
   const form = document.getElementById("estimate-form");

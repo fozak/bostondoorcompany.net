@@ -47,7 +47,7 @@ function attachFormHandler() {
     } finally {
       msg.style.display = "block";
       btn.disabled = false;
-      btn.textContent = "Request Free Consultation";
+      btn.textContent = "Request a Consultation";
     }
   });
 }

@@ -4,7 +4,7 @@
     "badge": "Chestnut Hill, MA — In Progress",
     "headline": "New Construction",
     "sub": "Foundation · Structural Steel · Framing",
-    "cta": "Get a Free Consultation",
+    "cta": "Get a Consultation",
     "ctaLink": "#contact",
     "chips": [
       { "icon": "fa-map-marker-alt", "label": "Chestnut Hill, MA" },
@@ -24,7 +24,7 @@
     "badge": "Boston, MA — Completed",
     "headline": "Roof Replacement",
     "sub": "Full Strip · New Shingles · Flashing",
-    "cta": "Get a Free Consultation",
+    "cta": "Get a Consultation",
     "ctaLink": "#contact",
     "chips": [
       { "icon": "fa-map-marker-alt", "label": "Boston, MA"        },

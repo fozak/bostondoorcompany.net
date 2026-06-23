@@ -1,4 +1,4 @@
-() Remove FREE
+() Remove a
 () Add customer section/page 
 () Change categories from 6 old to 7 new
 () Change hero slogan to provided 

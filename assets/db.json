@@ -325,70 +325,107 @@
 ],
 "customers": [
   {
-    "id": "homeowners",
-    "title": "Home Owners",
-    "image": "cs-990.d1.entry.after.5",
+    "id": "homeowners-private",
+    "title": "Homeowners & Private Residences",
+    "image": "71-marlborough.d1.entry.after.1",
     "benefits": [
       "Restore your front door to better-than-original condition",
       "Increase curb appeal and property value",
-      "Protect your investment with museum-quality finishes",
-      "Expert guidance on hardware, finish, and wood repair"
+      "White-glove service with attention to every detail",
+      "Custom finish matching and period-accurate restoration"
+    ]
+  },
+  {
+    "id": "hoa",
+    "title": "HOAs",
+    "image": "cs-990.d1.entry.after.5",
+    "benefits": [
+      "Uniform appearance across all building entries",
+      "Protect property values for the entire community",
+      "Scheduled maintenance programs for common areas",
+      "Documentation and reporting for board records"
     ]
   },
   {
     "id": "management-companies",
-    "title": "Management Companies",
+    "title": "Property Management Companies",
     "image": "cs-993.d1.entry.after.3",
     "benefits": [
-      "Single vendor for multi-property door maintenance",
-      "Scheduled service to minimize tenant disruption",
-      "Detailed documentation for property records",
-      "Priority scheduling for managed portfolios"
-    ]
-  },
-  {
-    "id": "residential-commercial",
-    "title": "Residential & Commercial",
-    "image": "cs-1000.d1.entry.after.3",
-    "benefits": [
-      "Full-scope restoration for any entry type or size",
-      "Code-compliant work for commercial properties",
-      "Experience with landmark and historic buildings",
-      "From single units to full building entries"
+      "Single trusted vendor across your entire portfolio",
+      "Flexible scheduling to minimize tenant disruption",
+      "Priority response for managed properties",
+      "Detailed records for every property and service visit"
     ]
   },
   {
     "id": "multi-unit-buildings",
-    "title": "Multi-Unit Buildings",
+    "title": "Multi-Unit Residential Buildings",
     "image": "cs-993.d1.entry.after.5",
     "benefits": [
       "Coordinated restoration across all building entries",
-      "Consistent finish and hardware across units",
-      "Phased scheduling to keep entries operational",
+      "Consistent finish and hardware standard throughout",
+      "Phased scheduling to keep all entries operational",
       "Volume pricing for larger building scopes"
     ]
   },
   {
-    "id": "private-residences",
-    "title": "Private Residences",
-    "image": "71-marlborough.d1.entry.after.1",
-    "benefits": [
-      "White-glove service for high-end properties",
-      "Discreet, professional crew with attention to detail",
-      "Custom finish matching and period-accurate restoration",
-      "Hardware sourcing and selection included"
-    ]
-  },
-  {
     "id": "businesses",
-    "title": "Business",
-    "image": "mit.d1.entry.after.1",
+    "title": "Small & Large Businesses",
+    "image": "cs-1000.d1.entry.after.3",
     "benefits": [
       "Make a strong first impression on every client",
       "Fast turnaround to minimize business disruption",
-      "Institutional and commercial entry experience",
+      "Experience with retail, office, and mixed-use entries",
       "Ongoing maintenance programs available"
     ]
+  },
+  {
+    "id": "universities-institutions",
+    "title": "Universities & Institutions",
+    "image": "mit.d1.entry.after.1",
+    "benefits": [
+      "Proven experience with landmark institutional buildings",
+      "Historic preservation standards and materials",
+      "Coordinated access around campus schedules",
+      "Large-scale project management from start to finish"
+    ]
+  },
+  {
+    "id": "commercial-retail",
+    "title": "Commercial & Retail",
+    "image": "cs-1000.d1.entry.after.5",
+    "benefits": [
+      "High-traffic entry restoration built to last",
+      "Code-compliant work for commercial properties",
+      "Minimal downtime with efficient project scheduling",
+      "Hardware upgrades and ADA-compliant solutions available"
+    ]
+  }
+],
+"our_customers": [
+  {
+    "id": "mit",
+    "name": "Massachusetts Institute of Technology",
+    "short": "MIT",
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/0/0c/MIT_logo.svg"
+  },
+  {
+    "id": "bu",
+    "name": "Boston University",
+    "short": "BU",
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/9/9c/Boston_University_wordmark.svg"
+  },
+  {
+    "id": "nu",
+    "name": "Northeastern University",
+    "short": "NU",
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/0/04/Northeastern_Wordmark.svg"
+  },
+  {
+    "id": "japanese-embassy",
+    "name": "Consulate General of Japan in Boston",
+    "short": "Japanese Embassy",
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/9/9e/Flag_of_Japan.svg"
   }
 ]
 }

@@ -321,7 +321,27 @@
       "mit.d1.damage.before.1",
       "mit.d1.damage.before.2"
     ]
-  }
+  },
+  {
+  "id": "locksmith",
+  "title": "Specialty Locksmith Services",
+  "icon": "fa-key",
+  "description": "High-security lock installation, historic hardware re-keying, mortise lock service, and cylinder replacement for period and institutional entry doors.",
+  "href": "/locksmith.html",
+  "image": "mit.d1.hardware.after.1",
+  "gallery": [
+    "mit.d1.hardware.before.1",
+    "mit.d1.hardware.before.2",
+    "mit.d1.hardware.before.3",
+    "mit.d1.hardware.after.1",
+    "mit.d1.hinge.after.1",
+    "mit.d1.hinge.after.2",
+    "mit.d1.hinge.after.3",
+    "mit.d1.entry.after.5",
+    "mit.d1.entry.after.6",
+    "mit.d1.entry.after.7"
+  ]
+}
 ],
 "customers": [
   {

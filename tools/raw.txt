@@ -1,0 +1,11 @@
+2026-06-26 17:53:15 URL:https://bostondoorcompany.net/ [2081/2081] -> "index.html.tmp.tmp" [1]
+2026-06-26 17:53:15 URL:https://bostondoorcompany.net/robots.txt [94/94] -> "robots.txt" [1]
+2026-06-26 17:53:15 URL:https://bostondoorcompany.net/css/site.css [12437/12437] -> "site.css.tmp.tmp" [1]
+2026-06-26 17:53:15 URL:https://bostondoorcompany.net/css/tabler-warm.css [24646/24646] -> "tabler-warm.css.tmp.tmp" [1]
+2026-06-26 17:53:15 URL: https://bostondoorcompany.net/js/components.js 200 OK
+unlink: No such file or directory
+Found no broken links.
+
+FINISHED --2026-06-26 17:53:15--
+Total wall clock time: 0.3s
+Downloaded: 4 files, 38K in 0.008s (4.63 MB/s)

@@ -27,6 +27,28 @@
 .scope-badge{display:inline-block;font-size:10px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;padding:2px 8px;border-radius:20px;margin-bottom:.5rem;}
 .scope-badge.exterior{background:#e8f4fd;color:#185FA5;}
 .scope-badge.interior{background:#faeeda;color:#854F0B;}
+
+/* modal toggle for more content */
+.modal-toggle { display: none; }
+.modal-more-content { display: none; }
+.modal-toggle:checked ~ .modal-more-content { display: block; }
+.modal-more-label {
+  display: block;
+  text-align: center;
+  padding: .75rem;
+  font-size: .8rem;
+  font-weight: 600;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  color: #185FA5;
+  cursor: pointer;
+  border-top: 1px solid #e5e5e5;
+}
+.modal-toggle:checked ~ .modal-more-label { display: none; }
+
+
+
+
 </style>
 
 <script>
@@ -130,41 +152,75 @@
       </tr>`).join('')
   }
 
-  function renderModal(project, door) {
-    const mid = modalId(project.id, door.id)
-    return `
-      <div id="${mid}" class="proj-modal">
-        <div class="modal-box">
+ function renderModal(project, door) {
+  const mid = modalId(project.id, door.id)
+  const tid = `more-${door.id}`
+  const firstPair = door.pairs[0]
+  const restPairs = door.pairs.slice(1)
 
-          <div class="modal-header">
-            <div>
-              <div style="font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:#999;">
-                ${project.subtitle || project.title}
-              </div>
-              <strong style="text-transform:uppercase;letter-spacing:.05em;font-size:.95rem;">
-                ${door.label}
-              </strong>
+  const firstPairHtml = `
+    <div class="pair-wrap">
+      <div class="pair-grid">
+        <div>
+          <div class="pair-label">${firstPair.label} &mdash; Before</div>
+          <img class="pair-img" src="${img(project.id, firstPair.before)}" alt="${firstPair.label} before" loading="lazy">
+        </div>
+        <div class="pair-divider"></div>
+        <div>
+          <div class="pair-label">${firstPair.label} &mdash; After</div>
+          <img class="pair-img" src="${img(project.id, firstPair.after)}" alt="${firstPair.label} after" loading="lazy">
+        </div>
+      </div>
+    </div>`
+
+  const restPairsHtml = restPairs.map(pair => `
+    <div class="pair-wrap">
+      <div class="pair-grid">
+        <div>
+          <div class="pair-label">${pair.label} &mdash; Before</div>
+          <img class="pair-img" src="${img(project.id, pair.before)}" alt="${pair.label} before" loading="lazy">
+        </div>
+        <div class="pair-divider"></div>
+        <div>
+          <div class="pair-label">${pair.label} &mdash; After</div>
+          <img class="pair-img" src="${img(project.id, pair.after)}" alt="${pair.label} after" loading="lazy">
+        </div>
+      </div>
+    </div>`).join('')
+
+  return `
+    <div id="${mid}" class="proj-modal">
+      <div class="modal-box">
+
+        <input type="checkbox" id="${tid}" class="modal-toggle">
+
+        <div class="modal-header">
+          <div>
+            <div style="font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:#999;">
+              ${project.subtitle || project.title}
             </div>
-            <a href="#" class="modal-close" aria-label="Close">&times;</a>
+            <strong style="text-transform:uppercase;letter-spacing:.05em;font-size:.95rem;">
+              ${door.label}
+            </strong>
           </div>
+          <a href="#" class="modal-close" aria-label="Close">&times;</a>
+        </div>
 
-          ${renderPairs(project, door)}
+        ${firstPairHtml}
+
+        <label for="${tid}" class="modal-more-label">More ▾</label>
+
+        <div class="modal-more-content">
+          ${restPairsHtml}
           ${renderAfterGallery(project, door)}
-
           <div class="p-4" style="border-top:1px solid #e5e5e5;">
             <div class="row g-5 align-items-start">
-
               <div class="col-lg-7">
-                <h2 class="display-6 text-uppercase mb-3">
-                  About This <span class="text-primary">Project</span>
-                </h2>
-                ${project.description.map(p =>
-                  `<p class="text-muted" style="font-size:1.05rem;">${p}</p>`
-                ).join('')}
+                <h2 class="display-6 text-uppercase mb-3">About This <span class="text-primary">Project</span></h2>
+                ${project.description.map(p => `<p class="text-muted" style="font-size:1.05rem;">${p}</p>`).join('')}
                 <h6 class="text-uppercase text-muted mb-3 mt-4">Work Completed</h6>
                 <ul class="list-unstyled mb-0">${renderWorkList(door)}</ul>
               </div>
-
               <div class="col-lg-5">
                 <div class="card">
                   <div class="card-body p-4">
@@ -173,9 +229,7 @@
                       <tbody>${renderMeta(project)}</tbody>
                     </table>
                     <hr>
-                    <p class="text-muted small mb-3">
-                      Have historic doors worth saving? a on-site assessment, no obligation.
-                    </p>
+                    <p class="text-muted small mb-3">Have historic doors worth saving? a on-site assessment, no obligation.</p>
                     <a href="tel:6175396365" class="btn btn-primary w-100 mb-2"
                       onclick="gtag('event','phone_click',{location:'project_modal'})">
                       <i class="fa fa-phone me-2"></i>(617) 539-6365
@@ -187,14 +241,13 @@
                   </div>
                 </div>
               </div>
-
             </div>
           </div>
-
         </div>
-      </div>`
-  }
 
+      </div>
+    </div>`
+}
   // boot
   fetch('/assets/db.json')
     .then(r => {

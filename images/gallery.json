@@ -4,7 +4,6 @@
   { "name": "door-repair-03.jpg" },
   { "name": "door-repair-04.jpg" },
   { "name": "door-repair-05.jpg" },
-  { "name": "door-repair-06.jpg" },
   { "name": "door-installation-01.jpg" },
   { "name": "door-installation-02.jpg" },
   { "name": "door-installation-03.jpg" },
@@ -31,17 +30,7 @@
   { "name": "door-weatherproofing-06.jpg" },
   { "name": "finish-carpentry-01.jpg" },
   { "name": "finish-carpentry-02.jpg" },
-  { "name": "finish-carpentry-03.jpg" },
-  { "name": "finish-carpentry-04.jpg" },
-  { "name": "finish-carpentry-05.jpg" },
-  { "name": "finish-carpentry-06.jpg" },
   { "name": "custom-doors-01.jpg" },
   { "name": "custom-doors-02.jpg" },
-  { "name": "custom-doors-03.jpg" },
-  { "name": "custom-doors-04.jpg" },
-  { "name": "custom-doors-05.jpg" },
-  { "name": "custom-doors-06.jpg" },
-  { "name": "custom-doors-07.jpg" },
-  { "name": "custom-doors-08.jpg" },
-  { "name": "custom-doors-09.jpg" }
+  { "name": "custom-doors-03.jpg" }
 ]

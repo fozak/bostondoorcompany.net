@@ -1,156 +1,147 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
 
   <!-- Homepage -->
   <url>
-    <loc>https://bostonelitecontractors.com/</loc>
-    <lastmod>2026-04-08</lastmod>
+    <loc>https://www.bostondoorcompany.net/</loc>
+    <lastmod>2026-07-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
 
-  <!-- Service pages -->
+  <!-- Main pages -->
   <url>
-    <loc>https://bostonelitecontractors.com/home-remodeling.html</loc>
-    <lastmod>2026-04-08</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-
-  <url>
-    <loc>https://bostonelitecontractors.com/room-additions.html</loc>
-    <lastmod>2026-04-08</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-
-  <url>
-    <loc>https://bostonelitecontractors.com/roofing-siding.html</loc>
-    <lastmod>2026-04-08</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-
-  <url>
-    <loc>https://bostonelitecontractors.com/interior-repairs</loc>
-    <lastmod>2026-04-08</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-
-  <url>
-    <loc>https://bostonelitecontractors.com/landscaping-tree-services.html</loc>
-    <lastmod>2026-04-08</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-
-  <url>
-    <loc>https://bostonelitecontractors.com/solar-energy</loc>
-    <lastmod>2026-04-08</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-
-  <url>
-    <loc>https://bostonelitecontractors.com/consulting-project-management</loc>
-    <lastmod>2026-04-08</lastmod>
+    <loc>https://www.bostondoorcompany.net/about.html</loc>
+    <lastmod>2026-07-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
-  <!-- Gallery -->
   <url>
-    <loc>https://bostonelitecontractors.com/gallery.html</loc>
-    <lastmod>2026-04-08</lastmod>
+    <loc>https://www.bostondoorcompany.net/contact.html</loc>
+    <lastmod>2026-07-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Service pages -->
+  <url>
+    <loc>https://www.bostondoorcompany.net/services.html</loc>
+    <lastmod>2026-07-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.bostondoorcompany.net/door-repair.html</loc>
+    <lastmod>2026-07-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.bostondoorcompany.net/door-restoration.html</loc>
+    <lastmod>2026-07-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.bostondoorcompany.net/consulting.html</loc>
+    <lastmod>2026-07-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.bostondoorcompany.net/locksmith.html</loc>
+    <lastmod>2026-07-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Projects -->
+  <url>
+    <loc>https://www.bostondoorcompany.net/restorationprojects.html</loc>
+    <lastmod>2026-07-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.bostondoorcompany.net/gallery.html</loc>
+    <lastmod>2026-07-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://www.bostondoorcompany.net/reviews.html</loc>
+    <lastmod>2026-07-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <!-- Project pages -->
   <url>
-    <loc>https://bostonelitecontractors.com/projects-natick-kitchen-bathroom.html</loc>
-    <lastmod>2026-04-08</lastmod>
+    <loc>https://www.bostondoorcompany.net/restorationprojects.html#990-centre-jamaica-plain</loc>
+    <lastmod>2026-07-01</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://www.bostondoorcompany.net/assets/cs-990.d1.entry.after.1.jpg</image:loc>
+      <image:title>Historic Door Restoration — 990 Centre St Jamaica Plain</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.bostondoorcompany.net/assets/cs-990.d1.entry.after.2.jpg</image:loc>
+      <image:title>Historic Door Restoration — 990 Centre St Jamaica Plain</image:title>
+    </image:image>
   </url>
 
-  <!-- Location landing pages -->
   <url>
-    <loc>https://bostonelitecontractors.com/home-remodeling-room-addition-highland-ma.html</loc>
-    <lastmod>2026-05-05</lastmod>
+    <loc>https://www.bostondoorcompany.net/restorationprojects.html#mit-cambridge</loc>
+    <lastmod>2026-07-01</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://www.bostondoorcompany.net/assets/mit.d1.entry.after.1.jpg</image:loc>
+      <image:title>Historic Door Restoration — MIT Campus Cambridge</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.bostondoorcompany.net/assets/mit.d1.entry.after.4.jpg</image:loc>
+      <image:title>Historic Door Restoration — MIT Campus Cambridge</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://www.bostondoorcompany.net/restorationprojects.html#71-marlborough-boston</loc>
+    <lastmod>2026-07-01</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://www.bostondoorcompany.net/assets/71-marlborough.d1.entry.after.1.jpg</image:loc>
+      <image:title>Historic Door Restoration — 71 Marlborough St Back Bay Boston</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.bostondoorcompany.net/assets/71-marlborough.d1.entry.before.1.jpg</image:loc>
+      <image:title>Historic Door Before Restoration — 71 Marlborough St Back Bay Boston</image:title>
+    </image:image>
+  </url>
+
+  <!-- Location pages -->
+  <url>
+    <loc>https://www.bostondoorcompany.net/door-repair-somerville.html</loc>
+    <lastmod>2026-07-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
-    <loc>https://bostonelitecontractors.com/home-remodeling-kitchen-remodel-dorchester-ma.html</loc>
-    <lastmod>2026-05-05</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <url>
-    <loc>https://bostonelitecontractors.com/home-remodeling-home-renovation-dorchester-ma.html</loc>
-    <lastmod>2026-05-05</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <url>
-    <loc>https://bostonelitecontractors.com/home-remodeling-home-renovation-danvers-ma.html</loc>
-    <lastmod>2026-05-05</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <url>
-    <loc>https://bostonelitecontractors.com/home-remodeling-home-renovation-cambridge-ma.html</loc>
-    <lastmod>2026-05-05</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <url>
-    <loc>https://bostonelitecontractors.com/home-remodeling-bathroom-remodel-watertown-ma.html</loc>
-    <lastmod>2026-05-05</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <url>
-    <loc>https://bostonelitecontractors.com/home-remodeling-home-renovation-boston-ma.html</loc>
-    <lastmod>2026-05-05</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <url>
-    <loc>https://bostonelitecontractors.com/home-remodeling-bathroom-remodel-needham-ma.html</loc>
-    <lastmod>2026-05-05</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <url>
-    <loc>https://bostonelitecontractors.com/home-remodeling-bathroom-remodel-ashland-ma.html</loc>
-    <lastmod>2026-05-05</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <url>
-    <loc>https://bostonelitecontractors.com/home-remodeling-adu-construction-malden-ma.html</loc>
-    <lastmod>2026-05-05</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <url>
-    <loc>https://bostonelitecontractors.com/adu-construction-malden-ma.html</loc>
-    <lastmod>2026-05-05</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <loc>https://www.bostondoorcompany.net/project-door-repair-cambridge.html</loc>
+    <lastmod>2026-07-01</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
   </url>
 
 </urlset>

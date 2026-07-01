@@ -21,10 +21,7 @@ const CAT_ICONS = {
   'custom-doors':         'fa-star',
 };
 
-const FILE_RE = /^([\w-]+?)-(\d+)(?:-(.+))?\.(jpg|jpeg|png|gif|webp)$/i;
-
 function categoryFromName(filename) {
-  // try longest known category match first
   for (const cat of Object.keys(CAT_LABELS)) {
     if (filename.startsWith(cat + '-')) return cat;
   }
@@ -33,7 +30,7 @@ function categoryFromName(filename) {
 
 function titleFromName(filename, cat) {
   if (!cat) return filename;
-  const rest = filename.slice(cat.length + 1); // strip "door-repair-"
+  const rest = filename.slice(cat.length + 1);
   const m = rest.match(/^(\d+)(?:-(.+))?\.\w+$/i);
   if (!m) return labelFor(cat);
   if (!m[2]) return labelFor(cat) + ' ' + m[1];
@@ -50,9 +47,6 @@ function iconFor(cat) {
   return CAT_ICONS[cat] || 'fa-image';
 }
 
-const CACHE_KEY = 'bec_gallery_v1';
-const CACHE_TTL = 60 * 60 * 1000;
-
 function skeletonHTML(n) {
   return Array.from({length: n}, () =>
     '<div class="gallery-item" style="background:#e8eaed;min-height:220px;animation:pulse 1.5s ease-in-out infinite;"></div>'
@@ -64,7 +58,7 @@ styleEl.textContent = '@keyframes pulse { 0%,100%{opacity:1} 50%{opacity:.4} }';
 document.head.appendChild(styleEl);
 
 async function loadGallery() {
-  const grid  = document.getElementById('galleryGrid');
+  const grid   = document.getElementById('galleryGrid');
   const tabsEl = document.querySelector('.filter-tabs');
   if (!grid) return;
 
@@ -73,29 +67,16 @@ async function loadGallery() {
   let files;
 
   try {
-    const cached = sessionStorage.getItem(CACHE_KEY);
-    if (cached) {
-      const { data, ts } = JSON.parse(cached);
-      if (Date.now() - ts < CACHE_TTL) files = data;
-    }
-  } catch (_) {}
-
-  if (!files) {
-    try {
-      const res = await fetch(GITHUB_API);
-      if (!res.ok) throw new Error('gallery.json ' + res.status);
-      files = await res.json();
-      try { sessionStorage.setItem(CACHE_KEY, JSON.stringify({ data: files, ts: Date.now() })); } catch (_) {}
-    } catch (e) {
-      grid.innerHTML = '<div class="text-danger p-4">Failed to load gallery: ' + e.message + '</div>';
-      return;
-    }
+    const res = await fetch(GITHUB_API);
+    if (!res.ok) throw new Error('gallery.json ' + res.status);
+    files = await res.json();
+  } catch (e) {
+    grid.innerHTML = '<div class="text-danger p-4">Failed to load gallery: ' + e.message + '</div>';
+    return;
   }
 
-  // filter to only files with a known category
   files = files.filter(f => categoryFromName(f.name) !== null);
 
-  // sort by category order then number
   const catOrder = Object.keys(CAT_LABELS);
   files.sort((a, b) => {
     const ca = categoryFromName(a.name);
@@ -108,7 +89,6 @@ async function loadGallery() {
     return na - nb;
   });
 
-  // build category tabs
   const catsInFiles = [...new Set(files.map(f => categoryFromName(f.name)))];
 
   if (tabsEl) {
@@ -121,7 +101,6 @@ async function loadGallery() {
       ).join('');
   }
 
-  // render items
   grid.innerHTML = files.map(f => {
     const cat   = categoryFromName(f.name);
     const title = titleFromName(f.name, cat);
@@ -129,7 +108,8 @@ async function loadGallery() {
     const src   = RAW_BASE + encodeURIComponent(f.name);
     return `
       <div class="gallery-item" data-category="${cat}">
-        <img src="${src}" alt="${title} — Boston" loading="lazy">
+        <img src="${src}" alt="${title} — Boston" loading="lazy"
+          onerror="this.closest('.gallery-item').remove()">
         <div class="gallery-overlay">
           <div class="zoom-icon"><i class="fa fa-expand"></i></div>
           <div class="cat-badge">${label}</div>

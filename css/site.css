@@ -142,3 +142,11 @@ p                  { font-size: 1rem; }
 .text-muted.small,
 p.text-muted.small,
 small              { font-size: 0.9rem !important; }
+
+.site-nav .navbar-brand-image, .site-nav .navbar-brand img {
+  height: var(--site-navbar-height);
+  width: auto;
+}
+img {
+  max-width: 100%;
+}

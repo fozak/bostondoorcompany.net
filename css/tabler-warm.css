@@ -200,7 +200,7 @@ nav .btn-primary {
   font-size: .8rem;
 }
 
-.site-nav {
+/*.site-nav {
   --site-navbar-height: 112px;
   min-height: var(--site-navbar-height);
 }
@@ -209,6 +209,19 @@ nav .btn-primary {
 .site-nav .navbar-brand img {
   height: var(--site-navbar-height);
   width: auto;
+}*/
+.site-nav {
+  --site-navbar-height: 112px;
+  min-height: var(--site-navbar-height);
+}
+
+.site-nav .navbar-brand-image,
+.site-nav .navbar-brand img {
+  height: auto;
+  max-height: 48px;
+  width: auto;
+  max-width: 220px;
+  object-fit: contain;
 }
 
 /* ── FIX: .nav-quote custom class → gold ── */

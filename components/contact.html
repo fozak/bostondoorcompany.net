@@ -16,10 +16,10 @@
                 <div class="row g-3">
 
                   <div class="col-sm-6">
-                    <input type="text" name="name" class="form-control form-control-lg" placeholder="Your Name">
+                    <input type="text" name="name" class="form-control form-control-lg" placeholder="Name">
                   </div>
                   <div class="col-sm-6">
-                    <input type="email" name="email" class="form-control form-control-lg" placeholder="Your Email">
+                    <input type="email" name="email" class="form-control form-control-lg" placeholder="Email">
                   </div>
                   <div class="col-sm-6">
                     <input type="tel" name="phone" class="form-control form-control-lg" placeholder="Phone Number">
@@ -58,13 +58,33 @@
                     </select>
                   </div>
 
+                  <div class="col-sm-6">
+                    <select name="building_type" class="form-select form-select-lg">
+                      <option value="">Building Type</option>
+                      <option>Residential</option>
+                      <option>Commercial Storefront</option>
+                      <option>Commercial Office</option>
+                      <option>Industrial</option>
+                      <option>Other</option>
+                    </select>
+                  </div>
+
                   <div class="col-12">
                     <textarea name="message" class="form-control" rows="4" placeholder="Describe your door project..."></textarea>
                   </div>
+
+                  <div class="col-12">
+                    <label class="form-label text-muted small mb-1">
+                      <i class="fa fa-camera text-primary me-1"></i>Photo of your door (optional)
+                    </label>
+                    <input type="file" name="photo" id="photo-input" class="form-control form-control-lg" accept="image/*">
+                  </div>
+
                   <div class="col-12">
                     <button type="submit" id="submit-btn" class="btn btn-primary w-100 py-3">Request a Consultation</button>
                   </div>
                   <div class="alert alert-success" id="form-msg" style="display:none;">Thank you! We'll be in touch shortly.</div>
+
                 </div>
               </form>
             </div>

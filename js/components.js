@@ -1,10 +1,12 @@
 // components.js - Dynamically load HTML components into elements with id="cmp-<name>"
 
-const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbx4_3t24ZxFop0H_G8pUsQt7LCqXoNFmxRSEWz2J4-okzRivXOysTm0Bf5tLvJ4NaA/exec";
+const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyBaHXP4caZPnjONHy2yrDjnsUgLqK4IXr_34xQj1DcZAjLj4_W0BLYRxnLbS8nkKE/exec";
 
 function attachFormHandler() {
   const form = document.getElementById("estimate-form");
   if (!form) return;
+  if (form.dataset.handlerAttached) return; // guard
+  form.dataset.handlerAttached = "true";
   console.log("[form] handler attached");
 
   form.addEventListener("submit", async function(e) {
@@ -18,16 +20,35 @@ function attachFormHandler() {
     btn.textContent = "Sending…";
     msg.style.display = "none";
 
+    // convert photo to base64 if provided
+    let photoBase64 = "";
+    let photoName   = "";
+    const photoFile = fd.get("photo");
+    if (photoFile && photoFile.size > 0) {
+      photoBase64 = await new Promise((resolve, reject) => {
+        const reader = new FileReader();
+        reader.onload  = () => resolve(reader.result);
+        reader.onerror = reject;
+        reader.readAsDataURL(photoFile);
+      });
+      photoName = photoFile.name;
+    }
+
     try {
       const res = await fetch(SCRIPT_URL, {
         method: "POST",
         headers: { "Content-Type": "text/plain" },
         body: JSON.stringify({
-          name:    fd.get("name"),
-          email:   fd.get("email"),
-          phone:   fd.get("phone"),
-          service: fd.get("service"),
-          message: fd.get("message"),
+          name:          fd.get("name"),
+          email:         fd.get("email"),
+          phone:         fd.get("phone"),
+          customer_type: fd.get("customer_type"),
+          company:       fd.get("company"),
+          service:       fd.get("service"),
+          building_type: fd.get("building_type"),
+          message:       fd.get("message"),
+          photo:         photoBase64,
+          photo_name:    photoName,
         }),
       });
 
@@ -68,9 +89,7 @@ async function loadComponent(el) {
     if (!res.ok) throw new Error(`Failed to load ${name}.html`);
     el.innerHTML = await res.text();
     execScripts(el);
-    //if (name === 'form') attachFormHandler();
-     attachFormHandler();  //added
-
+    attachFormHandler();
   } catch (e) {
     console.warn('[components]', e.message);
   }

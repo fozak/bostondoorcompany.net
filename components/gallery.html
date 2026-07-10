@@ -1,251 +1,273 @@
-<section>
+<section id="gallery" class="section-bg py-6">
   <div class="container-xl">
-
-    <!-- Filter Tabs -->
-    <div class="filter-tabs">
-      <button class="filter-btn active" data-filter="all">All Projects</button>
-      <button class="filter-btn" data-filter="home-remodeling"><i class="fa fa-home me-1"></i> Home Remodeling</button>
-      <button class="filter-btn" data-filter="roofing-siding"><i class="fa fa-hard-hat me-1"></i> Roofing & Siding</button>
-      <button class="filter-btn" data-filter="interior-repairs"><i class="fa fa-paint-roller me-1"></i> Interior Repairs</button>
-      <button class="filter-btn" data-filter="landscaping-tree-services"><i class="fa fa-tree me-1"></i> Landscaping & Tree</button>
-      <button class="filter-btn" data-filter="solar-energy"><i class="fa fa-solar-panel me-1"></i> Solar Energy</button>
+    <div class="text-center mb-5">
+      <h1 class="display-5 text-uppercase">Our <span class="text-primary">Work</span></h1>
+      <p class="text-muted">Browse by category or view all projects.</p>
     </div>
 
-    <!-- Masonry Grid -->
-    <div class="gallery-grid" id="galleryGrid">
+    <div class="filter-tabs d-flex flex-wrap justify-content-center gap-2 mb-4"></div>
 
-      <div class="gallery-item" data-category="home-remodeling">
-        <img src="/images/home-remodeling-01-living-room.jpg" alt="Living Room Remodel — Boston">
-        <div class="gallery-overlay">
-          <div class="zoom-icon"><i class="fa fa-expand"></i></div>
-          <div class="cat-badge">Home Remodeling</div>
-          <p class="img-title">Living Room Renovation</p>
-        </div>
-      </div>
-
-      <div class="gallery-item" data-category="home-remodeling">
-        <img src="/images/home-remodeling-02-kitchen-white.jpg" alt="White Kitchen Remodel — Boston">
-        <div class="gallery-overlay">
-          <div class="zoom-icon"><i class="fa fa-expand"></i></div>
-          <div class="cat-badge">Home Remodeling</div>
-          <p class="img-title">Modern White Kitchen</p>
-        </div>
-      </div>
-
-      <div class="gallery-item" data-category="roofing-siding">
-        <img src="/images/roofing-siding-01-aerial-exterior.jpg" alt="Aerial Exterior View — Boston">
-        <div class="gallery-overlay">
-          <div class="zoom-icon"><i class="fa fa-expand"></i></div>
-          <div class="cat-badge">Roofing & Siding</div>
-          <p class="img-title">Aerial Exterior View</p>
-        </div>
-      </div>
-
-      <div class="gallery-item" data-category="home-remodeling">
-        <img src="/images/home-remodeling-06-bathroom-ceiling.jpg" alt="Bathroom Renovation — Boston">
-        <div class="gallery-overlay">
-          <div class="zoom-icon"><i class="fa fa-expand"></i></div>
-          <div class="cat-badge">Home Remodeling</div>
-          <p class="img-title">Bathroom Ceiling & Fixtures</p>
-        </div>
-      </div>
-
-      <div class="gallery-item" data-category="landscaping-tree-services">
-        <img src="/images/landscaping-tree-services-01-excavation.jpg" alt="Site Excavation — Boston">
-        <div class="gallery-overlay">
-          <div class="zoom-icon"><i class="fa fa-expand"></i></div>
-          <div class="cat-badge">Landscaping & Tree Services</div>
-          <p class="img-title">Site Excavation & Prep</p>
-        </div>
-      </div>
-
-      <div class="gallery-item" data-category="home-remodeling">
-        <img src="/images/home-remodeling-03-kitchen-appliances.png" alt="Kitchen Appliances Install — Boston">
-        <div class="gallery-overlay">
-          <div class="zoom-icon"><i class="fa fa-expand"></i></div>
-          <div class="cat-badge">Home Remodeling</div>
-          <p class="img-title">Kitchen Appliance Installation</p>
-        </div>
-      </div>
-
-      <div class="gallery-item" data-category="roofing-siding">
-        <img src="/images/roofing-siding-02-roof-stripped.jpg" alt="Roof Replacement — Boston">
-        <div class="gallery-overlay">
-          <div class="zoom-icon"><i class="fa fa-expand"></i></div>
-          <div class="cat-badge">Roofing & Siding</div>
-          <p class="img-title">Roof Replacement in Progress</p>
-        </div>
-      </div>
-
-      <div class="gallery-item" data-category="home-remodeling">
-        <img src="/images/home-remodeling-07-bathroom-vanity.png" alt="Bathroom Vanity — Boston">
-        <div class="gallery-overlay">
-          <div class="zoom-icon"><i class="fa fa-expand"></i></div>
-          <div class="cat-badge">Home Remodeling</div>
-          <p class="img-title">Bathroom Vanity Install</p>
-        </div>
-      </div>
-
-      <div class="gallery-item" data-category="landscaping-tree-services">
-        <img src="/images/landscaping-tree-services-06-deck-pergola.jpg" alt="Deck & Pergola — Boston">
-        <div class="gallery-overlay">
-          <div class="zoom-icon"><i class="fa fa-expand"></i></div>
-          <div class="cat-badge">Landscaping & Tree Services</div>
-          <p class="img-title">Deck & Pergola Build</p>
-        </div>
-      </div>
-
-      <div class="gallery-item" data-category="home-remodeling">
-        <img src="/images/home-remodeling-04-room-addition-framing.jpg" alt="Room Addition — Boston">
-        <div class="gallery-overlay">
-          <div class="zoom-icon"><i class="fa fa-expand"></i></div>
-          <div class="cat-badge">Home Remodeling</div>
-          <p class="img-title">Room Addition Framing</p>
-        </div>
-      </div>
-
-      <div class="gallery-item" data-category="solar-energy">
-        <img src="/images/solar-energy-01-panel-installation.jpg" alt="Solar Panel Installation — Boston">
-        <div class="gallery-overlay">
-          <div class="zoom-icon"><i class="fa fa-expand"></i></div>
-          <div class="cat-badge">Solar Energy</div>
-          <p class="img-title">Solar Panel Installation</p>
-        </div>
-      </div>
-
-      <div class="gallery-item" data-category="interior-repairs">
-        <img src="/images/interior-repairs-02-hallway-kitchen.jpg" alt="Interior Repairs — Boston">
-        <div class="gallery-overlay">
-          <div class="zoom-icon"><i class="fa fa-expand"></i></div>
-          <div class="cat-badge">Interior Repairs</div>
-          <p class="img-title">Hallway & Kitchen Refresh</p>
-        </div>
-      </div>
-
-      <div class="gallery-item" data-category="roofing-siding">
-        <img src="/images/roofing-siding-03-roof-close.jpg" alt="Roof Close-up — Boston">
-        <div class="gallery-overlay">
-          <div class="zoom-icon"><i class="fa fa-expand"></i></div>
-          <div class="cat-badge">Roofing & Siding</div>
-          <p class="img-title">Shingle Detail & Quality Check</p>
-        </div>
-      </div>
-
-      <div class="gallery-item" data-category="landscaping-tree-services">
-        <img src="/images/landscaping-tree-services-02-tree-removal.jpg" alt="Tree Removal — Boston">
-        <div class="gallery-overlay">
-          <div class="zoom-icon"><i class="fa fa-expand"></i></div>
-          <div class="cat-badge">Landscaping & Tree Services</div>
-          <p class="img-title">Professional Tree Removal</p>
-        </div>
-      </div>
-
-      <div class="gallery-item" data-category="home-remodeling">
-        <img src="/images/home-remodeling-08-bathroom-tile.jpg" alt="Bathroom Tile — Boston">
-        <div class="gallery-overlay">
-          <div class="zoom-icon"><i class="fa fa-expand"></i></div>
-          <div class="cat-badge">Home Remodeling</div>
-          <p class="img-title">Custom Bathroom Tile Work</p>
-        </div>
-      </div>
-
-      <div class="gallery-item" data-category="landscaping-tree-services">
-        <img src="/images/landscaping-tree-services-04-exterior-house.jpg" alt="Exterior House — Boston">
-        <div class="gallery-overlay">
-          <div class="zoom-icon"><i class="fa fa-expand"></i></div>
-          <div class="cat-badge">Landscaping & Tree Services</div>
-          <p class="img-title">Exterior House & Grounds</p>
-        </div>
-      </div>
-
-      <div class="gallery-item" data-category="interior-repairs">
-        <img src="/images/interior-repairs-04-door-installation.jpg" alt="Door Installation — Boston">
-        <div class="gallery-overlay">
-          <div class="zoom-icon"><i class="fa fa-expand"></i></div>
-          <div class="cat-badge">Interior Repairs</div>
-          <p class="img-title">Premium Door Installation</p>
-        </div>
-      </div>
-
-      <div class="gallery-item" data-category="landscaping-tree-services">
-        <img src="/images/landscaping-tree-services-05-aerial-drone.jpg" alt="Aerial Drone Shot — Boston">
-        <div class="gallery-overlay">
-          <div class="zoom-icon"><i class="fa fa-expand"></i></div>
-          <div class="cat-badge">Landscaping & Tree Services</div>
-          <p class="img-title">Aerial Project Overview</p>
-        </div>
-      </div>
-
-      <div class="gallery-item" data-category="home-remodeling">
-        <img src="/images/home-remodeling-09-bathroom-mirror.jpg" alt="Bathroom Mirror — Boston">
-        <div class="gallery-overlay">
-          <div class="zoom-icon"><i class="fa fa-expand"></i></div>
-          <div class="cat-badge">Home Remodeling</div>
-          <p class="img-title">Bathroom Mirror & Lighting</p>
-        </div>
-      </div>
-
-      <div class="gallery-item" data-category="roofing-siding">
-        <img src="/images/roofing-siding-04-blue-tarp.jpg" alt="Emergency Roof Repair — Boston">
-        <div class="gallery-overlay">
-          <div class="zoom-icon"><i class="fa fa-expand"></i></div>
-          <div class="cat-badge">Roofing & Siding</div>
-          <p class="img-title">Emergency Roof Protection</p>
-        </div>
-      </div>
-
-      <div class="gallery-item" data-category="home-remodeling">
-        <img src="/images/home-remodeling-10-bathroom-marble.jpg" alt="Marble Bathroom — Boston">
-        <div class="gallery-overlay">
-          <div class="zoom-icon"><i class="fa fa-expand"></i></div>
-          <div class="cat-badge">Home Remodeling</div>
-          <p class="img-title">Luxury Marble Bathroom</p>
-        </div>
-      </div>
-
-      <div class="gallery-item" data-category="landscaping-tree-services">
-        <img src="/images/landscaping-tree-services-03-logs-cut.jpg" alt="Tree Logs Cut — Boston">
-        <div class="gallery-overlay">
-          <div class="zoom-icon"><i class="fa fa-expand"></i></div>
-          <div class="cat-badge">Landscaping & Tree Services</div>
-          <p class="img-title">Tree Removal & Log Clearing</p>
-        </div>
-      </div>
-
-      <div class="gallery-item" data-category="home-remodeling">
-        <img src="/images/home-remodeling-05-basement-flooring.jpg" alt="Basement Flooring — Boston">
-        <div class="gallery-overlay">
-          <div class="zoom-icon"><i class="fa fa-expand"></i></div>
-          <div class="cat-badge">Home Remodeling</div>
-          <p class="img-title">Basement Flooring Finish</p>
-        </div>
-      </div>
-
-      <div class="gallery-item" data-category="interior-repairs">
-        <img src="/images/interior-repairs-03-exterior-wall-repair.jpg" alt="Wall Repair — Boston">
-        <div class="gallery-overlay">
-          <div class="zoom-icon"><i class="fa fa-expand"></i></div>
-          <div class="cat-badge">Interior Repairs</div>
-          <p class="img-title">Exterior Wall Repair & Finish</p>
-        </div>
-      </div>
-
-      <div class="gallery-item" data-category="interior-repairs">
-        <img src="/images/interior-repairs-01-green-wall.jpg" alt="Green Wall Feature — Boston">
-        <div class="gallery-overlay">
-          <div class="zoom-icon"><i class="fa fa-expand"></i></div>
-          <div class="cat-badge">Interior Repairs</div>
-          <p class="img-title">Feature Wall Installation</p>
-        </div>
-      </div>
-
-    </div><!-- /gallery-grid -->
-
-    <div class="text-center mt-5">
-      <a href="/gallery.html" class="btn btn-primary btn-lg px-5">
-        View Full Gallery <i class="fa fa-arrow-right ms-2"></i>
-      </a>
-    </div>
-
+    <div id="galleryGrid" class="row g-4"></div>
   </div>
 </section>
+
+<!-- Gallery lightbox -->
+<div id="lightbox" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,.88);z-index:9999;
+     align-items:center;justify-content:center;flex-direction:column;">
+  <button id="lbClose"
+    style="position:absolute;top:1rem;right:1.25rem;background:none;border:none;
+           color:#fff;font-size:2.5rem;cursor:pointer;line-height:1;">&times;</button>
+  <button id="lbPrev" aria-label="Previous"
+    style="position:absolute;top:50%;left:1.25rem;transform:translateY(-50%);
+           width:44px;height:44px;border-radius:50%;border:none;background:#fff;
+           box-shadow:0 2px 8px rgba(0,0,0,.2);cursor:pointer;font-size:1.4rem;">&#8249;</button>
+  <button id="lbNext" aria-label="Next"
+    style="position:absolute;top:50%;right:1.25rem;transform:translateY(-50%);
+           width:44px;height:44px;border-radius:50%;border:none;background:#fff;
+           box-shadow:0 2px 8px rgba(0,0,0,.2);cursor:pointer;font-size:1.4rem;">&#8250;</button>
+  <div style="text-align:center;padding:1rem;">
+    <img id="lbImg" src="" alt=""
+      style="max-height:80vh;max-width:90vw;border-radius:6px;object-fit:contain;">
+    <p id="lbCaption" style="color:#fff;margin-top:.75rem;font-size:.9rem;"></p>
+  </div>
+</div>
+
+<style>
+.gallery-item {
+  cursor: pointer;
+  border-radius: 8px;
+  overflow: hidden;
+  position: relative;
+  flex: 0 0 calc(33.333% - 1rem);
+}
+.gallery-item img {
+  width: 100%;
+  aspect-ratio: 3/4;
+  object-fit: cover;
+  display: block;
+  transition: opacity .2s;
+}
+.gallery-item:hover img { opacity: .88; }
+.gallery-item.hidden { display: none; }
+.gallery-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: .75rem;
+  background: linear-gradient(to top, rgba(0,0,0,.6), transparent 60%);
+  pointer-events: none;
+}
+.zoom-icon {
+  position: absolute;
+  top: .75rem;
+  right: .75rem;
+  background: rgba(0,0,0,.45);
+  color: #fff;
+  width: 32px; height: 32px;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+}
+.cat-badge {
+  align-self: flex-start;
+  background: rgba(0,0,0,.45);
+  color: #fff;
+  font-size: .65rem;
+  padding: .2rem .55rem;
+  border-radius: 20px;
+  letter-spacing: .05em;
+  margin-bottom: .35rem;
+}
+.img-title { color: #fff; font-size: .85rem; margin: 0; }
+.filter-btn {
+  border: 1px solid #ddd;
+  background: #fff;
+  border-radius: 20px;
+  padding: .4rem 1rem;
+  font-size: .85rem;
+  cursor: pointer;
+  transition: background .2s, color .2s;
+}
+.filter-btn.active, .filter-btn:hover { background: #4a2e1a; color: #fff; border-color: #4a2e1a; }
+#lightbox.open { display: flex !important; }
+@keyframes pulse { 0%,100%{opacity:1} 50%{opacity:.4} }
+</style>
+
+<script>
+(function () {
+  const ASSETS_BASE = '/assets/';
+
+  const CAT_LABELS = {
+    'full-finish-restoration': 'Full Finish Restoration',
+    'finish-work':             'Finish Work',
+    'finish-maintenance':      'Finish Maintenance',
+  };
+
+  const CAT_ICONS = {
+    'full-finish-restoration': 'fa-paint-brush',
+    'finish-work':             'fa-ruler-combined',
+    'finish-maintenance':      'fa-broom',
+  };
+
+  const DEFAULT_CAT = 'full-finish-restoration';
+
+  // Files with no tag in name AND no useful photo content — always excluded.
+  const EXCLUDE_FILES = new Set(['consulting-01.jpg']);
+
+  function categoryFromName(filename, tags) {
+    if (EXCLUDE_FILES.has(filename)) return null;
+    if (/\bbefore\b/i.test(filename)) return null; // skip before-shots in gallery
+
+    for (const tag of tags) {
+      if (tag === DEFAULT_CAT) continue;
+      if (filename.includes(tag)) return tag;
+    }
+    return DEFAULT_CAT;
+  }
+
+  function titleFromName(filename) {
+    const base = filename.replace(/\.\w+$/, '');
+    return base
+      .split(/[.\-]/)
+      .filter(w => w && !/^\d+$/.test(w) && !/^(after|before)$/i.test(w))
+      .map(w => w.charAt(0).toUpperCase() + w.slice(1))
+      .join(' ') || 'Project';
+  }
+
+  function labelFor(cat) { return CAT_LABELS[cat] || cat; }
+  function iconFor(cat)  { return CAT_ICONS[cat] || 'fa-image'; }
+
+  function skeletonHTML(n) {
+    return Array.from({length: n}, () =>
+      '<div class="gallery-item" style="background:#e8eaed;min-height:220px;animation:pulse 1.5s ease-in-out infinite;"></div>'
+    ).join('');
+  }
+
+  async function loadGallery() {
+    const grid   = document.getElementById('galleryGrid');
+    const tabsEl = document.querySelector('.filter-tabs');
+    if (!grid) return;
+
+    grid.innerHTML = skeletonHTML(9);
+
+    let data;
+    try {
+      const res = await fetch(ASSETS_BASE + 'db.json');
+      if (!res.ok) throw new Error('db.json ' + res.status);
+      data = await res.json();
+    } catch (e) {
+      grid.innerHTML = '<div class="text-danger p-4">Failed to load gallery: ' + e.message + '</div>';
+      return;
+    }
+
+    const tags = data.tags || Object.keys(CAT_LABELS);
+
+    let files = data.files
+      .map(name => ({ name, cat: categoryFromName(name, tags) }))
+      .filter(f => f.cat !== null);
+
+    const catOrder = tags;
+    files.sort((a, b) => catOrder.indexOf(a.cat) - catOrder.indexOf(b.cat));
+
+    const catsInFiles = [...new Set(files.map(f => f.cat))];
+
+    if (tabsEl) {
+      tabsEl.innerHTML =
+        `<button class="filter-btn active" data-filter="all">All Projects</button>` +
+        catsInFiles.map(cat =>
+          `<button class="filter-btn" data-filter="${cat}">
+            <i class="fa ${iconFor(cat)} me-1"></i>${labelFor(cat)}
+          </button>`
+        ).join('');
+    }
+
+    grid.innerHTML = files.map(f => {
+      const title = titleFromName(f.name);
+      const label = labelFor(f.cat);
+      const src   = ASSETS_BASE + encodeURIComponent(f.name);
+      return `
+        <div class="gallery-item" data-category="${f.cat}">
+          <img src="${src}" alt="${title} — Boston" loading="lazy"
+            onerror="this.closest('.gallery-item').remove()">
+          <div class="gallery-overlay">
+            <div class="zoom-icon"><i class="fa fa-expand"></i></div>
+            <div class="cat-badge">${label}</div>
+            <p class="img-title">${title}</p>
+          </div>
+        </div>`;
+    }).join('');
+
+    initGallery();
+  }
+
+  function initGallery() {
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const items      = document.querySelectorAll('.gallery-item');
+
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const filter = btn.dataset.filter;
+        items.forEach(item => {
+          item.classList.toggle('hidden', filter !== 'all' && item.dataset.category !== filter);
+        });
+      });
+    });
+
+    const lightbox  = document.getElementById('lightbox');
+    if (!lightbox) return;
+    const lbImg     = document.getElementById('lbImg');
+    const lbCaption = document.getElementById('lbCaption');
+    let visibleItems = [], currentIndex = 0;
+
+    function getVisible() {
+      return [...document.querySelectorAll('.gallery-item:not(.hidden)')];
+    }
+
+    items.forEach(item => {
+      item.addEventListener('click', () => {
+        visibleItems = getVisible();
+        currentIndex = visibleItems.indexOf(item);
+        openLightbox(currentIndex);
+      });
+    });
+
+    function openLightbox(idx) {
+      const item  = visibleItems[idx];
+      const img   = item.querySelector('img');
+      lbImg.src   = img.src;
+      lbImg.alt   = img.alt;
+      const badge = item.querySelector('.cat-badge');
+      const title = item.querySelector('.img-title');
+      lbCaption.textContent = (badge ? badge.textContent : '') + (title ? ' — ' + title.textContent : '');
+      lightbox.classList.add('open');
+    }
+
+    document.getElementById('lbClose').addEventListener('click', () => lightbox.classList.remove('open'));
+    lightbox.addEventListener('click', e => { if (e.target === lightbox) lightbox.classList.remove('open'); });
+
+    document.getElementById('lbPrev').addEventListener('click', e => {
+      e.stopPropagation();
+      currentIndex = (currentIndex - 1 + visibleItems.length) % visibleItems.length;
+      openLightbox(currentIndex);
+    });
+
+    document.getElementById('lbNext').addEventListener('click', e => {
+      e.stopPropagation();
+      currentIndex = (currentIndex + 1) % visibleItems.length;
+      openLightbox(currentIndex);
+    });
+
+    document.addEventListener('keydown', e => {
+      if (!lightbox.classList.contains('open')) return;
+      if (e.key === 'ArrowLeft')  { currentIndex = (currentIndex - 1 + visibleItems.length) % visibleItems.length; openLightbox(currentIndex); }
+      if (e.key === 'ArrowRight') { currentIndex = (currentIndex + 1) % visibleItems.length; openLightbox(currentIndex); }
+      if (e.key === 'Escape')     { lightbox.classList.remove('open'); }
+    });
+  }
+
+  document.addEventListener('components:ready', loadGallery);
+})();
+</script>

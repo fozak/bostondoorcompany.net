@@ -1,5 +1,9 @@
 {
-  "tags": ["full-finish-restoration", "finish-work", "finish-maintenance"],
+  "tags": [
+    "full-finish-restoration",
+    "finish-work",
+    "finish-maintenance"
+  ],
   "files": [
     "about-hero.avif",
     "beauty1.after.jpg",
@@ -175,412 +179,561 @@
     "mit.d1.hinge.after.1.jpg",
     "mit.d1.hinge.after.2.jpg",
     "mit.d1.hinge.after.3.jpg"
-],
-  "projects": [
-  {
-    "id": "990-centre-jamaica-plain",
-    "title": "Historic Entry Door Restoration",
-    "subtitle": "Weld Mansion — Adams Arboretum Condominiums",
-    "location": "Jamaica Plain, MA",
-    "address": "990 & 1000 Centre St",
-    "client": "Evergreen Management",
-    "service": "door-restoration",
-    "door_type": "Historic hardwood double entry",
-    "property": "Victorian estate — c.1885",
-    "finish": "Epifanes Natural Oil Varnish",
-    "description": [
-      "990 Centre Street, Jamaica Plain is the historic Weld Mansion — a landmark Victorian estate built around 1885 and converted into residential condominiums. The property sits on landscaped grounds directly adjacent to the Arnold Arboretum, one of the world's great botanical collections. The buildings retain much of their original architectural character, including the ornate carved hardwood entry doors that are among the most distinctive features of the estate.",
-      "Boston Door Company was engaged to restore five sets of entry doors across the two main buildings at 990 and 1000 Centre Street. All doors are original period hardwood, heavily carved in the Victorian manner, with arched glass panels and matching period hardware. Decades of deferred maintenance had left the finishes oxidized, checked, and in places completely failed.",
-      "The full scope covered complete abatement of existing finishes, wood damage repair, and 3–5 coats of Epifanes natural oil varnish on all exterior faces. Interior faces were cleaned, prepped, and topcoated throughout. All hardware was disassembled, serviced, and reinstalled; a broken hinge at the main 990 entry was repaired and matched to the original."
-    ],
-    "doors": [
-      {
-        "id": "cs-990",
-        "label": "990 Centre St — Exterior Entry",
-        "scope": "exterior",
-        "description": "The main exterior double doors at 990 Centre Street — the most architecturally significant set on the property. Ornate carved hardwood with arched glass panels and original Victorian hardware. Finish had failed across most of the surface with visible weathering and checking in the wood. A broken hinge required repair and matching before reinstallation.",
-        "work": [
-          "Complete abatement of existing exterior finish",
-          "Visible wood damage repaired",
-          "Exterior prepped and finished with Epifanes natural oil varnish — 3–5 coats",
-          "Interior face cleaned, prepped, and topcoated with natural oil varnish",
-          "Broken hinge repaired and matched to original",
-          "All hardware disassembled, maintained, and reinstalled",
-          "Doors reinstalled and full function verified"
-        ],
-        "card_image": "cs-990.d1.entry.after.1",
-        "pairs": [
-          { "label": "Entry",    "before": "cs-990.d1.entry.before.1",   "after": "cs-990.d1.entry.after.1" },
-          { "label": "Carving",  "before": "cs-990.d1.carving.before",   "after": "cs-990.d1.carving.after.1" },
-          { "label": "Interior", "before": "cs-990.d1.interior.before.1","after": "cs-990.d1.interior.after" }
-        ],
-        "after": [
-          "cs-990.d1.entry.after.1",
-          "cs-990.d1.entry.after.2",
-          "cs-990.d1.entry.after.3",
-          "cs-990.d1.entry.after.4",
-          "cs-990.d1.entry.after.5",
-          "cs-990.d1.entry.after.6",
-          "cs-990.d1.entry.after.7",
-          "cs-990.d1.entry.after.8",
-          "cs-990.d1.entry.after.9",
-          "cs-990.d1.entry.after.10",
-          "cs-990.d1.entry.after.11",
-          "cs-990.d1.entry.after.12",
-          "cs-990.d1.entry.after.13",
-          "cs-990.d1.entry.after.14",
-          "cs-990.d1.entry.after.15",
-          "cs-990.d1.entry.after.16",
-          "cs-990.d1.carving.after.1",
-          "cs-990.d1.carving.after.2",
-          "cs-990.d1.carving.after.3",
-          "cs-990.d1.carving.after.4",
-          "cs-990.d1.hardware.after.1",
-          "cs-990.d1.hardware.after.2",
-          "cs-990.d1.hardware.after.3",
-          "cs-990.d1.hardware.after.4",
-          "cs-990.d1.hardware.after.5",
-          "cs-990.d1.hardware.after.6",
-          "cs-990.d1.hardware.after.7",
-          "cs-990.d1.hardware.after.8",
-          "cs-990.d1.hardware.after.9",
-          "cs-990.d1.hardware.after.10",
-          "cs-990.d1.finish.after.1",
-          "cs-990.d1.finish.after.2",
-          "cs-990.d1.threshold.after.1",
-          "cs-990.d1.threshold.after.2",
-          "cs-990.d1.threshold.after.3"
-        ]
-      },
-      {
-        "id": "cs-993",
-        "label": "990 Centre St #3 — Exterior Entry",
-        "scope": "exterior",
-        "description": "The exterior entry doors serving unit #3 at 990 Centre Street — a second double door set on the same building, sharing the same period hardwood construction and arched glass detailing. Finish failure was similar in character to the main entry. Hardware was serviced in place.",
-        "work": [
-          "Complete abatement of existing exterior finish",
-          "Visible wood damage repaired",
-          "Exterior prepped and finished with Epifanes natural oil varnish — 3–5 coats",
-          "Interior face cleaned, prepped, and topcoated with natural oil varnish",
-          "Hardware disassembled, maintained, and reinstalled",
-          "Doors reinstalled and full function verified"
-        ],
-        "card_image": "cs-993.d1.entry.after.1",
-        "pairs": [
-          { "label": "Entry", "before": "cs-993.d1.entry.before.1", "after": "cs-993.d1.entry.after.1" }
-        ],
-        "after": [
-          "cs-993.d1.entry.after.1",
-          "cs-993.d1.entry.after.2",
-          "cs-993.d1.entry.after.3",
-          "cs-993.d1.entry.after.4",
-          "cs-993.d1.entry.after.5",
-          "cs-993.d1.entry.after.6",
-          "cs-993.d1.entry.after.7",
-          "cs-993.d1.entry.after.8",
-          "cs-993.d1.entry.after.9",
-          "cs-993.d1.entry.after.10",
-          "cs-993.d1.entry.after.11",
-          "cs-993.d1.entry.after.12",
-          "cs-993.d1.entry.after.13",
-          "cs-993.d1.entry.after.14",
-          "cs-993.d1.entry.after.15",
-          "cs-993.d1.entry.after.16",
-          "cs-993.d1.entry.after.17",
-          "cs-993.d1.entry.after.18",
-          "cs-993.d1.carving.after.1",
-          "cs-993.d1.carving.after.2",
-          "cs-993.d1.panel.after.1",
-          "cs-993.d1.panel.after.2",
-          "cs-993.d1.panel.after.3"
-        ]
-      },
-      {
-        "id": "cs-1000",
-        "label": "1000 Centre St — Exterior Entry",
-        "scope": "exterior",
-        "description": "The main exterior entry doors at 1000 Centre Street, the adjacent building on the Weld Mansion estate. A brick arch surround frames the double door set. Restoration scope matched the 990 exterior sets.",
-        "work": [
-          "Complete abatement of existing exterior finish",
-          "Visible wood damage repaired",
-          "Exterior prepped and finished with Epifanes natural oil varnish — 3–5 coats",
-          "Interior face cleaned, prepped, and topcoated with natural oil varnish",
-          "Hardware disassembled, maintained, and reinstalled",
-          "Doors reinstalled and full function verified"
-        ],
-        "card_image": "cs-1000.d1.entry.after.1",
-        "pairs": [
-          { "label": "Entry", "before": "cs-1000.d1.entry.before.1", "after": "cs-1000.d1.entry.after.1" }
-        ],
-        "after": [
-          "cs-1000.d1.entry.after.1",
-          "cs-1000.d1.entry.after.2",
-          "cs-1000.d1.entry.after.3",
-          "cs-1000.d1.entry.after.4",
-          "cs-1000.d1.entry.after.5",
-          "cs-1000.d1.entry.after.6",
-          "cs-1000.d1.entry.after.7",
-          "cs-1000.d1.entry.after.8",
-          "cs-1000.d1.entry.after.9",
-          "cs-1000.d1.entry.after.10",
-          "cs-1000.d1.entry.after.11",
-          "cs-1000.d1.entry.after.12",
-          "cs-1000.d1.entry.after.13"
-        ]
-      }
-    ],
-    "meta": [
-      { "label": "Location",  "value": "Jamaica Plain, MA" },
-      { "label": "Client",    "value": "Evergreen Management" },
-      { "label": "Service",   "value": "Door Restoration & Refinishing" },
-      { "label": "Finish",    "value": "Epifanes Natural Oil Varnish" },
-      { "label": "Scope",     "value": "3 door sets — 990 & 1000 Centre St" },
-      { "label": "Property",  "value": "Weld Mansion — Victorian estate c.1885" },
-      { "label": "Status",    "value": "Completed" }
-    ]
-  },
-{
-  "id": "mit-cambridge",
-  "title": "Historic Door Restoration",
-  "subtitle": "MIT Campus — Cambridge, MA",
-  "location": "Cambridge, MA",
-  "address": "MIT Campus, Cambridge",
-  "client": "MIT",
-  "service": "door-restoration",
-  "door_type": "Historic painted wood with iron strap hinges",
-  "property": "MIT institutional building — early 20th century",
-  "finish": "Paint restoration",
-  "description": [
-    "A landmark institutional entry on the MIT campus in Cambridge — large painted wood double doors set within a granite arch surround, fitted with original ornate iron strap hinges and period hardware. The doors had accumulated decades of paint buildup, surface damage, and hardware corrosion.",
-    "Boston Door Company restored the full entry: surface preparation, wood damage repair, hardware disassembly and servicing, and finish restoration. The distinctive ironwork strap hinges were cleaned, treated, and reinstalled to their original condition."
   ],
-  "doors": [
+  "projects": [
     {
-      "id": "mit",
-      "label": "MIT Campus — Exterior Entry",
-      "scope": "exterior",
-      "description": "Historic painted wood double doors with ornate iron strap hinges set in a granite arch surround. Decades of deferred maintenance had left the finish deteriorated and hardware corroded.",
-      "work": [
-        "Complete surface preparation and paint restoration",
-        "Wood damage repaired",
-        "Iron strap hinges disassembled, cleaned, and reinstalled",
-        "Hardware serviced and reinstalled",
-        "Doors reinstalled and full function verified"
+      "id": "990-centre-jamaica-plain",
+      "title": "Historic Entry Door Restoration",
+      "subtitle": "Weld Mansion \u2014 Adams Arboretum Condominiums",
+      "location": "Jamaica Plain, MA",
+      "address": "990 & 1000 Centre St",
+      "client": "Evergreen Management",
+      "service": "door-restoration",
+      "door_type": "Historic hardwood double entry",
+      "property": "Victorian estate \u2014 c.1885",
+      "finish": "Epifanes Natural Oil Varnish",
+      "description": [
+        "990 Centre Street, Jamaica Plain is the historic Weld Mansion \u2014 a landmark Victorian estate built around 1885 and converted into residential condominiums. The property sits on landscaped grounds directly adjacent to the Arnold Arboretum, one of the world's great botanical collections. The buildings retain much of their original architectural character, including the ornate carved hardwood entry doors that are among the most distinctive features of the estate.",
+        "Boston Door Company was engaged to restore five sets of entry doors across the two main buildings at 990 and 1000 Centre Street. All doors are original period hardwood, heavily carved in the Victorian manner, with arched glass panels and matching period hardware. Decades of deferred maintenance had left the finishes oxidized, checked, and in places completely failed.",
+        "The full scope covered complete abatement of existing finishes, wood damage repair, and 3\u20135 coats of Epifanes natural oil varnish on all exterior faces. Interior faces were cleaned, prepped, and topcoated throughout. All hardware was disassembled, serviced, and reinstalled; a broken hinge at the main 990 entry was repaired and matched to the original."
       ],
-      "card_image": "mit.d1.entry.after.4",
-      "pairs": [
-        { "label": "Entry", "before": "mit.d1.entry.before.3", "after": "mit.d1.entry.after.4" }
+      "doors": [
+        {
+          "id": "cs-990",
+          "label": "990 Centre St \u2014 Exterior Entry",
+          "scope": "exterior",
+          "description": "The main exterior double doors at 990 Centre Street \u2014 the most architecturally significant set on the property. Ornate carved hardwood with arched glass panels and original Victorian hardware. Finish had failed across most of the surface with visible weathering and checking in the wood. A broken hinge required repair and matching before reinstallation.",
+          "work": [
+            "Complete abatement of existing exterior finish",
+            "Visible wood damage repaired",
+            "Exterior prepped and finished with Epifanes natural oil varnish \u2014 3\u20135 coats",
+            "Interior face cleaned, prepped, and topcoated with natural oil varnish",
+            "Broken hinge repaired and matched to original",
+            "All hardware disassembled, maintained, and reinstalled",
+            "Doors reinstalled and full function verified"
+          ],
+          "card_image": "cs-990.d1.entry.after.1",
+          "pairs": [
+            {
+              "label": "Entry",
+              "before": "cs-990.d1.entry.before.1",
+              "after": "cs-990.d1.entry.after.1"
+            },
+            {
+              "label": "Carving",
+              "before": "cs-990.d1.carving.before",
+              "after": "cs-990.d1.carving.after.1"
+            },
+            {
+              "label": "Interior",
+              "before": "cs-990.d1.interior.before.1",
+              "after": "cs-990.d1.interior.after"
+            }
+          ],
+          "after": [
+            "cs-990.d1.entry.after.1",
+            "cs-990.d1.entry.after.2",
+            "cs-990.d1.entry.after.3",
+            "cs-990.d1.entry.after.4",
+            "cs-990.d1.entry.after.5",
+            "cs-990.d1.entry.after.6",
+            "cs-990.d1.entry.after.7",
+            "cs-990.d1.entry.after.8",
+            "cs-990.d1.entry.after.9",
+            "cs-990.d1.entry.after.10",
+            "cs-990.d1.entry.after.11",
+            "cs-990.d1.entry.after.12",
+            "cs-990.d1.entry.after.13",
+            "cs-990.d1.entry.after.14",
+            "cs-990.d1.entry.after.15",
+            "cs-990.d1.entry.after.16",
+            "cs-990.d1.carving.after.1",
+            "cs-990.d1.carving.after.2",
+            "cs-990.d1.carving.after.3",
+            "cs-990.d1.carving.after.4",
+            "cs-990.d1.hardware.after.1",
+            "cs-990.d1.hardware.after.2",
+            "cs-990.d1.hardware.after.3",
+            "cs-990.d1.hardware.after.4",
+            "cs-990.d1.hardware.after.5",
+            "cs-990.d1.hardware.after.6",
+            "cs-990.d1.hardware.after.7",
+            "cs-990.d1.hardware.after.8",
+            "cs-990.d1.hardware.after.9",
+            "cs-990.d1.hardware.after.10",
+            "cs-990.d1.finish.after.1",
+            "cs-990.d1.finish.after.2",
+            "cs-990.d1.threshold.after.1",
+            "cs-990.d1.threshold.after.2",
+            "cs-990.d1.threshold.after.3"
+          ]
+        },
+        {
+          "id": "cs-993",
+          "label": "990 Centre St #3 \u2014 Exterior Entry",
+          "scope": "exterior",
+          "description": "The exterior entry doors serving unit #3 at 990 Centre Street \u2014 a second double door set on the same building, sharing the same period hardwood construction and arched glass detailing. Finish failure was similar in character to the main entry. Hardware was serviced in place.",
+          "work": [
+            "Complete abatement of existing exterior finish",
+            "Visible wood damage repaired",
+            "Exterior prepped and finished with Epifanes natural oil varnish \u2014 3\u20135 coats",
+            "Interior face cleaned, prepped, and topcoated with natural oil varnish",
+            "Hardware disassembled, maintained, and reinstalled",
+            "Doors reinstalled and full function verified"
+          ],
+          "card_image": "cs-993.d1.entry.after.1",
+          "pairs": [
+            {
+              "label": "Entry",
+              "before": "cs-993.d1.entry.before.1",
+              "after": "cs-993.d1.entry.after.1"
+            }
+          ],
+          "after": [
+            "cs-993.d1.entry.after.1",
+            "cs-993.d1.entry.after.2",
+            "cs-993.d1.entry.after.3",
+            "cs-993.d1.entry.after.4",
+            "cs-993.d1.entry.after.5",
+            "cs-993.d1.entry.after.6",
+            "cs-993.d1.entry.after.7",
+            "cs-993.d1.entry.after.8",
+            "cs-993.d1.entry.after.9",
+            "cs-993.d1.entry.after.10",
+            "cs-993.d1.entry.after.11",
+            "cs-993.d1.entry.after.12",
+            "cs-993.d1.entry.after.13",
+            "cs-993.d1.entry.after.14",
+            "cs-993.d1.entry.after.15",
+            "cs-993.d1.entry.after.16",
+            "cs-993.d1.entry.after.17",
+            "cs-993.d1.entry.after.18",
+            "cs-993.d1.carving.after.1",
+            "cs-993.d1.carving.after.2",
+            "cs-993.d1.panel.after.1",
+            "cs-993.d1.panel.after.2",
+            "cs-993.d1.panel.after.3"
+          ]
+        },
+        {
+          "id": "cs-1000",
+          "label": "1000 Centre St \u2014 Exterior Entry",
+          "scope": "exterior",
+          "description": "The main exterior entry doors at 1000 Centre Street, the adjacent building on the Weld Mansion estate. A brick arch surround frames the double door set. Restoration scope matched the 990 exterior sets.",
+          "work": [
+            "Complete abatement of existing exterior finish",
+            "Visible wood damage repaired",
+            "Exterior prepped and finished with Epifanes natural oil varnish \u2014 3\u20135 coats",
+            "Interior face cleaned, prepped, and topcoated with natural oil varnish",
+            "Hardware disassembled, maintained, and reinstalled",
+            "Doors reinstalled and full function verified"
+          ],
+          "card_image": "cs-1000.d1.entry.after.1",
+          "pairs": [
+            {
+              "label": "Entry",
+              "before": "cs-1000.d1.entry.before.1",
+              "after": "cs-1000.d1.entry.after.1"
+            }
+          ],
+          "after": [
+            "cs-1000.d1.entry.after.1",
+            "cs-1000.d1.entry.after.2",
+            "cs-1000.d1.entry.after.3",
+            "cs-1000.d1.entry.after.4",
+            "cs-1000.d1.entry.after.5",
+            "cs-1000.d1.entry.after.6",
+            "cs-1000.d1.entry.after.7",
+            "cs-1000.d1.entry.after.8",
+            "cs-1000.d1.entry.after.9",
+            "cs-1000.d1.entry.after.10",
+            "cs-1000.d1.entry.after.11",
+            "cs-1000.d1.entry.after.12",
+            "cs-1000.d1.entry.after.13"
+          ]
+        }
       ],
-      "after": [
-        "mit.d1.entry.after.1",
-        "mit.d1.entry.after.2",
-        "mit.d1.entry.after.3",
-        "mit.d1.entry.after.4",
-        "mit.d1.entry.after.5",
-        "mit.d1.entry.after.6",
-        "mit.d1.entry.after.7",
+      "meta": [
+        {
+          "label": "Location",
+          "value": "Jamaica Plain, MA"
+        },
+        {
+          "label": "Client",
+          "value": "Evergreen Management"
+        },
+        {
+          "label": "Service",
+          "value": "Door Restoration & Refinishing"
+        },
+        {
+          "label": "Finish",
+          "value": "Epifanes Natural Oil Varnish"
+        },
+        {
+          "label": "Scope",
+          "value": "3 door sets \u2014 990 & 1000 Centre St"
+        },
+        {
+          "label": "Property",
+          "value": "Weld Mansion \u2014 Victorian estate c.1885"
+        },
+        {
+          "label": "Status",
+          "value": "Completed"
+        }
+      ]
+    },
+    {
+      "id": "mit-cambridge",
+      "title": "Historic Door Restoration",
+      "subtitle": "MIT Campus \u2014 Cambridge, MA",
+      "location": "Cambridge, MA",
+      "address": "MIT Campus, Cambridge",
+      "client": "MIT",
+      "service": "door-restoration",
+      "door_type": "Historic painted wood with iron strap hinges",
+      "property": "MIT institutional building \u2014 early 20th century",
+      "finish": "Paint restoration",
+      "description": [
+        "A landmark institutional entry on the MIT campus in Cambridge \u2014 large painted wood double doors set within a granite arch surround, fitted with original ornate iron strap hinges and period hardware. The doors had accumulated decades of paint buildup, surface damage, and hardware corrosion.",
+        "Boston Door Company restored the full entry: surface preparation, wood damage repair, hardware disassembly and servicing, and finish restoration. The distinctive ironwork strap hinges were cleaned, treated, and reinstalled to their original condition."
+      ],
+      "doors": [
+        {
+          "id": "mit",
+          "label": "MIT Campus \u2014 Exterior Entry",
+          "scope": "exterior",
+          "description": "Historic painted wood double doors with ornate iron strap hinges set in a granite arch surround. Decades of deferred maintenance had left the finish deteriorated and hardware corroded.",
+          "work": [
+            "Complete surface preparation and paint restoration",
+            "Wood damage repaired",
+            "Iron strap hinges disassembled, cleaned, and reinstalled",
+            "Hardware serviced and reinstalled",
+            "Doors reinstalled and full function verified"
+          ],
+          "card_image": "mit.d1.entry.after.4",
+          "pairs": [
+            {
+              "label": "Entry",
+              "before": "mit.d1.entry.before.3",
+              "after": "mit.d1.entry.after.4"
+            }
+          ],
+          "after": [
+            "mit.d1.entry.after.1",
+            "mit.d1.entry.after.2",
+            "mit.d1.entry.after.3",
+            "mit.d1.entry.after.4",
+            "mit.d1.entry.after.5",
+            "mit.d1.entry.after.6",
+            "mit.d1.entry.after.7",
+            "mit.d1.hinge.after.1",
+            "mit.d1.hinge.after.2",
+            "mit.d1.hinge.after.3",
+            "mit.d1.hardware.after.1"
+          ]
+        }
+      ],
+      "meta": [
+        {
+          "label": "Location",
+          "value": "Cambridge, MA"
+        },
+        {
+          "label": "Client",
+          "value": "MIT"
+        },
+        {
+          "label": "Service",
+          "value": "Door Restoration & Refinishing"
+        },
+        {
+          "label": "Scope",
+          "value": "1 door set \u2014 MIT Campus entry"
+        },
+        {
+          "label": "Property",
+          "value": "MIT institutional building \u2014 early 20th century"
+        },
+        {
+          "label": "Status",
+          "value": "Completed"
+        }
+      ]
+    },
+    {
+      "id": "71-marlborough-boston",
+      "title": "Historic Entry Door Restoration",
+      "subtitle": "71 Marlborough Street \u2014 Back Bay",
+      "location": "Boston, MA",
+      "address": "71 Marlborough St",
+      "service": "door-restoration",
+      "door_type": "Historic hardwood double entry with glass lights and brass kick plates",
+      "property": "Back Bay brownstone \u2014 late 19th century",
+      "finish": "Natural oil varnish",
+      "description": [
+        "71 Marlborough Street is a landmark Back Bay brownstone on one of Boston's most distinguished residential streets. The historic hardwood double entry features full-length glass lights, original brass kick plates, and a arched transom above \u2014 characteristic of the refined Federal-era rowhouse architecture of the neighborhood.",
+        "Boston Door Company restored the full entry. The existing finish had oxidized and failed across most of the surface, leaving the wood weathered and grey. The restoration brought the doors back to a rich, deep natural finish that reveals the quality of the original hardwood."
+      ],
+      "doors": [
+        {
+          "id": "71-marlborough",
+          "label": "71 Marlborough St \u2014 Exterior Entry",
+          "scope": "exterior",
+          "description": "Historic hardwood double entry doors with full-length glass lights, brass kick plates, and arched transom. Finish had failed across the surface with significant weathering and oxidation.",
+          "work": [
+            "Complete abatement of existing exterior finish",
+            "Exterior prepped and finished with natural oil varnish",
+            "Hardware serviced and reinstalled",
+            "Doors reinstalled and full function verified"
+          ],
+          "card_image": "71-marlborough.d1.entry.after.1",
+          "pairs": [
+            {
+              "label": "Entry",
+              "before": "71-marlborough.d1.entry.before.1",
+              "after": "71-marlborough.d1.entry.after.1"
+            }
+          ],
+          "after": [
+            "71-marlborough.d1.entry.after.1",
+            "71-marlborough.d1.entry.after.2",
+            "71-marlborough.d1.entry.after.3"
+          ]
+        }
+      ],
+      "meta": [
+        {
+          "label": "Location",
+          "value": "Boston, MA"
+        },
+        {
+          "label": "Service",
+          "value": "Door Restoration & Refinishing"
+        },
+        {
+          "label": "Finish",
+          "value": "Natural Oil Varnish"
+        },
+        {
+          "label": "Scope",
+          "value": "1 door set \u2014 71 Marlborough St entry"
+        },
+        {
+          "label": "Property",
+          "value": "Back Bay brownstone \u2014 late 19th century"
+        },
+        {
+          "label": "Status",
+          "value": "Completed"
+        }
+      ]
+    },
+    {
+      "id": "90-park-st-brookline",
+      "title": "Vestibule Entry Door \u2014 Finish Maintenance & Hardware",
+      "subtitle": "90 Park Street \u2014 Brookline",
+      "location": "Brookline, MA",
+      "address": "90 Park St",
+      "client": "Private Residence",
+      "service": "door-function",
+      "door_type": "Vestibule entry door",
+      "property": "Residential \u2014 Brookline, MA",
+      "finish": "Finish maintenance coat",
+      "description": [
+        "90 Park Street is a private residence in Brookline with a vestibule entry door requiring both finish maintenance and full hardware servicing. The scope covered a finish maintenance coat on the entryway as well as replacement of six hinges, a new door closer, and threshold topcoat.",
+        "Boston Door Company completed two scopes of work: a finish maintenance coat on the vestibule entryway, and a full hardware overhaul covering all six hinges, a replacement closer, and threshold refinishing."
+      ],
+      "doors": [
+        {
+          "id": "90-park-st",
+          "label": "90 Park St \u2014 Vestibule Entry",
+          "scope": "exterior",
+          "description": "Vestibule entry door at 90 Park St, Brookline. Work included finish maintenance coat, replacement of all six hinges, new door closer installation, and threshold topcoat.",
+          "work": [
+            "Finish maintenance coat on vestibule entryway",
+            "Replace 6 hinges",
+            "Replace door closer",
+            "Topcoat threshold",
+            "Materials: hinges (6), closer, supplies"
+          ],
+          "card_image": "",
+          "pairs": [],
+          "after": []
+        }
+      ],
+      "meta": [
+        {
+          "label": "Location",
+          "value": "Brookline, MA"
+        },
+        {
+          "label": "Client",
+          "value": "Private Residence"
+        },
+        {
+          "label": "Service",
+          "value": "Finish Maintenance & Hardware"
+        },
+        {
+          "label": "Finish",
+          "value": "Finish Maintenance Coat"
+        },
+        {
+          "label": "Scope",
+          "value": "1 door \u2014 vestibule entry"
+        },
+        {
+          "label": "Property",
+          "value": "Residential"
+        },
+        {
+          "label": "Status",
+          "value": "Completed"
+        }
+      ]
+    }
+  ],
+  "services": [
+    {
+      "id": "door-function",
+      "title": "Functionality",
+      "icon": "fa-tools",
+      "description": "Door adjustment, structural repairs, weatherstripping, hardware replacement and installation, specialty locksmith, and door installation.",
+      "href": "/door-repair.html",
+      "image": "mit.d1.hinge.after.2",
+      "gallery": [
         "mit.d1.hinge.after.1",
         "mit.d1.hinge.after.2",
         "mit.d1.hinge.after.3",
-        "mit.d1.hardware.after.1"
+        "cs-990.d1.hardware.after.1",
+        "cs-990.d1.hardware.after.2",
+        "cs-990.d1.hardware.after.3",
+        "cs-990.d1.threshold.after.1",
+        "cs-990.d1.threshold.after.2",
+        "mit.d1.hardware.after.1",
+        "mit.d1.entry.after.5"
       ]
-    }
-  ],
-  "meta": [
-    { "label": "Location",  "value": "Cambridge, MA" },
-    { "label": "Client",    "value": "MIT" },
-    { "label": "Service",   "value": "Door Restoration & Refinishing" },
-    { "label": "Scope",     "value": "1 door set — MIT Campus entry" },
-    { "label": "Property",  "value": "MIT institutional building — early 20th century" },
-    { "label": "Status",    "value": "Completed" }
-  ]
-},
-{
-  "id": "71-marlborough-boston",
-  "title": "Historic Entry Door Restoration",
-  "subtitle": "71 Marlborough Street — Back Bay",
-  "location": "Boston, MA",
-  "address": "71 Marlborough St",
-  "service": "door-restoration",
-  "door_type": "Historic hardwood double entry with glass lights and brass kick plates",
-  "property": "Back Bay brownstone — late 19th century",
-  "finish": "Natural oil varnish",
-  "description": [
-    "71 Marlborough Street is a landmark Back Bay brownstone on one of Boston's most distinguished residential streets. The historic hardwood double entry features full-length glass lights, original brass kick plates, and a arched transom above — characteristic of the refined Federal-era rowhouse architecture of the neighborhood.",
-    "Boston Door Company restored the full entry. The existing finish had oxidized and failed across most of the surface, leaving the wood weathered and grey. The restoration brought the doors back to a rich, deep natural finish that reveals the quality of the original hardwood."
-  ],
-  "doors": [
+    },
     {
-      "id": "71-marlborough",
-      "label": "71 Marlborough St — Exterior Entry",
-      "scope": "exterior",
-      "description": "Historic hardwood double entry doors with full-length glass lights, brass kick plates, and arched transom. Finish had failed across the surface with significant weathering and oxidation.",
-      "work": [
-        "Complete abatement of existing exterior finish",
-        "Exterior prepped and finished with natural oil varnish",
-        "Hardware serviced and reinstalled",
-        "Doors reinstalled and full function verified"
-      ],
-      "card_image": "71-marlborough.d1.entry.after.1",
-      "pairs": [
-        { "label": "Entry", "before": "71-marlborough.d1.entry.before.1", "after": "71-marlborough.d1.entry.after.1" }
-      ],
-      "after": [
-        "71-marlborough.d1.entry.after.1",
-        "71-marlborough.d1.entry.after.2",
-        "71-marlborough.d1.entry.after.3"
+      "id": "door-restoration",
+      "title": "Finish Restoration",
+      "icon": "fa-paint-brush",
+      "description": "Museum-quality finish, complete restoration, finish maintenance, natural oil finish, and detailed fabrication for historic and period entry doors.",
+      "href": "/door-restoration.html",
+      "image": "door-restoration-09",
+      "gallery": [
+        "cs-990.d1.entry.after.2",
+        "cs-990.d1.entry.after.3",
+        "cs-990.d1.entry.after.4",
+        "cs-990.d1.carving.after.1",
+        "cs-990.d1.carving.after.2",
+        "cs-993.d1.entry.after.1",
+        "cs-993.d1.entry.after.2",
+        "cs-1000.d1.entry.after.1",
+        "cs-1000.d1.entry.after.2",
+        "mit.d1.entry.after.4"
+      ]
+    },
+    {
+      "id": "consulting",
+      "title": "Consulting",
+      "icon": "fa-comments",
+      "description": "Hardware guidance, finish selection, and restoration feasibility for homeowners, management companies, multi-unit buildings, and businesses.",
+      "href": "/consulting.html",
+      "image": "consulting-01",
+      "gallery": [
+        "cs-990.d1.carving.after.2",
+        "cs-990.d1.carving.after.3",
+        "cs-990.d1.finish.after.1",
+        "cs-990.d1.finish.after.2",
+        "cs-993.d1.panel.after.1",
+        "cs-993.d1.panel.after.2",
+        "mit.d1.damage.before.1",
+        "mit.d1.damage.before.2"
       ]
     }
   ],
-  "meta": [
-    { "label": "Location",  "value": "Boston, MA" },
-    { "label": "Service",   "value": "Door Restoration & Refinishing" },
-    { "label": "Finish",    "value": "Natural Oil Varnish" },
-    { "label": "Scope",     "value": "1 door set — 71 Marlborough St entry" },
-    { "label": "Property",  "value": "Back Bay brownstone — late 19th century" },
-    { "label": "Status",    "value": "Completed" }
-  ]
-}
+  "customers": [
+    {
+      "id": "homeowners-private",
+      "title": "Homeowners & Private Residences",
+      "image": "71-marlborough.d1.entry.after.1",
+      "benefits": [
+        "Restore your front door to better-than-original condition",
+        "Increase curb appeal and property value",
+        "White-glove service with attention to every detail",
+        "Custom finish matching and period-accurate restoration"
+      ]
+    },
+    {
+      "id": "hoa",
+      "title": "HOAs",
+      "image": "cs-990.d1.entry.after.5",
+      "benefits": [
+        "Uniform appearance across all building entries",
+        "Protect property values for the entire community",
+        "Scheduled maintenance programs for common areas",
+        "Documentation and reporting for board records"
+      ]
+    },
+    {
+      "id": "management-companies",
+      "title": "Property Management Companies",
+      "image": "cs-993.d1.entry.after.3",
+      "benefits": [
+        "Single trusted vendor across your entire portfolio",
+        "Flexible scheduling to minimize tenant disruption",
+        "Priority response for managed properties",
+        "Detailed records for every property and service visit"
+      ]
+    },
+    {
+      "id": "multi-unit-buildings",
+      "title": "Multi-Unit Residential Buildings",
+      "image": "cs-993.d1.entry.after.5",
+      "benefits": [
+        "Coordinated restoration across all building entries",
+        "Consistent finish and hardware standard throughout",
+        "Phased scheduling to keep all entries operational",
+        "Volume pricing for larger building scopes"
+      ]
+    },
+    {
+      "id": "businesses",
+      "title": "Small & Large Businesses",
+      "image": "cs-1000.d1.entry.after.3",
+      "benefits": [
+        "Make a strong first impression on every client",
+        "Fast turnaround to minimize business disruption",
+        "Experience with retail, office, and mixed-use entries",
+        "Ongoing maintenance programs available"
+      ]
+    },
+    {
+      "id": "universities-institutions",
+      "title": "Universities & Institutions",
+      "image": "mit.d1.entry.after.1",
+      "benefits": [
+        "Proven experience with landmark institutional buildings",
+        "Historic preservation standards and materials",
+        "Coordinated access around campus schedules",
+        "Large-scale project management from start to finish"
+      ]
+    },
+    {
+      "id": "commercial-retail",
+      "title": "Commercial & Retail",
+      "image": "cs-1000.d1.entry.after.5",
+      "benefits": [
+        "High-traffic entry restoration built to last",
+        "Code-compliant work for commercial properties",
+        "Minimal downtime with efficient project scheduling",
+        "Hardware upgrades and ADA-compliant solutions available"
+      ]
+    }
   ],
-"services": [
-  {
-    "id": "door-function",
-    "title": "Functionality",
-    "icon": "fa-tools",
-    "description": "Door adjustment, structural repairs, weatherstripping, hardware replacement and installation, specialty locksmith, and door installation.",
-    "href": "/door-repair.html",
-    "image": "mit.d1.hinge.after.2",
-    "gallery": [
-      "mit.d1.hinge.after.1",
-      "mit.d1.hinge.after.2",
-      "mit.d1.hinge.after.3",
-      "cs-990.d1.hardware.after.1",
-      "cs-990.d1.hardware.after.2",
-      "cs-990.d1.hardware.after.3",
-      "cs-990.d1.threshold.after.1",
-      "cs-990.d1.threshold.after.2",
-      "mit.d1.hardware.after.1",
-      "mit.d1.entry.after.5"
-    ]
-  },
-  {
-    "id": "door-restoration",
-    "title": "Finish Restoration",
-    "icon": "fa-paint-brush",
-    "description": "Museum-quality finish, complete restoration, finish maintenance, natural oil finish, and detailed fabrication for historic and period entry doors.",
-    "href": "/door-restoration.html",
-    "image": "door-restoration-09",
-    "gallery": [
-      "cs-990.d1.entry.after.2",
-      "cs-990.d1.entry.after.3",
-      "cs-990.d1.entry.after.4",
-      "cs-990.d1.carving.after.1",
-      "cs-990.d1.carving.after.2",
-      "cs-993.d1.entry.after.1",
-      "cs-993.d1.entry.after.2",
-      "cs-1000.d1.entry.after.1",
-      "cs-1000.d1.entry.after.2",
-      "mit.d1.entry.after.4"
-    ]
-  },
-  {
-    "id": "consulting",
-    "title": "Consulting",
-    "icon": "fa-comments",
-    "description": "Hardware guidance, finish selection, and restoration feasibility for homeowners, management companies, multi-unit buildings, and businesses.",
-    "href": "/consulting.html",
-    "image": "consulting-01",
-    "gallery": [
-      "cs-990.d1.carving.after.2",
-      "cs-990.d1.carving.after.3",
-      "cs-990.d1.finish.after.1",
-      "cs-990.d1.finish.after.2",
-      "cs-993.d1.panel.after.1",
-      "cs-993.d1.panel.after.2",
-      "mit.d1.damage.before.1",
-      "mit.d1.damage.before.2"
-    ]
-  }
-],
-"customers": [
-  {
-    "id": "homeowners-private",
-    "title": "Homeowners & Private Residences",
-    "image": "71-marlborough.d1.entry.after.1",
-    "benefits": [
-      "Restore your front door to better-than-original condition",
-      "Increase curb appeal and property value",
-      "White-glove service with attention to every detail",
-      "Custom finish matching and period-accurate restoration"
-    ]
-  },
-  {
-    "id": "hoa",
-    "title": "HOAs",
-    "image": "cs-990.d1.entry.after.5",
-    "benefits": [
-      "Uniform appearance across all building entries",
-      "Protect property values for the entire community",
-      "Scheduled maintenance programs for common areas",
-      "Documentation and reporting for board records"
-    ]
-  },
-  {
-    "id": "management-companies",
-    "title": "Property Management Companies",
-    "image": "cs-993.d1.entry.after.3",
-    "benefits": [
-      "Single trusted vendor across your entire portfolio",
-      "Flexible scheduling to minimize tenant disruption",
-      "Priority response for managed properties",
-      "Detailed records for every property and service visit"
-    ]
-  },
-  {
-    "id": "multi-unit-buildings",
-    "title": "Multi-Unit Residential Buildings",
-    "image": "cs-993.d1.entry.after.5",
-    "benefits": [
-      "Coordinated restoration across all building entries",
-      "Consistent finish and hardware standard throughout",
-      "Phased scheduling to keep all entries operational",
-      "Volume pricing for larger building scopes"
-    ]
-  },
-  {
-    "id": "businesses",
-    "title": "Small & Large Businesses",
-    "image": "cs-1000.d1.entry.after.3",
-    "benefits": [
-      "Make a strong first impression on every client",
-      "Fast turnaround to minimize business disruption",
-      "Experience with retail, office, and mixed-use entries",
-      "Ongoing maintenance programs available"
-    ]
-  },
-  {
-    "id": "universities-institutions",
-    "title": "Universities & Institutions",
-    "image": "mit.d1.entry.after.1",
-    "benefits": [
-      "Proven experience with landmark institutional buildings",
-      "Historic preservation standards and materials",
-      "Coordinated access around campus schedules",
-      "Large-scale project management from start to finish"
-    ]
-  },
-  {
-    "id": "commercial-retail",
-    "title": "Commercial & Retail",
-    "image": "cs-1000.d1.entry.after.5",
-    "benefits": [
-      "High-traffic entry restoration built to last",
-      "Code-compliant work for commercial properties",
-      "Minimal downtime with efficient project scheduling",
-      "Hardware upgrades and ADA-compliant solutions available"
-    ]
-  }
-],
   "our_customers": [
     {
       "id": "mit",

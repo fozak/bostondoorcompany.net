@@ -178,7 +178,9 @@
     "mit.d1.hardware.before.3.jpg",
     "mit.d1.hinge.after.1.jpg",
     "mit.d1.hinge.after.2.jpg",
-    "mit.d1.hinge.after.3.jpg"
+    "mit.d1.hinge.after.3.jpg",
+    "90-park-st-brookline.d1.entry.after.1.jpg",
+    "90-park-st-brookline.d1.entry.after.2.jpg"
   ],
   "projects": [
     {
@@ -558,9 +560,12 @@
             "Topcoat threshold",
             "Materials: hinges (6), closer, supplies"
           ],
-          "card_image": "",
+          "card_image": "90-park-st-brookline.d1.entry.after.1",
           "pairs": [],
-          "after": []
+          "after": [
+            "90-park-st-brookline.d1.entry.after.1",
+            "90-park-st-brookline.d1.entry.after.2"
+          ]
         }
       ],
       "meta": [

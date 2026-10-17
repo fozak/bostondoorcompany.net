@@ -12,7 +12,7 @@
         <div class="card">
           <div class="card-body p-4">
             <div id="new-form">
-              <form id="estimate-form">
+              <form id="estimate-form" novalidate>
                 <div class="row g-3">
 
                   <div class="col-sm-6">
@@ -28,33 +28,20 @@
                   <div class="col-sm-6">
                     <select name="customer_type" class="form-select form-select-lg">
                       <option value="">Customer Type</option>
-                      <option>Homeowner</option>
-                      <option>HOA</option>
-                      <option>Property Management Company</option>
-                      <option>Multi-Unit Building</option>
-                      <option>Small Business</option>
-                      <option>University / Institution</option>
-                      <option>Commercial / Retail</option>
-                      <option>Other</option>
+                      <option>Owner</option>
+                      <option>Property Manager</option>
+                      <option>General Contractor</option>
                     </select>
-                  </div>
-
-                  <div class="col-sm-6">
-                    <input type="text" name="company" class="form-control form-control-lg" placeholder="Company / Organization (if applicable)">
                   </div>
 
                   <div class="col-sm-6">
                     <select name="service" class="form-select form-select-lg">
                       <option value="">Service Needed</option>
-                      <option>Door Repair</option>
-                      <option>Door Installation</option>
-                      <option>Door Restoration &amp; Refinishing</option>
-                      <option>Hardware &amp; Locks</option>
-                      <option>Specialty Locksmith</option>
-                      <option>Weatherproofing</option>
-                      <option>Finish Carpentry</option>
-                      <option>Consulting</option>
-                      <option>Other</option>
+                      <option>Adjustment / Weatherization</option>
+                      <option>Full Restoration</option>
+                      <option>Hardware Replacement / Locksmith</option>
+                      <option>Consultation</option>
+                      <option>Not Sure</option>
                     </select>
                   </div>
 
@@ -62,15 +49,13 @@
                     <select name="building_type" class="form-select form-select-lg">
                       <option value="">Building Type</option>
                       <option>Residential</option>
-                      <option>Commercial Storefront</option>
-                      <option>Commercial Office</option>
-                      <option>Industrial</option>
-                      <option>Other</option>
+                      <option>Commercial</option>
                     </select>
                   </div>
 
                   <div class="col-12">
-                    <input type="text" name="address" class="form-control form-control-lg" placeholder="Project Address (e.g. 123 Main St, Boston, MA)" required>
+                    <input type="text" name="address" class="form-control form-control-lg" placeholder="Project Address (e.g. 123 Main St, Boston, MA) *" required>
+                    <div class="invalid-feedback">Property address is required.</div>
                   </div>
 
                   <div class="col-12">
@@ -98,3 +83,19 @@
     </div>
   </div>
 </section>
+
+<script>
+  document.getElementById('estimate-form').addEventListener('submit', function(e) {
+    const address = this.querySelector('[name="address"]');
+    if (!address.value.trim()) {
+      e.preventDefault();
+      address.classList.add('is-invalid');
+      address.focus();
+    } else {
+      address.classList.remove('is-invalid');
+    }
+  });
+  document.querySelector('[name="address"]').addEventListener('input', function() {
+    this.classList.remove('is-invalid');
+  });
+</script>

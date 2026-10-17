@@ -1,4 +1,4 @@
-<form id="estimate-form">
+<form id="estimate-form" novalidate>
   <div class="row g-3">
     <div class="col-sm-6">
       <input type="text" name="name" class="form-control form-control-lg" placeholder="Your Name">
@@ -12,14 +12,31 @@
     <div class="col-sm-6">
       <select name="service" class="form-select form-select-lg">
         <option value="">Service Needed</option>
-        <option>Home Remodeling &amp; Renovations</option>
-        <option>Roofing &amp; Siding</option>
-        <option>Interior Repairs &amp; Finishes</option>
-        <option>Landscaping &amp; Tree Services</option>
-        <option>Solar Energy Solutions</option>
-        <option>Consulting &amp; Project Management</option>
-        <option>Other</option>
+        <option>Adjustment / Weatherization</option>
+        <option>Full Restoration</option>
+        <option>Hardware Replacement / Locksmith</option>
+        <option>Consultation</option>
+        <option>Not Sure</option>
       </select>
+    </div>
+    <div class="col-sm-6">
+      <select name="customer_type" class="form-select form-select-lg">
+        <option value="">Customer Type</option>
+        <option>Owner</option>
+        <option>Property Manager</option>
+        <option>General Contractor</option>
+      </select>
+    </div>
+    <div class="col-sm-6">
+      <select name="building_type" class="form-select form-select-lg">
+        <option value="">Building Type</option>
+        <option>Residential</option>
+        <option>Commercial</option>
+      </select>
+    </div>
+    <div class="col-12">
+      <input type="text" name="address" class="form-control form-control-lg" placeholder="Property Address *" required>
+      <div class="invalid-feedback">Property address is required.</div>
     </div>
     <div class="col-12">
       <textarea name="message" class="form-control" rows="4" placeholder="Describe your project..."></textarea>
@@ -30,3 +47,19 @@
     <div class="col-12" id="form-msg" style="display:none"></div>
   </div>
 </form>
+
+<script>
+  document.getElementById('estimate-form').addEventListener('submit', function(e) {
+    const address = this.querySelector('[name="address"]');
+    if (!address.value.trim()) {
+      e.preventDefault();
+      address.classList.add('is-invalid');
+      address.focus();
+    } else {
+      address.classList.remove('is-invalid');
+    }
+  });
+  document.querySelector('[name="address"]').addEventListener('input', function() {
+    this.classList.remove('is-invalid');
+  });
+</script>

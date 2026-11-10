@@ -2,7 +2,7 @@
   <div class="container-xl">
     <div class="text-center mb-5">
       <h1 class="display-5 text-uppercase">Before <span class="text-primary">&amp; After</span></h1>
-      <p class="text-muted">Click any photo to see the before.</p>
+      <p class="text-muted">Click any photo to flip and see the before.</p>
     </div>
 
     <div style="position:relative;">
@@ -21,45 +21,73 @@
   </div>
 </section>
 
-<!-- Before lightbox -->
-<div id="abLightbox" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,.88);z-index:9999;
-     align-items:center;justify-content:center;flex-direction:column;">
-  <button id="abLbClose"
-    style="position:absolute;top:1rem;right:1.25rem;background:none;border:none;
-           color:#fff;font-size:2.5rem;cursor:pointer;line-height:1;">&times;</button>
-  <div style="text-align:center;padding:1rem;">
-    <p style="color:#aaa;font-size:.75rem;text-transform:uppercase;letter-spacing:.08em;margin-bottom:.5rem;">Before</p>
-    <img id="abLbImg" src="" alt=""
-      style="max-height:80vh;max-width:90vw;border-radius:6px;object-fit:contain;">
-  </div>
-</div>
-
 <style>
-.ab-card {
+.ab-flip {
   cursor: pointer;
   border-radius: 8px;
-  overflow: hidden;
-  position: relative;
-}
-.ab-card img {
-  width: 100%;
+  perspective: 1200px;
   aspect-ratio: 3/4;
+}
+.ab-flip-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.72s cubic-bezier(0.4, 0.2, 0.2, 1);
+  border-radius: 8px;
+}
+.ab-flip.flipped .ab-flip-inner {
+  transform: rotateY(180deg);
+}
+.ab-flip-front,
+.ab-flip-back {
+  position: absolute;
+  inset: 0;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  border-radius: 8px;
+  overflow: hidden;
+}
+.ab-flip-back {
+  transform: rotateY(180deg);
+}
+.ab-flip img {
+  width: 100%;
+  height: 100%;
   object-fit: cover;
   display: block;
-  transition: opacity .2s;
+  transition: transform 0.3s ease;
 }
-.ab-card:hover img { opacity: .88; }
-.ab-click-hint {
+.ab-flip:hover img { transform: scale(1.03); }
+.ab-badge {
   position: absolute;
   top: .75rem;
   right: .75rem;
-  background: rgba(0,0,0,.45);
+  background: rgba(0,0,0,.52);
   color: #fff;
   font-size: .65rem;
+  font-weight: 700;
+  letter-spacing: .08em;
+  text-transform: uppercase;
   padding: .2rem .55rem;
   border-radius: 20px;
-  letter-spacing: .05em;
+  pointer-events: none;
+  z-index: 2;
 }
+.ab-hint {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  background: linear-gradient(transparent, rgba(0,0,0,.52));
+  color: #fff;
+  font-size: .72rem;
+  text-align: center;
+  padding: 28px 8px 10px;
+  pointer-events: none;
+  z-index: 2;
+  letter-spacing: .05em;
+  transition: opacity .25s;
+}
+.ab-flip.flipped .ab-hint { opacity: 0; }
 .ab-dot {
   width: 8px; height: 8px;
   border-radius: 50%;
@@ -70,7 +98,6 @@
   transition: background .2s;
 }
 .ab-dot.active { background: #4a2e1a; }
-#abLightbox.open { display: flex !important; }
 </style>
 
 <script>
@@ -101,13 +128,28 @@
       function goTo(page) {
         current = (page + total) % total;
         const slice = pairs.slice(current * PER_PAGE, current * PER_PAGE + PER_PAGE);
+
         track.innerHTML = slice.map((p, i) => `
           <div class="col-lg-4">
-            <div class="ab-card" data-index="${current * PER_PAGE + i}">
-              <img src="/assets/${p.after}" alt="After" loading="lazy">
-              <div class="ab-click-hint">Click for Before</div>
+            <div class="ab-flip" data-index="${current * PER_PAGE + i}">
+              <div class="ab-flip-inner">
+                <div class="ab-flip-front">
+                  <img src="/assets/${p.after}" alt="After" loading="lazy">
+                  <span class="ab-badge">After</span>
+                  <div class="ab-hint">Click to see Before</div>
+                </div>
+                <div class="ab-flip-back">
+                  <img src="/assets/${p.before}" alt="Before" loading="lazy">
+                  <span class="ab-badge">Before</span>
+                </div>
+              </div>
             </div>
           </div>`).join('');
+
+        track.querySelectorAll('.ab-flip').forEach(card => {
+          card.addEventListener('click', () => card.classList.toggle('flipped'));
+        });
+
         dotsEl.querySelectorAll('.ab-dot').forEach((d, i) =>
           d.classList.toggle('active', i === current));
       }
@@ -117,29 +159,9 @@
       dotsEl.querySelectorAll('.ab-dot').forEach(d =>
         d.addEventListener('click', () => goTo(+d.dataset.index)));
 
-      const lightbox = document.getElementById('abLightbox');
-      const lbImg    = document.getElementById('abLbImg');
-
-      track.addEventListener('click', e => {
-        const card = e.target.closest('.ab-card');
-        if (!card) return;
-        const p = pairs[+card.dataset.index];
-        lbImg.src = `/assets/${p.before}`;
-        lbImg.alt = 'Before';
-        lightbox.classList.add('open');
-      });
-
-      document.getElementById('abLbClose').addEventListener('click', () =>
-        lightbox.classList.remove('open'));
-      lightbox.addEventListener('click', e => {
-        if (e.target === lightbox) lightbox.classList.remove('open');
-      });
       document.addEventListener('keydown', e => {
-        if (e.key === 'Escape') lightbox.classList.remove('open');
-        if (!lightbox.classList.contains('open')) {
-          if (e.key === 'ArrowLeft')  goTo(current - 1);
-          if (e.key === 'ArrowRight') goTo(current + 1);
-        }
+        if (e.key === 'ArrowLeft')  goTo(current - 1);
+        if (e.key === 'ArrowRight') goTo(current + 1);
       });
 
       goTo(0);
